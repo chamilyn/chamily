@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Sniglet|Raleway:900');
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@200&display=swap');
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+body {
+	/* background-color: #fabd4a; */
+	background-color: #efebe0;
+    text-align: center;
+}
+
+p {
+    text-align: -webkit-center;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 1.2rem;
+    color: #3D5A48;
+}
+
+.textheader {
+    position: absolute;
+    top: 9px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #3D5A48;
+    left: 10px;
+}
+
+.mainContainer {
+    position: relative;
+    padding: 0;
+    min-width: 250px;
+    min-height: 250px;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+img {border: none; max-width: 100%; max-height: 100%;}
+
+#textArea {
+    display: block;
+    padding: 10px 5px;
+}
+
+#theText {
+    position: absolute;
+    /* top: 90px;
+    left: 0; */
+    top: 0;
+    left: 0;
+    margin-top: 32%;
+    margin-left: 16%;
+    background: #000;
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+    width: auto;
+    padding: 5px;
+    text-align: left;
+    border: dashed 2px #fabd4a;
+    /* font: 15px; */
+    font-size: 30px;
+    display: block;
+    cursor: move;
+}
+
+canvas { max-width: 100%; max-height: 100%; }
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.boxthetext {
+    text-align: left;
+}
+
+.bodytexttrue {
+    font-family: 'Sniglet', cursive;
+}
+
+.bodytextfalse {
+    font-family: 'Mali', cursive;
+}

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,200&display=swap');
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+    /* background: #769ECB; */
+    background-image: url('../img_background/bg_hbd_my_favorite_artist.png');
+    perspective: 500px;
+    overflow-x: hidden;
+
+	font-family: 'Mali', cursive;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	min-height: 100vh;
+	margin: 0;
+}
+
+figure {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+figure:nth-child(1) img {
+    transform: scale(0.6) rotate(-12.5deg);
+}
+
+figure:nth-child(2) img {
+    transform: scale(0.6) rotate(-9.72222deg);
+}
+
+figure:nth-child(3) img {
+    transform: scale(0.6) rotate(-6.94deg);
+}
+
+figure:nth-child(4) img {
+    transform: scale(0.6) rotate(-4.16deg);
+}
+
+figure:nth-child(5) img {
+    transform: scale(0.6) rotate(-1.38deg);
+}
+
+figure:nth-child(6) img {
+    transform: scale(0.6) rotate(1.38deg);
+}
+
+figure:nth-child(7) img {
+    transform: scale(0.6) rotate(4.16deg);
+}
+
+figure:nth-child(8) img {
+    transform: scale(0.6) rotate(6.94deg);
+}
+
+figure:nth-child(9) img {
+    transform: scale(0.6) rotate(9.72deg);
+}
+
+figure:nth-child(10) img {
+    transform: scale(0.6) rotate(12.5deg);
+}
+
+figure img {
+    width: 130vmin;
+    height: 130vmin;
+    border-radius: 3px;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 1.2rem;
+    color: #0e2431;
+}
+
+.textheader {
+    position: absolute;
+    top: 9px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #0e2431;
+    left: 10px;
+}
