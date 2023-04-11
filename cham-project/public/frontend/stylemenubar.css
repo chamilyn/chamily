@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+::-webkit-scrollbar { /* make scrollbar transparent */
+    width: 0px;
+    background: transparent;
+}
+
+.banner-image {
+    /* background-image: url('../img_background/flowers.jpg'); */
+    background-color: #FAD02C;
+    background-size: cover;
+}
