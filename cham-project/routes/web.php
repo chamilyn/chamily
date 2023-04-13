@@ -22,5 +22,5 @@ Route::group(['prefix' => 'admin'], function()
 
 });
 Route::get('/', 'IndexController@index');
-Route::get('/flowersforyou/{month}', 'OldProject@showFlower');
-Route::get('/wish', 'OldProject@wish');
+Route::get('/flowersforyou/{month}', 'OldProjectController@showFlower');
+Route::get('/wish', 'OldProjectController@wish');
