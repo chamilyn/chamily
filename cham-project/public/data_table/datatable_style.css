@@ -1,0 +1,25 @@
+.dataTables_wrapper .dt-buttons {
+ float:right;
+ }
+ button.btn.btn-primary{
+  margin-bottom: 5px;
+ }
+
+ button.btn.btn-danger{
+  margin-bottom: 5px;
+ }
+
+ button.btn.btn-danger.gp{
+  margin-bottom: 0px;
+ }
+ 
+ .dataTables_wrapper .dataTables_filter input { 
+   border-radius: 13px;
+   width: 300px;
+   background-color: transparent;
+}
+
+.pdf_export{
+  background-color: #F40F02;
+  color: #fff;
+  }

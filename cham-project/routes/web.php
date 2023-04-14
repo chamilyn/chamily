@@ -18,7 +18,8 @@ Auth::routes();
 Route::group(['prefix' => 'admin'], function()
 {
     Route::get('/', 'HomeController@index')->name('admin')->middleware('auth');
-    Route::get('/event/add', 'EventController@adminCreate')->middleware('auth');
+    Route::resource('/event', 'EventController')->middleware('auth');
+    Route::get('/get_event_datatable', 'EventController@getDatatables')->middleware('auth');
 
 });
 Route::get('/', 'IndexController@index');
