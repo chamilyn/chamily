@@ -13,18 +13,42 @@
             <div class="col-md-12">
                 <div class="card card-primary">
                     <div class="card-body">
-                        <table id="table_id" class="text-center table table-bordered table-hover">
+                        <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Start Date</th>
-                                    <th>End Date</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">End Date</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @php
+                                    $x = 1;
+                                @endphp
+                                @foreach($events as $event)
+                                    <tr event_id="{{$event->id}}">
+                                    <td>{{$x}}</td>
+                                    <td>{{$event->name}}</td>
+                                    <td>{{$event->start_date}}</td>
+                                    <td>{{$event->end_date}}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm" del a_id="{{$event->id}}">
+                                        <span class="fas fa-trash-alt" aria-hidden="true" >
+                                        </span>
+                                        </button>
+                                    </td>
+                                    </tr>
+                                @php
+                                    $x++;
+                                @endphp
+                                @endforeach
                             </tbody>
                         </table>
+                        <div id="paging_tab" class="d-flex justify-content-center">
+                            {{$events->links()}}
+                        </div>
                     </div>
                 </div>
             </div>

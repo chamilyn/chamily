@@ -16,7 +16,10 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view('admin.event.list');
+        
+        $events = App\Event::orderBy('start_date', 'desc')->paginate(2);
+        $count = $events->count();
+        return view('admin.event.list', ['events'=>$events, 'count'=>$count]);
     }
 
     public function getDatatables(Request $request) {
