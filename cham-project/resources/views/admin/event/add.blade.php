@@ -3,8 +3,9 @@
 
 @endsection
 @section('content')
-@if (isset($event)))
-<form action="admin/event/{{$event->id}}" class="form-horizontal" enctype="multipart/form-data" method="put">
+@if (isset($event))
+<form action="/admin/event/{{$event->id}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+@method("PUT")
 @else
 <form action="/admin/event" class="form-horizontal prevent_submit" enctype="multipart/form-data" method="post">
 @endif

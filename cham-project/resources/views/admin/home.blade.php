@@ -13,7 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    Hi .. {{ isset($name) ? $name : '' }}
+                    @if(Auth::user()->is_admin == 1)
+                        Hi .. {{ isset($name) ? $name : '' }}
+                    @else
+                        Hi .. Waiting for approve
+                    @endif
                 </div>
             </div>
         </div>

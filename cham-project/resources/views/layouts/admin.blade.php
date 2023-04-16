@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- jquuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="/js/jquery-3.6.4.min.js"></script>
     <!-- bootstrap -->
      <link rel="stylesheet" href="/css/bootstrap.min.css">
     @yield('assets')
@@ -25,18 +25,20 @@
     <div class="container">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
         <div class="col-md-3 mb-2 mb-md-0">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ url('/admin') }}">
                         CHAMILY
             </a>
             <img src="/img_logo/Chamily_logo_color.png" alt="" width="50px" height="50px"/>
         </div>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="/admin" class="nav-link px-2">Home</a></li>
-            <li><a href="/admin/event" class="nav-link px-2">Event</a></li>
-            <li><a href="#" class="nav-link px-2">Pricing</a></li>
-            <li><a href="#" class="nav-link px-2">FAQs</a></li>
-            <li><a href="#" class="nav-link px-2">About</a></li>
+            @guest
+            @else
+                @if(Auth::user()->is_admin == 1)
+                <li><a href="/admin" class="nav-link px-2">Home</a></li>
+                <li><a href="/admin/event" class="nav-link px-2">Event</a></li>
+                @endif
+            @endguest
         </ul>
 
         <div class="col-md-3 text-end">
@@ -46,7 +48,7 @@
             @else
             <div class="dropdown text-end">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ Auth::user()->name }}
+                    {{ Auth::user()->name }}
                 </a>
                 <ul class="dropdown-menu text-small" style="">
                     <li><a class="dropdown-item" href="{{ route('logout') }}"

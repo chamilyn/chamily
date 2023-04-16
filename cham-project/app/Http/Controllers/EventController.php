@@ -180,7 +180,8 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = App\Event::find($id);
+        return view('admin/event/add', ['event' => $event]);
     }
 
     /**
@@ -192,7 +193,30 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //dd($request->all());
+        $request->validate([
+            'event_name' => 'required',
+            'start_date' => 'required',
+        ]);
+
+        DB::beginTransaction();
+        $event = App\Event::find($id);
+        try {
+            $event->name = $request->event_name;
+            $event->start_date = $request->start_date;
+            $event->end_date = $request->end_date;
+            $event->img_path = $request->img_path;
+            $event->url = $request->url;
+            $event->desc = $request->desc;
+            $event->updated_user_id = Auth::user()->id;
+            $event->save();
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect('admin/event')->with('error', 'Line : '.$e->getLine().' Something went wrong'.$e->getMessage());
+        }
+
+        return redirect('admin/event')->with('success', 'Success update event : '.$event->name.'.');
     }
 
     /**
@@ -203,6 +227,16 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $res_obj = (object)[];
+        $res_obj->status = 'success';
+        try {
+            $event = App\Event::find($id);
+            $event->delete();
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            $res_obj->status = 'fail';
+        }
+        return $res_obj;
     }
 }
