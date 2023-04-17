@@ -14,7 +14,7 @@ jQuery(document).ready(function () {
             _token: $('meta[name="csrf-token"]').attr("content"),
             },
             success: function (result) {
-            if (result.status == "success") {
+            if (result == "success") {
                 location.reload();
             } else {
                 alert(result.message);

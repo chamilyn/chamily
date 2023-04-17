@@ -75,8 +75,10 @@
                             </div>
                             <label class="control-label col-sm-2 text-right" for="img_path">Image</label>
                             <div class="col-sm-5">
-                                <input type="file" class="form-control" id="img_path" name="img_path"
-                                        value="">
+                                @if(isset($event) && $event->img_path)
+                                <a href="/storage/events/{{$event->img_path}}" target="_blank">{{$event->img_path}}</a>
+                                @endif
+                                <input type="file" class="form-control" id="img_path" name="img_path">
                                 @if ($errors->has('img_path'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('img_path') }}</strong>

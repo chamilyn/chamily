@@ -18,7 +18,7 @@ class EventController extends Controller
     public function index()
     {
         
-        $events = App\Event::orderBy('start_date', 'desc')->paginate(2);
+        $events = App\Event::orderBy('start_date', 'desc')->paginate(10);
         $count = $events->count();
         return view('admin.event.list', ['events'=>$events, 'count'=>$count]);
     }
@@ -219,10 +219,18 @@ class EventController extends Controller
             $event->name = $request->event_name;
             $event->start_date = $request->start_date;
             $event->end_date = $request->end_date;
-            $event->img_path = $request->img_path;
             $event->url = $request->url;
             $event->desc = $request->desc;
             $event->updated_user_id = Auth::user()->id;
+            //upload img
+            if ($request->hasFile('img_path')) {
+                $destination_path = 'public/events';
+                $file = $request->file('img_path');
+                $extension = $file->getClientOriginalExtension();
+                $file_name = 'event_' . $event->id.'.'.$extension;
+                $path = $request->file('img_path')->storeAs($destination_path, $file_name);
+                $event->img_path = $file_name;
+            }
             $event->save();
             DB::commit();
         } catch (\Exception $e) {
@@ -241,17 +249,20 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        $res_obj = (object)[];
-        $res_obj->status = 'success';
+        $res_message = 'success';
         try {
             $event = App\Event::find($id);
+            if ($event->img_path) {
+                $delPath = public_path('storage'.DIRECTORY_SEPARATOR.'events');
+                unlink($delPath.DIRECTORY_SEPARATOR.$event->img_path);
+            }
             $event->delete();
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
-            $res_obj->status = 'fail';
+            $res_message = 'fail : '.$e->getMessage();
         }
-        return $res_obj;
+        return $res_message;
     }
 
     public function clientIndex()
