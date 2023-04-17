@@ -140,6 +140,9 @@ class EventController extends Controller
         $request->validate([
             'event_name' => 'required',
             'start_date' => 'required',
+            'img_path' => 'mimes:jpg,png'
+        ], [
+            'img_path.mimes' => 'The file must be of type jpg or png.'
         ]);
 
         DB::beginTransaction();
@@ -148,11 +151,18 @@ class EventController extends Controller
             $event->name = $request->event_name;
             $event->start_date = $request->start_date;
             $event->end_date = $request->end_date;
-            $event->img_path = $request->img_path;
             $event->url = $request->url;
             $event->desc = $request->desc;
             $event->created_user_id = $event->updated_user_id = Auth::user()->id;
             $event->save();
+            //upload img
+            if ($request->file('img_path')) {
+                $file = $request->file('img_path');
+                $extension = $file->getClientOriginalExtension();
+                $file_name = 'event_' . $event->id.'.'.$extension;
+                $event->img_path = $file->storeAs('file_upload', $file_name);
+                $event->save();
+            }
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();

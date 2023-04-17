@@ -30,7 +30,7 @@
                                 <input type="hidden" class="form-control" readonly id="event_id"
                                         name="event_id" value="{{ (isset($event) ? $event->id:'') }}">
                                 <input type="text" class="form-control" id="event_name" name="event_name"
-                                        value="{{ (isset($event)?$event->name:'') }}">
+                                        value="{{ (old('event_name') ? old('event_name') : (isset($event) ?$event->name:"")) }}">
                                 @if ($errors->has('event_name'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('event_name') }}</strong>
@@ -75,8 +75,13 @@
                             </div>
                             <label class="control-label col-sm-2 text-right" for="img_path">Image</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="img_path" name="img_path"
-                                        value="{{ (isset($event)?$event->img_path:'') }}">
+                                <input type="file" class="form-control" id="img_path" name="img_path"
+                                        value="">
+                                @if ($errors->has('img_path'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('img_path') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="col-md-2 col-xs-12">
                             </div>
@@ -88,7 +93,7 @@
                             <label class="control-label col-sm-2 text-right" for="url">Link</label>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control" id="url" name="url"
-                                        value="{{ (isset($event)?$event->url:'') }}">
+                                        value="{{ (old('url') ? old('url') : (isset($event) ?$event->url:"")) }}">
                             </div>
                             <div class="col-md-2 col-xs-12">
                             </div>
