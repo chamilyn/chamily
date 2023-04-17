@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+
+::-webkit-scrollbar { /* make scrollbar transparent */
+    width: 0px;
+    background: transparent;
+}
+
+* {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+body {
+    /* background-image: url("../img_background/bg_janken_tournament2023.jpg"); */
+    background-color: #FF7F50;
+    background-size: 100% 100%;
+}
+
+.table-responsive {
+    max-height: 300px;
+    overflow: scroll;
+}
+
+.textbgcl {
+    border-radius: 25px;
+    background: #FF7F50;
+    padding: 3px;
+    color: #FFFFFF;
+  }
