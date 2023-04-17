@@ -37,7 +37,7 @@ function renderEventList(year, month) {
             $('#main_table').append(`<div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
-                <img src="${event.img_path}" class="img-fluid rounded-start" alt="...">
+                <img src="/storage/events/${event.img_path}" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">

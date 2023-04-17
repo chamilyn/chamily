@@ -136,6 +136,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+        //dd(storage_path('app'));
         //dd($request->all());
         $request->validate([
             'event_name' => 'required',
@@ -156,11 +157,13 @@ class EventController extends Controller
             $event->created_user_id = $event->updated_user_id = Auth::user()->id;
             $event->save();
             //upload img
-            if ($request->file('img_path')) {
+            if ($request->hasFile('img_path')) {
+                $destination_path = 'public/events';
                 $file = $request->file('img_path');
                 $extension = $file->getClientOriginalExtension();
                 $file_name = 'event_' . $event->id.'.'.$extension;
-                $event->img_path = $file->storeAs('file_upload', $file_name);
+                $path = $request->file('img_path')->storeAs($destination_path, $file_name);
+                $event->img_path = $file_name;
                 $event->save();
             }
             DB::commit();
