@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App;
 use Auth;
 use DB;
+use DateTime;
 
 class EventController extends Controller
 {
@@ -238,5 +239,75 @@ class EventController extends Controller
             $res_obj->status = 'fail';
         }
         return $res_obj;
+    }
+
+    public function clientIndex()
+    {
+        return view('event.event');
+    }
+
+    public function getEventSchedules() 
+    {
+        $event_list = [];
+        $from = new DateTime("-6 months");
+        $to = new DateTime("6 months");
+        $from_year = intval($from->format('Y'));
+        $to_year = intval($to->format('Y'));
+        $from_month = intval($from->format('m'));
+        $to_month = intval($to->format('m'));
+        $event_list[intval($from->format('Y'))] = [];
+        $event_list[intval($to->format('Y'))] = [];
+        if ($from_year != $to_year) {
+            $to_month += 12;
+        }
+        $add_year = 0;
+        for ($int_month = $from_month; $int_month<=$to_month; $int_month++) {
+            $event_list[$from_year][($int_month%13) + $add_year] = [];
+            if ($int_month == 12) {
+                $from_year++;
+                $add_year = 1;
+            }
+        }
+        $events = App\Event::whereBetween('start_date', [now()->subMonths(6), now()->addMonths(6)])
+        ->orderBy('start_date', 'desc')
+        ->get();
+        foreach ($events as $event) {
+            if ($event->end_date == null) {
+                $event->end_date = $event->start_date;
+            }
+            $event->build_date = $this->buildDateRangeString($event->start_date,$event->end_date);
+            $start_year = intval(date('Y', strtotime($event->start_date)));
+            $start_month = intval(date('m', strtotime($event->start_date)));
+            $tmp_events = $event_list[$start_year][$start_month];
+            array_push($tmp_events,$event);
+            $event_list[$start_year][$start_month] = $tmp_events;
+        }
+        return $event_list;
+    }
+
+    function buildDateRangeString($startDate, $endDate) {
+        $startMonth = date('M', strtotime($startDate));
+        $endMonth = date('M', strtotime($endDate));
+    
+        // If the start month is the same as the end month
+        if ($startMonth === $endMonth) {
+            $startDay = date('j', strtotime($startDate));
+            $endDay = date('j', strtotime($endDate));
+            $startYear = date('Y', strtotime($startDate));
+    
+            // If the start day and end day are the same
+            if ($startDay === $endDay) {
+                return "{$startDay} {$startMonth} {$startYear}";
+            } else {
+                return "{$startDay}-{$endDay} {$startMonth} {$startYear}";
+            }
+        } else {
+            $startDay = date('j', strtotime($startDate));
+            $endDay = date('j', strtotime($endDate));
+            $startYear = date('Y', strtotime($startDate));
+            $endYear = date('Y', strtotime($endDate));
+    
+            return "{$startDay} {$startMonth} {$startYear} - {$endDay} {$endMonth} {$endYear}";
+        }
     }
 }
