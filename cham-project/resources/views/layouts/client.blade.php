@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="shortcut icon" href="../img_logo/Chamily_logo_color.png"/>
+    <link rel="shortcut icon" href="/img_logo/Chamily_logo_color.png"/>
     <head>
         <title>Chamily</title>
         <meta charset="utf-8">
@@ -10,13 +10,14 @@
         <!-- bootstrap -->
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="frontend/styletest_sd.css">
         @yield('assets')
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <nav class="navbar sticky-top navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
-                    <img src="/img_logo/Chamily_logo_color.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    <img src="img_logo/Chamily_logo_color.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
                     &nbsp;Chamily
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>

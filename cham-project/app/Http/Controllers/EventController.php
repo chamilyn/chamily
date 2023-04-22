@@ -293,7 +293,7 @@ class EventController extends Controller
             }
         }
         $events = App\Event::whereBetween('start_date', [now()->subMonths(6), now()->addMonths(6)])
-        ->orderBy('start_date', 'desc')
+        ->orderBy('start_date', 'asc')
         ->get();
         foreach ($events as $event) {
             if ($event->end_date == null) {
@@ -303,8 +303,30 @@ class EventController extends Controller
             $start_year = intval(date('Y', strtotime($event->start_date)));
             $start_month = intval(date('m', strtotime($event->start_date)));
             $tmp_events = $event_list[$start_year][$start_month];
-            array_push($tmp_events,$event);
+            array_push($tmp_events, $event);
             $event_list[$start_year][$start_month] = $tmp_events;
+            if ($event->start_date != $event->end_date) {
+                $end_year = intval(date('Y', strtotime($event->end_date)));
+                $end_month = intval(date('m', strtotime($event->end_date)));
+                if ($start_month == 12) {
+                    $start_month = 1;
+                    $start_year++;
+                } else {
+                    $start_month++;
+                }
+                while ($start_month <= $end_month || $start_year < $end_year) {
+                    $tmp_events = $event_list[$start_year][$start_month];
+                    
+                    array_push($tmp_events, $event);
+                    $event_list[$start_year][$start_month] = $tmp_events;
+                    if ($start_month == 12 && $start_year < $end_year) {
+                        $start_month = 1;
+                        $start_year++;
+                    } else {
+                        $start_month++;
+                    }
+                }
+            }
         }
         return $event_list;
     }

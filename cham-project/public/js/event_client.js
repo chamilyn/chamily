@@ -2,6 +2,10 @@ let event_list = [];
 let month_text = [];
 let current_year = 0;
 let current_month = 0;
+let last_prev_month = 0;
+let last_next_month = 0;
+let last_prev_year = 0;
+let last_next_year = 0;
 function init() {
     current_year = parseInt(new Date().getFullYear());
     current_month = parseInt(new Date().getMonth()+1);
@@ -22,6 +26,18 @@ function init() {
         method: "GET",
         success: function (results) {
             event_list = results;
+            if (event_list) {
+                let keys = Object.keys(event_list);
+                last_prev_year = parseInt(keys[0]);
+                last_prev_month = parseInt(Object.keys(event_list[keys[0]])[0]);
+                if (keys.length > 1) {
+                    last_next_year = keys[1];
+                    last_next_month = parseInt(Object.keys(event_list[keys[1]])[Object.keys(event_list[keys[1]]).length - 1]);
+                } else {
+                    last_next_year = keys[0];
+                    last_next_month = parseInt(Object.keys(event_list[keys[0]])[Object.keys(event_list[keys[0]]).length - 1]);
+                }
+            }
             renderEventList(current_year, current_month);
         },
     });
@@ -30,7 +46,6 @@ function renderEventList(year, month) {
     $('#main_table').html("");
     year = parseInt(year);
     month = parseInt(month);
-    console.log(typeof event_list[year]);
     if (event_list[year] && event_list[year][month].length) {
         for (const key in event_list[year][month]) {
             let event =  event_list[year][month][key];
@@ -64,33 +79,18 @@ function renderEventList(year, month) {
 }
 jQuery(document).ready(function () {
     init();
-    $("[del").on("click", function (evt) {
-        if (
-        confirm(`Do you want to delete Event : ${$(this).attr('obj_id')} ?`)
-        ) {
-        $.ajax({
-            url: `/admin/event/${$(this).attr('obj_id')}`,
-            method: "delete",
-            data: {
-            _token: $('meta[name="csrf-token"]').attr("content"),
-            },
-            success: function (result) {
-            if (result.status == "success") {
-                location.reload();
-            } else {
-                alert(result.message);
-            }
-            },
-        });
-        }
-        evt.stopImmediatePropagation();
-    });
     $('#arrow_up').on('click', function (evt) {
         if (current_month != 12){
             current_month++;
         } else {
             current_month = 1;
             current_year++;
+        }
+        $('#arrow_down').attr('disabled', false);
+        if (current_year == last_next_year && current_month == last_next_month) {
+            $(this).attr('disabled', true);
+        } else {
+            $(this).attr('disabled', false);
         }
         renderEventList(current_year, current_month);
     });
@@ -100,6 +100,12 @@ jQuery(document).ready(function () {
         } else {
             current_month = 12;
             current_year--;
+        }
+        $('#arrow_up').attr('disabled', false);
+        if (current_year == last_prev_year && current_month == last_prev_month) {
+            $(this).attr('disabled', true);
+        } else {
+            $(this).attr('disabled', false);
         }
         renderEventList(current_year, current_month);
     });
