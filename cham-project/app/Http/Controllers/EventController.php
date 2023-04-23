@@ -19,7 +19,8 @@ class EventController extends Controller
     {
         
         $events = App\Event::orderBy('start_date', 'desc')->paginate(10);
-        $count = $events->count();
+        $event_count = App\Event::all();
+        $count = $event_count->count();
         return view('admin.event.list', ['events'=>$events, 'count'=>$count]);
     }
 

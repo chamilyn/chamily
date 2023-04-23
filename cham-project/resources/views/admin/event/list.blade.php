@@ -30,11 +30,11 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="text-center">#</th>
+                                    <th class="text-center">No</th>
                                     <th class="text-left">Name</th>
                                     <th class="text-center">Start Date</th>
                                     <th class="text-center">End Date</th>
-                                    <th></th>
+                                    <th class="text-center">#</th>
                                 </tr>
                             </thead>
                             <tbody>
