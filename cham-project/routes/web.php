@@ -21,15 +21,17 @@ Route::group(['prefix' => 'admin'], function()
     Route::resource('/event', 'EventController')->middleware('auth');
     Route::get('/get_event_datatable', 'EventController@getDatatables')->middleware('auth');
 
+    Route::get('/feedbacks', 'FeedbackController@index')->middleware('auth');
+
 });
-Route::group(['php_artisan_command' => 'php_artisan'], function()
+Route::group(['prefix' => 'php_artisan_command'], function()
 {
     Route::get('/linkstorage', function () {
         Artisan::call('storage:link');
         return 'Link complete!';
     })->middleware('auth');
 
-    Route::get('/linkstorage', function () {
+    Route::get('/migrate', function () {
         Artisan::call('migrate');
         return 'Migration complete!';
     })->middleware('auth');
@@ -40,3 +42,6 @@ Route::get('/flowersforyou/{month}', 'OldProjectController@showFlower');
 Route::get('/wish', 'OldProjectController@wish');
 Route::get('/schedule', 'EventController@clientIndex');
 Route::get('/get_event_schedules', 'EventController@getEventSchedules');
+
+Route::get('/feedbacks', 'FeedbackController@create');
+Route::post('/feedbacks', 'FeedbackController@store');
