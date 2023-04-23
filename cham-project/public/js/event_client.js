@@ -59,7 +59,7 @@ function renderEventList(year, month) {
                         <h5 class="card-title">${event.build_date}</h5>
                         <p class="card-text textbgcl"><b>${event.name}</b></p>
                         <p class="card-text">${(event.desc ? event.desc : '')}</p>
-                        <a href="${(event.url ? event.url : 'https://www.facebook.com/cgm48official')}" class="btn btn-primary">Detail</a>
+                        <a href="${(event.url ? event.url : 'https://www.facebook.com/cgm48official')}" target="_blank" class="btn btn-primary">Detail</a>
                     </div>
                 </div>
             </div>
