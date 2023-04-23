@@ -27,3 +27,8 @@ Route::get('/flowersforyou/{month}', 'OldProjectController@showFlower');
 Route::get('/wish', 'OldProjectController@wish');
 Route::get('/schedule', 'EventController@clientIndex');
 Route::get('/get_event_schedules', 'EventController@getEventSchedules');
+
+
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+});

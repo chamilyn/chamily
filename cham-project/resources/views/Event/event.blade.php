@@ -7,7 +7,7 @@
     </style>
 @endsection
 @section('content')
-    <div class="container mt-4 d-flex justify-content-center">
+    <div class="container mt-4 mb-4 d-flex justify-content-center">
         <div class="card" style="width: 90%;">
             <div class="card-body" style="text-align: -webkit-center;">
                 <div class="container">
@@ -15,10 +15,10 @@
                 </div>
                 <div class="container mt-2" style="text-align-last: end;">
                     <div class="mt-2" style="float: left;">
-                        <p class="textbgcl">Jan 2023</p>
+                        <p class="textbgcl header_month">Jan 2023</p>
                     </div>
-                    <button id="arrow_down" class="btn btn-warning" style="text-align-last: center;"><i class="fa fa-arrow-left"></i></button>
-                    <button id="arrow_up" class="btn btn-warning" style="text-align-last: center;"><i class="fa fa-arrow-right"></i></button>
+                    <button id="arrow_down" class="btn btn-warning" style="text-align-last: center;"><i class="fa fa-arrow-left" style="color: #FFFFFF;"></i></button>
+                    <button id="arrow_up" class="btn btn-warning" style="text-align-last: center;"><i class="fa fa-arrow-right" style="color: #FFFFFF;"></i></button>
                 </div>
                 <hr width="95%"><!-- monthback=1|month=0|monthnext=1 -->
                 <!-- ต่อจากนี้อาจเป็นloopวนโชว์ -->

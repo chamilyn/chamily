@@ -14,7 +14,7 @@
         @yield('assets')
     </head>
     <body>
-        <nav class="navbar sticky-top navbar-expand-lg bg-dark navbar-dark">
+        <nav class="navbar sticky-top bg-dark navbar-dark"><!-- navbar-expand-lg -->
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
                     <img src="img_logo/Chamily_logo_color.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
@@ -28,18 +28,18 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="/schedule">Schedule</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Wish</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
-                    </li>
+                    </li> -->
                 </ul>
                 </div>
             </div>

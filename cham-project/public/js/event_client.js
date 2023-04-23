@@ -57,7 +57,8 @@ function renderEventList(year, month) {
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">${event.build_date}</h5>
-                        <p class="card-text">${event.name}${(event.desc ? ' : '+event.desc : '')}</p>
+                        <p class="card-text textbgcl"><b>${event.name}</b></p>
+                        <p class="card-text">${(event.desc ? event.desc : '')}</p>
                         <a href="${(event.url ? event.url : 'https://www.facebook.com/cgm48official')}" class="btn btn-primary">Detail</a>
                     </div>
                 </div>
@@ -75,7 +76,7 @@ function renderEventList(year, month) {
         </div>
     </div>`);
     }
-    $('.textbgcl').html(`${month_text[month]} ${year}`);
+    $('.header_month').html(`${month_text[month]} ${year}`);
 }
 jQuery(document).ready(function () {
     init();
