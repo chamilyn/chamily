@@ -22,13 +22,21 @@ Route::group(['prefix' => 'admin'], function()
     Route::get('/get_event_datatable', 'EventController@getDatatables')->middleware('auth');
 
 });
+Route::group(['php_artisan_command' => 'php_artisan'], function()
+{
+    Route::get('/linkstorage', function () {
+        Artisan::call('storage:link');
+        return 'Link complete!';
+    })->middleware('auth');
+
+    Route::get('/linkstorage', function () {
+        Artisan::call('migrate');
+        return 'Migration complete!';
+    })->middleware('auth');
+
+});
 Route::get('/', 'IndexController@index');
 Route::get('/flowersforyou/{month}', 'OldProjectController@showFlower');
 Route::get('/wish', 'OldProjectController@wish');
 Route::get('/schedule', 'EventController@clientIndex');
 Route::get('/get_event_schedules', 'EventController@getEventSchedules');
-
-
-Route::get('/linkstorage', function () {
-    Artisan::call('storage:link');
-});
