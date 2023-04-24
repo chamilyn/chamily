@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@300&display=swap');
+
+::-webkit-scrollbar { /* make scrollbar transparent */
+    width: 0px;
+    background: transparent;
+}
+
+* {
+    font-family: 'Anuphan', sans-serif;
+}
+
+body {
+    background-color: #fcbf4a;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}

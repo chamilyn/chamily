@@ -1,96 +1,58 @@
 @extends('layouts.client')
 @section('assets')
+<link rel="stylesheet" href="/frontend/style_feedbacks.css">
 @endsection
 @section('content')
 <form action="/feedbacks" class="form-horizontal prevent_submit" enctype="multipart/form-data" method="post">
 {!! csrf_field() !!}
-<br>
-<div class="container">
-                @if (Session()->has('error'))
-                    <div class="alert alert-danger">
-                        {!! Session()->get('error') !!}
-                    </div>
-                    @if (Session()->has('message'))
-                        <div class="alert alert-danger">
-                            <ul class="mb-0 ml-2">
-                                @foreach (Session()->get('message') as $item)
-                                    <li>{{ $item }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                @endif
-                @if (Session()->has('success'))
-                    <div class="alert alert-success">
-                        {{ Session()->get('success') }}
-                    </div>
-                @endif
-            </div>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- left column -->
-            <div class="col-lg-12">
-                <!-- general form elements -->
-                <div class="card card-light">
-                    <div class="card-header">
-                        <b>Feedback</b>
-                        <div class="float-right">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group row">
-                            <div class="col-sm-2">
-                            </div>
-                            <label class="control-label col-sm-2 text-right" for="feedback_name">Name</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" id="feedback_name" name="feedback_name" value="">
-                                @if ($errors->has('feedback_name'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('feedback_name') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                            <div class="col-md-2 col-xs-12">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-2">
-                            </div>
-                            <label class="control-label col-sm-2 text-right" for="desc">แนะนำ/ติชม *</label>
-                            <div class="col-sm-5">
-                                <textarea class="form-control" id="feedback_message" name="feedback_message"
-                                    row="5">{{ (old('feedback_message') ? old('feedback_message') : "") }}</textarea>
-                                @if ($errors->has('feedback_message'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('feedback_message') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                            <div class="col-md-2 col-xs-12">
-                            </div>
-                        </div>
-                    </div> <!-- /.card body-->
-                </div>
-            </div>
+    @if (Session()->has('error'))
+        <div class="alert alert-danger">
+            {!! Session()->get('error') !!}
         </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- left column -->
-            <div class="col-lg-12">
-                <!-- general form elements -->
-                <div class="card card-info">
-                    <div class="card-body">
-                        <div class="form-group row">
-                            <div class="text-center col-sm-12" style="padding-top:10px;">
-                                <button type="submit" class="btn btn-primary btn-block">
-                                    Save
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--card-body3-->
+        @if (Session()->has('message'))
+            <div class="alert alert-danger">
+                <ul class="mb-0 ml-2">
+                    @foreach (Session()->get('message') as $item)
+                        <li>{{ $item }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+    @endif
+    @if (Session()->has('success'))
+        <div class="alert alert-success">
+            {{ Session()->get('success') }}
+        </div>
+    @endif
+    <div class="container mt-4 mb-4 d-flex justify-content-center">
+        <div class="card" style="width: 90%;">
+            <div class="card-body">
+                <div class="text-center">
+                    <h3>
+                        <b><span style="color:#3F5E98;">Feedback</span></b>
+                        <img src="img_champooart/champybara.png" width="70" height="70"></img>
+                    </h3>
                 </div>
+                <div style="text-align: -webkit-center;"><hr width="95%"></div>
+                <form>
+                    <div class="mb-3">
+                        <label for="feedback_name" class="form-label">ชื่อ</label><font color="red"> (*ใส่หรือไม่ก็ได้)</font>
+                        <input type="text" class="form-control" id="feedback_name" name="feedback_name" value="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="feedback_message" class="form-label">สิ่งที่อยากบอกเรา</label>
+                        <textarea class="form-control" id="feedback_message" name="feedback_message"
+                            row="5">{{ (old('feedback_message') ? old('feedback_message') : (isset($feedback) ?$feedback->feedback_message:"")) }}</textarea>
+                        @if ($errors->has('feedback_message'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('feedback_message') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    <div  style="text-align: -webkit-center;">
+                        <button type="submit" class="btn btn-success">บันทึก</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

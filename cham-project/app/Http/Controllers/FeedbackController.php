@@ -43,7 +43,7 @@ class FeedbackController extends Controller
         $feedback = new App\Feedback;
         try {
             if ($request->feedback_name) {
-                $feedback->name = $request->event_name;
+                $feedback->name = $request->feedback_name;
             }
             $feedback->message = $request->feedback_message;
             $feedback->save();
