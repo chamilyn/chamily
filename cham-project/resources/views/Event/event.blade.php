@@ -1,5 +1,6 @@
 @extends('layouts.client')
 @section('assets')
+<link rel="stylesheet" href="frontend/styletest_sd.css">
     <style>
         .template {
             display : none;
