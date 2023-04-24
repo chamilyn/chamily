@@ -14,7 +14,10 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        //
+        $feedbacks = App\Feedback::orderBy('created_at', 'desc')->paginate(10);
+        $feedback_count = App\Feedback::all();
+        $count = $feedback_count->count();
+        return view('admin.feedback.list', ['feedbacks'=>$feedbacks, 'count'=>$count]);
     }
 
     /**
@@ -53,7 +56,7 @@ class FeedbackController extends Controller
             return redirect('/feedbacks')->with('error', 'Line : '.$e->getLine().' Something went wrong'.$e->getMessage());
         }
 
-        return redirect('/feedbacks')->with('success', 'Thank you for feedback');
+        return redirect('/feedbacks')->with('success', 'ขอบคุณทุกการสนับสนุนให้พวกเรา :)');
     }
 
     /**
@@ -98,6 +101,15 @@ class FeedbackController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $res_message = 'success';
+        try {
+            $feedback = App\Feedback::find($id);
+            $feedback->delete();
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            $res_message = 'fail : '.$e->getMessage();
+        }
+        return $res_message;
     }
 }

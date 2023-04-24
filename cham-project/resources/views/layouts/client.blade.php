@@ -33,6 +33,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/schedule">Champoo Schedule</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/feedbacks">Feedback</a>
+                    </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Wish</a>
                     </li>

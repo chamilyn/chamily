@@ -36,7 +36,8 @@
             @else
                 @if(Auth::user()->is_admin == 1)
                 <li><a href="/admin" class="nav-link px-2">Home</a></li>
-                <li><a href="/admin/event" class="nav-link px-2">Event</a></li>
+                <li><a href="/admin/event" class="nav-link px-2">Events</a></li>
+                <li><a href="/admin/feedbacks" class="nav-link px-2">Feedbacks</a></li>
                 @endif
             @endguest
         </ul>
