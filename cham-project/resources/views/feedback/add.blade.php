@@ -29,7 +29,7 @@
             <div class="card-body">
                 <div class="text-center">
                     <h3>
-                        <b><span style="color:#3F5E98;">Feedback</span></b>
+                        <b><span style="color:#3F5E98;">แนะนำพวกเรา</span></b>
                         <img src="img_champooart/champybara.png" width="70" height="70"></img>
                     </h3>
                 </div>

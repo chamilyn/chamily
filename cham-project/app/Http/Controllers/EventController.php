@@ -294,7 +294,7 @@ class EventController extends Controller
             }
         }
         $events = App\Event::whereBetween('start_date', [now()->subMonths(6), now()->addMonths(6)])
-        ->orderBy('start_date', 'asc')
+        ->orderBy('start_date', 'desc')
         ->get();
         foreach ($events as $event) {
             if ($event->end_date == null) {
