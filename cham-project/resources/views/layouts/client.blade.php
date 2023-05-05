@@ -5,6 +5,30 @@
         <title>Chamily</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- OG -->
+        <meta name="og:title" content="Chamily - Champoo CGM48" />
+        <meta
+        name="description"
+        content="สวัสดีดีดี ยินดีต้อนรับสู่เว็บไซต์ Chamily 🌻☀️"
+        />
+        <meta
+        property="og:description"
+        content="สวัสดีดีดี ยินดีต้อนรับสู่เว็บไซต์ Chamily 🌻☀️"
+        />
+        <meta
+        property="og:image"
+        content="https://chamily.net/img_logo/Chamily_logo_color.png"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Chamily - Champoo CGM48" />
+        <meta
+        property="twitter:description"
+        content="สวัสดีดีดี ยินดีต้อนรับสู่เว็บไซต์ Chamily 🌻☀️"
+        />
+        <meta
+        property="twitter:image"
+        content="https://chamily.net/img_logo/Chamily_logo_color.png"
+        />
         <!-- jquuery -->
         <script src="/js/jquery-3.6.4.min.js"></script>
         <!-- bootstrap -->
@@ -23,7 +47,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/">Home</a>
                     </li>
