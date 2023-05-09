@@ -39,10 +39,12 @@
     <body>
         <nav class="navbar sticky-top bg-dark navbar-dark"><!-- navbar-expand-lg -->
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                    <img src="img_logo/Chamily_logo_color.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
-                    &nbsp;Chamily
-                </a>
+                <div class="col-md-3 mb-2 mb-md-0">
+                    <img src="img_logo/Chamily_logo_color.png" alt="" width="40px" height="40px"/>                
+                    <a class="navbar-brand" href="#">
+                                CHAMILY
+                    </a>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
