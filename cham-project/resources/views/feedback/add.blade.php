@@ -1,6 +1,6 @@
 @extends('layouts.client')
 @section('assets')
-<link rel="stylesheet" href="/frontend/style_feedbacks.css">
+<link rel="stylesheet" href="/frontend/style_feedbacks.css?v={{ time() }}">
 @endsection
 @section('content')
 <form action="/feedbacks" class="form-horizontal prevent_submit" enctype="multipart/form-data" method="post">

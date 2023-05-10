@@ -1,6 +1,6 @@
 @extends('layouts.client')
 @section('assets')
-<link rel="stylesheet" href="frontend/styletest_sd.css">
+<link rel="stylesheet" href="frontend/styletest_sd.css?v={{ time() }}">
     <style>
         .template {
             display : none;

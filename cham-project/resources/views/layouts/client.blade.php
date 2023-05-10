@@ -9,31 +9,41 @@
         <meta name="og:title" content="Chamily - Champoo CGM48" />
         <meta
         name="description"
-        content="สวัสดีดีดี ยินดีต้อนรับสู่เว็บไซต์ Chamily 🌻☀️"
+        content="สวัสดีดีดี ยินดีต้อนรับสู่เว็บไซต์ Chamily เหล่าไดโนของแชมพู 🌻🦖☀️"
         />
         <meta
         property="og:description"
-        content="สวัสดีดีดี ยินดีต้อนรับสู่เว็บไซต์ Chamily 🌻☀️"
+        content="สวัสดีดีดี ยินดีต้อนรับสู่เว็บไซต์ Chamily เหล่าไดโนของแชมพู 🌻🦖☀️"
         />
         <meta
         property="og:image"
-        content="https://chamily.net/img_logo/Chamily_logo_color.png"
+        content="https://chamily.net/img_logo/chamily.jpg"
         />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Chamily - Champoo CGM48" />
         <meta
         property="twitter:description"
-        content="สวัสดีดีดี ยินดีต้อนรับสู่เว็บไซต์ Chamily 🌻☀️"
+        content="สวัสดีดีดี ยินดีต้อนรับสู่เว็บไซต์ Chamily เหล่าไดโนของแชมพู 🌻🦖☀️"
         />
         <meta
         property="twitter:image"
-        content="https://chamily.net/img_logo/Chamily_logo_color.png"
+        content="https://chamily.net/img_logo/chamily.jpg"
         />
         <!-- jquuery -->
         <script src="/js/jquery-3.6.4.min.js"></script>
         <!-- bootstrap -->
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S33FV423R4"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-S33FV423R4');
+        </script>
         @yield('assets')
     </head>
     <body>
@@ -41,7 +51,7 @@
             <div class="container-fluid">
                 <div class="col-md-3 mb-2 mb-md-0">
                     <img src="img_logo/Chamily_logo_color.png" alt="" width="40px" height="40px"/>                
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="/" style="vertical-align: middle;">
                                 CHAMILY
                     </a>
                 </div>

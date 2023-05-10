@@ -1,10 +1,10 @@
 @extends('layouts.client')
 @section('assets')
-    <link rel="stylesheet" href="frontend/style.css">
+    <link rel="stylesheet" href="frontend/style.css?v={{ time() }}">
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 @endsection
 @section('content')
-<div class="" style="background-color: black;">
+<div class="" style="background-color: #EFEFEF;">
     <div class="firstsection">
         <div class="showcase">
             <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline  oncontextmenu="return false;"  preload="auto"  id="myVideo">
@@ -24,11 +24,11 @@
 </div>
 <div class="secondsection">
         <div class="container d-flex justify-content-center">
-            <div class="card" style="width: 90%;background-color: #000;">
-                <div class="card-body" style="text-align: -webkit-center;">
+            <div class="card" style="width: 90%;background-color: #EFEFEF;border: 0px;">
+                <div class="card-body" style="text-align: -webkit-center;border: 0px;">
                     <br>
                     <div class="container">
-                        <h2 style="color:#FFFFFF;" class="text-center"><b>Chamily Contact</b></h2>
+                        <h2 style="color:black;" class="text-center"><b>Chamily Contact</b></h2>
                     </div>
                     <br>
                     <div class="card" style="width: 15rem;"><!-- background-color: #FFF4BD; -->
