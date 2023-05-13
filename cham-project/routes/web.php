@@ -18,11 +18,11 @@ Auth::routes();
 Route::group(['prefix' => 'admin'], function()
 {
     Route::get('/', 'HomeController@index')->name('admin')->middleware('auth');
-    Route::resource('/event', 'EventController')->middleware('auth');
-    Route::get('/get_event_datatable', 'EventController@getDatatables')->middleware('auth');
+    Route::resource('/event', 'EventController')->middleware(['auth','is_admin']);
+    Route::get('/get_event_datatable', 'EventController@getDatatables')->middleware(['auth','is_admin']);
 
-    Route::get('/feedbacks', 'FeedbackController@index')->middleware('auth');
-    Route::delete('/feedbacks/{id}', 'FeedbackController@destroy')->middleware('auth');
+    Route::get('/feedbacks', 'FeedbackController@index')->middleware(['auth','is_admin']);
+    Route::delete('/feedbacks/{id}', 'FeedbackController@destroy')->middleware(['auth','is_admin']);
 
 });
 Route::group(['prefix' => 'php_artisan_command'], function()
@@ -38,7 +38,7 @@ Route::group(['prefix' => 'php_artisan_command'], function()
     })->middleware('auth');
 
 });
-Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@index')->name('welcome');
 Route::get('/flowersforyou/{month}', 'OldProjectController@showFlower');
 Route::get('/wish', 'OldProjectController@wish');
 Route::get('/schedule', 'EventController@clientIndex');
