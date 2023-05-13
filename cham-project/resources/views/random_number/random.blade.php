@@ -27,7 +27,7 @@
                 <div class="card-body">
                     <div class="text-center">
                         <h3>
-                            <b><span style="color:#89CFF0;">Chamily Number</span></b>
+                            <b><span style="color:#89CFF0;">Random Number</span></b>
                             <i class="fa fa-gamepad" style="color: #89CFF0;"></i>
                         </h3>
                     </div>

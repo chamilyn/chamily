@@ -67,10 +67,10 @@
                         <a class="nav-link" href="#">About</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="/schedule">Champoo Schedule</a>
+                        <a class="nav-link" href="/schedule">Schedule</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/random">Chamily Number</a>
+                        <a class="nav-link" href="/random">Random Number</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/feedbacks">Feedback</a>
