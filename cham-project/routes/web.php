@@ -24,6 +24,13 @@ Route::group(['prefix' => 'admin'], function()
     Route::get('/feedbacks', 'FeedbackController@index')->middleware(['auth','is_admin']);
     Route::delete('/feedbacks/{id}', 'FeedbackController@destroy')->middleware(['auth','is_admin']);
 
+    Route::get('/savings', 'SavingController@index')->middleware(['auth','is_admin']);
+    Route::get('/savings/create', 'SavingController@create')->middleware(['auth','is_admin']);
+    Route::post('/savings', 'SavingController@store')->middleware(['auth','is_admin']);
+    Route::get('/savings/{id}/edit', 'SavingController@edit')->middleware(['auth','is_admin']);
+    Route::put('/savings/{id}', 'SavingController@update')->middleware(['auth','is_admin']);
+    Route::delete('/savings/{id}', 'SavingController@destroy')->middleware(['auth','is_admin']);
+
 });
 Route::group(['prefix' => 'php_artisan_command'], function()
 {
