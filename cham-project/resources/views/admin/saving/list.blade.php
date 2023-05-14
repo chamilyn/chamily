@@ -19,7 +19,7 @@
                         <div class="float-end">
                             <button type="button" class="btn btn-primary btn-sm" id="bt_add"
                                 onclick="window.location='/admin/savings/create';">
-                                New Wallet
+                                New
                                 <span class="fas fa-plus" aria-hidden="true">
                                 </span>
                             </button>
@@ -43,14 +43,16 @@
                                 @foreach($savings as $saving)
                                     <tr saving_id="{{$saving->id}}">
                                         <td class="text-center">{{$x}}</td>
-                                        <td class="text-left">{{$saving->name}}</td>
+                                        <td class="text-left">
+                                            <a href="/admin/savings/{{$saving->id}}">
+                                                {{$saving->name}}
+                                            </a>
+                                        </td>
                                         <td class="text-center">
                                             <a class="btn btn-info btn-sm" href="/admin/savings/{{$saving->id}}/edit">
-                                                Edt
                                                 <span aria-hidden="true" class="fas fa-list-alt"></span>
                                             </a>
                                             <a class="btn btn-danger btn-sm" del obj_id="{{$saving->id}}">
-                                                Del
                                                 <span class="fas fa-trash-alt" aria-hidden="true" ></span>
                                             </a>
                                         </td>

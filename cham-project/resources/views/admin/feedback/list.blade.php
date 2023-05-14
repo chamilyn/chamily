@@ -41,7 +41,6 @@
                                         <td class="text-left">{{($feedback->name ? $feedback->name : '-')}}</td>
                                         <td class="text-center">
                                             <a class="btn btn-danger btn-sm" del obj_id="{{$feedback->id}}">
-                                                Del
                                                 <span class="fas fa-trash-alt" aria-hidden="true" ></span>
                                             </a>
                                         </td>

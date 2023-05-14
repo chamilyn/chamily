@@ -31,6 +31,13 @@ Route::group(['prefix' => 'admin'], function()
     Route::put('/savings/{id}', 'SavingController@update')->middleware(['auth','is_admin']);
     Route::delete('/savings/{id}', 'SavingController@destroy')->middleware(['auth','is_admin']);
 
+    Route::get('/savings/{id}', 'SavingController@show')->middleware(['auth','is_admin']);
+    Route::get('/savings/{id}/lineitem/create', 'SavingController@createLineitem')->middleware(['auth','is_admin']);
+    Route::post('/savings/{id}/lineitem/', 'SavingController@storeLineitem')->middleware(['auth','is_admin']);
+    Route::get('/savings/{id}/lineitem/{lineitem_id}/edit/', 'SavingController@editLineitem')->middleware(['auth','is_admin']);
+    Route::put('/savings/{id}/lineitem/{lineitem_id}', 'SavingController@updateLineitem')->middleware(['auth','is_admin']);
+    Route::delete('/savings/{id}/lineitem/{lineitem_id}', 'SavingController@destroyLineitem')->middleware(['auth','is_admin']);
+
 });
 Route::group(['prefix' => 'php_artisan_command'], function()
 {
