@@ -23,6 +23,11 @@ class SavingController extends Controller
         return view('admin.saving.list', ['savings'=>$savings, 'count'=>$count]);
     }
 
+    public function info()
+    {
+        return view('kongtun.info');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

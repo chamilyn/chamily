@@ -61,6 +61,8 @@ Route::get('/get_event_schedules', 'EventController@getEventSchedules');
 Route::get('/feedbacks', 'FeedbackController@create');
 Route::post('/feedbacks', 'FeedbackController@store');
 
+Route::get('/kongtun', 'SavingController@info');
+
 Route::get('/random', function () {
     return view('random_number.random');
 });
