@@ -17,7 +17,7 @@
         />
         <meta
         property="og:image"
-        content="https://chamily.net/img_logo/chamily.jpg"
+        content="https://chamily.net/img_background/CHAMILY-2.jpg"
         />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Chamily - Champoo CGM48" />
@@ -27,7 +27,7 @@
         />
         <meta
         property="twitter:image"
-        content="https://chamily.net/img_logo/chamily.jpg"
+        content="https://chamily.net/img_background/CHAMILY-2.jpg"
         />
         <!-- jquuery -->
         <script src="/js/jquery-3.6.4.min.js"></script>
