@@ -28,6 +28,63 @@ class SavingController extends Controller
         return view('kongtun.info');
     }
 
+    public function summary()
+    {
+        $current_month = intval(date("m"));
+        $current_month_text = $this->convertIntMonthToString($current_month);
+        $current_year = intval(date("Y"));
+        $current_month_year = $current_month_text.' '.($current_year<2500?$current_year+543 : $current_year);
+
+        $saving_lineitem_total = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
+        ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->where("saving_code", Auth::user()->saving_code)
+        ->groupBy('saving_code')
+        ->orderBy('total_amount', 'DESC')
+        ->first();
+        $total_amount = 0;
+        if ($saving_lineitem_total) {
+            $total_amount = $saving_lineitem_total->total_amount;
+        }
+
+        $top_spenders = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
+        ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->whereYear("transfer_date", $current_year)
+        ->whereMonth("transfer_date", $current_month)
+        ->groupBy('saving_code')
+        ->orderBy('total_amount', 'DESC')
+        ->limit(10)
+        ->get();
+
+        $saving_lineitem_months = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code
+        , YEAR(tbl_saving_lineitems.transfer_date) as transfer_year, MONTH(tbl_saving_lineitems.transfer_date) as transfer_month')
+        ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        //->whereYear("transfer_date", $current_year)
+        //->whereMonth("transfer_date", $current_month)
+        ->where("saving_code", Auth::user()->saving_code)
+        ->groupBy('saving_code', 'transfer_year', 'transfer_month')
+        ->orderBy('transfer_year', 'DESC')
+        ->orderBy('transfer_month', 'DESC')
+        ->get();
+        $data_months = [];
+        foreach ($saving_lineitem_months as $saving_lineitem_month) {
+            $data_month = (object)[];
+            $data_month->year = ($saving_lineitem_month->transfer_year<2500?$saving_lineitem_month->transfer_year+543 : $saving_lineitem_month->transfer_year);
+            $data_month->month = $this->convertIntMonthToString($saving_lineitem_month->transfer_month);
+            $data_month->amount = $saving_lineitem_month->total_amount;
+            array_push($data_months, $data_month);
+        }
+        return view('kongtun.summary', compact('current_month_year', 'top_spenders', 'total_amount', 'data_months'));
+    }
+
+    public function login()
+    {
+        if (Auth::user()) {
+            return redirect('/kongtun/summary');
+        } else {
+            return view('kongtun.login');
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -250,5 +307,34 @@ class SavingController extends Controller
             $res_message = 'fail : '.$e->getMessage();
         }
         return $res_message;
+    }
+
+    public function convertIntMonthToString($month) 
+    {
+        if ($month == 1) {
+            return 'มกราคม';
+        } elseif ($month == 2) {
+            return 'กุมพาพันธ์';
+        } elseif ($month == 3) {
+            return 'มีนาคม';
+        } elseif ($month == 4) {
+            return 'เมษายน';
+        } elseif ($month == 5) {
+            return 'พฤษภาคม';
+        } elseif ($month == 6) {
+            return 'มิถุนายน';
+        } elseif ($month == 7) {
+            return 'กรกฎาคม';
+        } elseif ($month == 8) {
+            return 'สิงหาคม';
+        } elseif ($month == 9) {
+            return 'กันยายน';
+        } elseif ($month == 10) {
+            return 'ตุลาคม';
+        } elseif ($month == 11) {
+            return 'พฤจิกายน';
+        } else {
+            return 'ธันวาคม';
+        }
     }
 }

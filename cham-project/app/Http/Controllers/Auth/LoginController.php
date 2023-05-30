@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -43,6 +44,28 @@ class LoginController extends Controller
 
     public function username() {
         return 'username';
+    }
+
+    protected function login(Request $request)
+    {
+        $credientials = $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+
+        if (Auth::attempt($credientials)) {
+            $is_admin = Auth::user()->is_admin;
+
+            if ($is_admin) {
+                return redirect('/admin');
+            } else {
+                return redirect('/kongtun/summary');
+            }
+            
+        } else {
+            redirect('/');
+        }
+        return redirect()->back()->with('error', 'Wrong username or password');
     }
 
     public function logout(Request $request)

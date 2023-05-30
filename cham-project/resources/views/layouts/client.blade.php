@@ -47,10 +47,10 @@
         @yield('assets')
     </head>
     <body>
-        <nav class="navbar sticky-top bg-dark navbar-dark"><!-- navbar-expand-lg -->
+        <!--nav class="navbar sticky-top bg-dark navbar-dark">
             <div class="container-fluid">
                 <div class="col-md-3 mb-2 mb-md-0">
-                    <img src="img_logo/Chamily_logo_color.png" alt="" width="40px" height="40px"/>                
+                    <img src="/img_logo/Chamily_logo_color.png" alt="" width="40px" height="40px"/>                
                     <a class="navbar-brand" href="/" style="vertical-align: middle;">
                                 CHAMILY
                     </a>
@@ -63,9 +63,6 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/">Home</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="/schedule">Schedule</a>
                     </li>
@@ -75,12 +72,47 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/feedbacks">Feedback</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Wish</a>
+                </ul>
+                </div>
+            </div>
+        </nav-->
+
+        <nav class="navbar sticky-top navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="col-md-3 mb-2 mb-md-0">
+                    <img src="/img_logo/Chamily_logo_color.png" alt="" width="40px" height="40px"/>                
+                    <a class="navbar-brand" href="/" style="vertical-align: middle;">
+                                CHAMILY
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li> -->
+                        <a class="nav-link" href="/schedule">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/random">Random Number</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/feedbacks">Feedback</a>
+                    </li>
+                    @guest
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
+                        </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    @endguest
+                    
                 </ul>
                 </div>
             </div>

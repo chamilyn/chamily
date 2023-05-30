@@ -52,6 +52,13 @@ Route::group(['prefix' => 'php_artisan_command'], function()
     })->middleware('auth');
 
 });
+Route::group(['prefix' => 'kongtun'], function()
+{
+    Route::get('/', 'SavingController@info');
+    Route::get('/login', 'SavingController@login');
+    Route::get('/summary', 'SavingController@summary')->middleware('auth');
+
+});
 Route::get('/', 'IndexController@index')->name('welcome');
 Route::get('/flowersforyou/{month}', 'OldProjectController@showFlower');
 Route::get('/wish', 'OldProjectController@wish');
@@ -60,8 +67,6 @@ Route::get('/get_event_schedules', 'EventController@getEventSchedules');
 
 Route::get('/feedbacks', 'FeedbackController@create');
 Route::post('/feedbacks', 'FeedbackController@store');
-
-Route::get('/kongtun', 'SavingController@info');
 
 Route::get('/random', function () {
     return view('random_number.random');
