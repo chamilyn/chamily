@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@300&display=swap');
+
+::-webkit-scrollbar { /* make scrollbar transparent */
+    width: 0px;
+    background: transparent;
+}
+
+* {
+    font-family: 'Anuphan', sans-serif;
+}
+
+.firstsection {
+    width: 100%;
+    height: 100%;
+}
+
+.firstsection img {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.secondsection {
+    width: 100%;
+    height: 100%;
+}
+
+
+.chamily_social .fab {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 5px;
+}
+
+.chamily_social .fab:hover {
+    opacity: 0.7;
+}
+
+.chamily_social .fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.chamily_social .fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.chamily_social .fa-tiktok {
+    background: #000;
+    color: white;
+}
+
+.chamily_social .fa-google {
+    background: #dd4b39;
+    color: white;
+}
+
+.chamily_social .fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.chamily_social .fa-instagram {
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+    color: white;
+}
+
+.twitter-timeline {
+    color: #fff;
+    font-size: 24px;
+}
+  
+blockquote.twitter-tweet {
+    display: inline-block;
+    padding: 16px;
+    margin: 10px 0;
+    max-width: 468px;
+    border: #ddd 1px solid;
+    border-top-color: #eee;
+    border-bottom-color: #bbb;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    font: bold 14px/18px Helvetica, Arial, sans-serif;
+    color: #000;
+}
+   
+blockquote.twitter-tweet p {
+    font: normal 18px/24px Georgia, "Times New Roman", Palatino, serif;
+    margin: 0 5px 10px 0;
+}
+   
+blockquote.twitter-tweet a[href^="https://twitter.com"] {
+    font-weight: normal;
+    color: yellow;
+    font-size: 18px;
+}
