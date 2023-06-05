@@ -70,7 +70,11 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
+        $redicrect = '/kongtun/login';
+        if (Auth::user() && Auth::user()->is_admin) {
+            $redicrect = '/admin';
+        }
         $this->performLogout($request);
-        return redirect('admin');
+        return redirect($redicrect);
     }
 }

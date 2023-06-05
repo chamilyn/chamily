@@ -30,6 +30,10 @@ class SavingController extends Controller
 
     public function summary()
     {
+        if (!Auth::user()) {
+            return redirect('/kongtun/login');
+        }
+
         $current_month = intval(date("m"));
         $current_month_text = $this->convertIntMonthToString($current_month);
         $current_year = intval(date("Y"));

@@ -56,7 +56,7 @@ Route::group(['prefix' => 'kongtun'], function()
 {
     Route::get('/', 'SavingController@info');
     Route::get('/login', 'SavingController@login');
-    Route::get('/summary', 'SavingController@summary')->middleware('auth');
+    Route::get('/summary', 'SavingController@summary');
 
 });
 Route::get('/', 'IndexController@index')->name('welcome');
