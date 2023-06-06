@@ -20,7 +20,42 @@ class SavingController extends Controller
         $savings = App\Saving::orderBy('created_at', 'desc')->paginate(10);
         $saving_count = App\Saving::all();
         $count = $saving_count->count();
-        return view('admin.saving.list', ['savings'=>$savings, 'count'=>$count]);
+
+        $current_month = intval(date("m"));
+        $current_month_text = $this->convertIntMonthToString($current_month);
+        $current_year = intval(date("Y"));
+        $current_month_year = $current_month_text.' '.($current_year<2500?$current_year+543 : $current_year);
+
+        $saving_lineitem_total = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount')
+        ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        //->where("saving_code", Auth::user()->saving_code)
+        //->groupBy('saving_code')
+        //->orderBy('total_amount', 'DESC')
+        ->first();
+        $total_amount = 0;
+        if ($saving_lineitem_total) {
+            $total_amount = $saving_lineitem_total->total_amount;
+        }
+
+        $top_spenders = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
+        ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->whereYear("transfer_date", $current_year)
+        ->whereMonth("transfer_date", $current_month)
+        ->groupBy('saving_code')
+        ->orderBy('total_amount', 'DESC')
+        ->limit(10)
+        ->get();
+
+        $saving_lineitems = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
+        ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        //->whereYear("transfer_date", $current_year)
+        //->whereMonth("transfer_date", $current_month)
+        //->where("saving_code", Auth::user()->saving_code)
+        ->groupBy('saving_code')
+        ->orderBy('total_amount', 'DESC')
+        ->get();
+        
+        return view('admin.saving.list', compact('savings', 'count', 'total_amount', 'current_month_year', 'top_spenders', 'saving_lineitems'));
     }
 
     public function info()
