@@ -27,7 +27,7 @@ class SavingController extends Controller
         $current_month_year = $current_month_text.' '.($current_year<2500?$current_year+543 : $current_year);
 
         $saving_lineitem_total = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount')
-        ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        //->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
         //->where("saving_code", Auth::user()->saving_code)
         //->groupBy('saving_code')
         //->orderBy('total_amount', 'DESC')
@@ -187,7 +187,7 @@ class SavingController extends Controller
         try {
             $saving_lineitem->transfer_id = $request->transfer_selected;
             $saving_lineitem->transfer_date = $request->transfer_date;
-            $saving_lineitem->amount = number_format($request->amount, 2);
+            $saving_lineitem->amount = $request->amount;
             $saving_lineitem->saving_id = $request->saving_id;
             $saving_lineitem->note = $request->note;
             $saving_lineitem->created_user_id = $saving_lineitem->updated_user_id = Auth::user()->id;
@@ -289,7 +289,7 @@ class SavingController extends Controller
         try {
             $saving_lineitem->transfer_id = $request->transfer_selected;
             $saving_lineitem->transfer_date = $request->transfer_date;
-            $saving_lineitem->amount = number_format($request->amount, 2);
+            $saving_lineitem->amount = $request->amount;
             $saving_lineitem->saving_id = $request->saving_id;
             $saving_lineitem->note = $request->note;
             $saving_lineitem->updated_user_id = Auth::user()->id;

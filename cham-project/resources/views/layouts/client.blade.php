@@ -100,16 +100,19 @@
                         <a class="nav-link" href="/random">Random Number</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/kongtun">Kongtun Rules</a>
+                        <a class="nav-link" href="/feedbacks">Feedback</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/feedbacks">Feedback</a>
+                        <a class="nav-link" href="/kongtun">Kongtun Rules</a>
                     </li>
                     @guest
                         <li class="nav-item">
                             <a class="nav-link" href="/kongtun/login">Login</a>
                         </li>
                     @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="/kongtun/summary">Kongtun Summary</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
