@@ -258,7 +258,7 @@ class SavingController extends Controller
         ->orderBy('total_amount', 'DESC')
         ->get();
 
-        return view('admin.saving.lineitem.list', compact('saving', 'saving_lineitems', 'count', 'current_month_year', 'top_spenders', 'saving_lineitem_tops'));
+        return view('admin.saving.lineitem.list', compact('saving', 'saving_lineitems', 'count', 'total_amount', 'current_month_year', 'top_spenders', 'saving_lineitem_tops'));
     }
 
     /**

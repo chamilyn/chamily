@@ -100,6 +100,25 @@
         @endauth
         <div id="layoutSidenav_content">
             <main>
+                @if (Session()->has('error'))
+                    <div class="alert alert-danger">
+                        {!! Session()->get('error') !!}
+                    </div>
+                    @if (Session()->has('message'))
+                        <div class="alert alert-danger">
+                            <ul class="mb-0 ml-2">
+                                @foreach (Session()->get('message') as $item)
+                                    <li>{{ $item }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                @endif
+                @if (Session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ Session()->get('success') }}
+                    </div>
+                @endif
                 @yield('content')
             </main>
         </div>
