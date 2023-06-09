@@ -18,85 +18,94 @@
     <!-- jquuery -->
     <script src="/js/jquery-3.6.4.min.js"></script>
     <!-- bootstrap -->
-     <link rel="stylesheet" href="/css/bootstrap.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="/css/styles.css" rel="stylesheet" />
+     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
      
     @yield('assets')
 </head>
-<body>
-    <div class="container">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <div class="col-md-3 mb-2 mb-md-0">
-            <a class="navbar-brand" href="{{ url('/admin') }}">
-                        CHAMILY
-            </a>
-            <img src="/img_logo/Chamily_logo_color.png" alt="" width="50px" height="50px"/>
-        </div>
-
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            @guest
-            @else
-                @if(Auth::user()->is_admin == 1)
-                <li><a href="/admin" class="nav-link px-2">Home</a></li>
-                <li><a href="/admin/event" class="nav-link px-2">Events</a></li>
-                <li><a href="/admin/savings" class="nav-link px-2">Savings</a></li>
-                <li><a href="/admin/feedbacks" class="nav-link px-2">Feedbacks</a></li>
-                @endif
-            @endguest
-        </ul>
-
-        <div class="col-md-3 text-end">
-            @guest
-            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-            @else
-            <div class="dropdown text-end">
-                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ Auth::user()->name }}
-                </a>
-                <ul class="dropdown-menu text-small" style="">
-                    <li><a class="dropdown-item" href="{{ route('logout') }}"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign out</a></li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
+        <!-- Navbar Brand-->
+        <img src="/img_logo/Chamily_logo_color.png" alt="" width="50px" height="50px"/>
+        <a class="navbar-brand ps-3" href="/admin">CHAMILY</a>
+        @auth
+        @if(Auth::user()->is_admin == 1)
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        @endif
+        @endauth
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+            </div>
+        </form>
+        
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    @guest
+                        <li><a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                    @else
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    @endguest
                 </ul>
-            </div>
-            @endguest
-        </div>
-        </header>
-    </div>
-    
-    <div class="content-wrapper">
-        <div class="card-body">
-            <div class="container">
-                @if (Session()->has('error'))
-                    <div class="alert alert-danger">
-                        {!! Session()->get('error') !!}
-                    </div>
-                    @if (Session()->has('message'))
-                        <div class="alert alert-danger">
-                            <ul class="mb-0 ml-2">
-                                @foreach (Session()->get('message') as $item)
-                                    <li>{{ $item }}</li>
-                                @endforeach
-                            </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        @auth
+        @if(Auth::user()->is_admin == 1)
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        
+                        <div class="sb-sidenav-menu-heading">Menu</div>
+                        <a class="nav-link" href="/admin/event">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Events
+                        </a>
+                        <a class="nav-link" href="/admin/feedbacks">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Feedbacks
+                        </a>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Kongtun
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="/admin/savings/1">General Election 4</a>
+                            </nav>
                         </div>
-                    @endif
-                @endif
-                @if (Session()->has('success'))
-                    <div class="alert alert-success">
-                        {{ Session()->get('success') }}
                     </div>
-                @endif
-            </div>
-            @yield('content')
-
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    @auth
+                        {{ Auth::user()->name }}
+                    @endauth
+                </div>
+            </nav>
+        </div>
+        @endif
+        @endauth
+        <div id="layoutSidenav_content">
+            <main>
+                @yield('content')
+            </main>
         </div>
     </div>
-
-    <!-- bootstrap -->
     <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/scripts.js"></script>
     @yield('scripts')
 </body>
 </html>
