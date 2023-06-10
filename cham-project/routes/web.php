@@ -71,3 +71,7 @@ Route::post('/feedbacks', 'FeedbackController@store');
 Route::get('/random', function () {
     return view('random_number.random');
 });
+
+Route::get('/about', function () {
+    return view('about.about');
+});
