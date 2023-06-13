@@ -33,7 +33,7 @@
             <div class="clear"></div>
         </div>
         <div class="skills-container">
-            <h2>อนุญาตให้ใช้ชีวิตในแบบที่ตัวเองชอบ✦</h2>
+            <h3>อนุญาตให้ใช้ชีวิตในแบบที่ตัวเองชอบ✦</h3>
         </div>
     </div>
 
@@ -51,7 +51,7 @@
                     </div>
                     <div class="body">
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p> -->
-                        <img src="http://placehold.it/1000x500" alt="Graphic">
+                        <img src="/img_about/champoo_2019.jpg" alt="Graphic">
                     </div>
                 </div>
 
@@ -64,7 +64,7 @@
                     </div>
                     <div class="body">
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p> -->
-                        <img src="http://placehold.it/1000x500" alt="Graphic">
+                        <img src="/img_about/champoo_2020.jpg" alt="Graphic">
                     </div>
                 </div>
 
@@ -77,7 +77,7 @@
                     </div>
                     <div class="body">
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p> -->
-                        <img src="http://placehold.it/1000x500" alt="Graphic">
+                        <img src="/img_about/champoo_2021.jpg" alt="Graphic">
                     </div>
                 </div>
 
@@ -90,7 +90,7 @@
                     </div>
                     <div class="body">
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p> -->
-                        <img src="http://placehold.it/1000x500" alt="Graphic">
+                        <img src="/img_about/champoo_2022.jpg" alt="Graphic">
                     </div>
                 </div>
 
@@ -103,7 +103,7 @@
                     </div>
                     <div class="body">
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p> -->
-                        <img src="http://placehold.it/1000x500" alt="Graphic">
+                        <img src="/img_about/champoo_2023.jpg" alt="Graphic">
                     </div>
                 </div>
             </div>
