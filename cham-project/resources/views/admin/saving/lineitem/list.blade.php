@@ -52,11 +52,17 @@
                                     </thead>
                                     <tbody>
                                         @php
-                                            $inx = 1;
+                                            $inx = 0;
                                             $changed_amount = 0.00;
                                         @endphp
                                         @if (isset($top_spenders))
                                             @foreach ($top_spenders as $top_spender)
+                                                @php
+                                                    if ($changed_amount != $top_spender->total_amount) {
+                                                        $inx++;
+                                                        $changed_amount = $top_spender->total_amount;
+                                                    }
+                                                @endphp
                                                 @if ($inx == 1)
                                                     <tr class="text-center" style="background-color: #fdbc4b; color: #FFFFFF;">
                                                         <td><img src="/img/gold.png" width="30px" height="30px"></td>
@@ -82,12 +88,6 @@
                                                         <td>{{($top_spender->total_amount ? number_format($top_spender->total_amount,2) : '0.00')}}฿</td>
                                                     </tr>
                                                 @endif
-                                                @php
-                                                    if ($changed_amount != $top_spender->total_amount) {
-                                                        $inx++;
-                                                        $changed_amount = $top_spender->total_amount;
-                                                    }
-                                                @endphp
                                             @endforeach
                                         @endif
                                     </tbody>
