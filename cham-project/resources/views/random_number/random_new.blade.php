@@ -40,12 +40,16 @@
                         <label for="end" class="form-label">ถึงหมายเลข</label>
                         <input type="number" class="form-control" id="end" name="end" value="">
                     </div>
+                    <div class="mb-3 more_number" style="display: none;">
+                        <label for="end" class="form-label">จำนวน</label>
+                        <input type="number" class="form-control" id="more_number" name="more_number" value="">
+                    </div>
                     <div class="mb-3">
                         <input type="checkbox" id="is_dup" name="is_dup">
                         <label for="is_dup">ไม่ซ้ำ</label>
 
                         <input type="checkbox" id="is_more" name="is_more">
-                        <label for="is_more">จำนวน</label>
+                        <label for="is_more">หลายจำนวน</label>
                     </div>
                     <div style="text-align: -webkit-center;">
                         <button type="button" id="random" class="btn btn-success">Go</button>
@@ -110,11 +114,17 @@
         }
         
         $(document).ready(function() {
+            //$('.more_number').hide();
             $('#random').click(function() {
                 $(this).attr('disabled', true);
                 let resultElement = $('#result');
                 let start = $('#start').val();
                 let end = $('#end').val();
+                let is_more = $('#is_more:checked').val();
+                let more_number = $('#more_number').val();
+                if (!is_more) {
+                    more_number = 1;
+                }
                 if(start === '' || end === '') {
                     alert('กรุณากรอกตัวเลขเริ่มต้นและสิ้นสุด');
                     $('#random').attr('disabled', false);
@@ -127,6 +137,19 @@
                 }
                 const range = (+end) - (+start) + 1;
                 let is_dup = $("#is_dup").is(':checked');
+                if(is_more) {
+                    if (more_number === '' || more_number == 0) {
+                        alert('กรุณากรอกจำตัวเลขที่ต้องการสุ่ม');
+                        $('#random').attr('disabled', false);
+                        return false;
+                    }
+                    if (more_number > ((+end) - (+start) + 1) - array_number.length && is_dup) {
+                        alert('กรุณากรอกจำตัวเลขน้อยกว่าที่ต้องการสุ่ม');
+                        $('#random').attr('disabled', false);
+                        return false;
+                    }
+                    
+                }
                 if (range <= array_number.length && is_dup) {
                     alert('กรุณากด Reset เพื่อทำรายการใหม่');
                     $('#random').attr('disabled', false);
@@ -135,24 +158,30 @@
                 resultElement.text('?');
                 resultElement.removeClass('result');
                 resultElement.width(); // Trigger reflow for animation
-                let randomNumber = getRandomInt(+start, +end, is_dup);
-                for (let i = 1; i <= 6; i++) {
+                for (let j = 0; j < more_number; j++) {
                     setTimeout(function() {
-                        randomNumber = getRandomInt(+start, +end, is_dup);
-                        resultElement.html(`<b>${randomNumber}</b>`);
-                        resultElement.addClass('fade-out');
-                        resultElement.removeClass('result');
-                    }, i * 150);
-                    setTimeout(function() {
-                        resultElement.removeClass('fade-out');
-                        resultElement.width(); // Trigger reflow for animation
-                        if (i == 6) {
-                            string_number += `${(string_number===''?'':', ')}${randomNumber}`;
-                            $("#results").html(`[${string_number}]`);
-                            array_number.push(randomNumber);
-                            $('#random').attr('disabled', false);
+                        let randomNumber = getRandomInt(+start, +end, is_dup);
+                        for (let i = 1; i <= 6; i++) {
+                            setTimeout(function() {
+                                randomNumber = getRandomInt(+start, +end, is_dup);
+                                resultElement.html(`<b>${randomNumber}</b>`);
+                                resultElement.addClass('fade-out');
+                                resultElement.removeClass('result');
+                            }, i * 150);
+                            setTimeout(function() {
+                                resultElement.removeClass('fade-out');
+                                resultElement.width(); // Trigger reflow for animation
+                                if (i == 6) {
+                                    string_number += `${(string_number===''?'':', ')}${randomNumber}`;
+                                    $("#results").html(`[${string_number}]`);
+                                    array_number.push(randomNumber);
+                                    if (j == more_number-1) {
+                                        $('#random').attr('disabled', false);
+                                    }
+                                }
+                            }, i * 150 + 150);
                         }
-                    }, i * 150 + 150);
+                    }, j * 1000);
                 }
                 
             });
@@ -163,6 +192,16 @@
                 $("#results").html(`[${string_number}]`);
                 let resultElement = $('#result');
                 resultElement.text(null);
+            });
+
+            $('#is_more').click(function() {
+                let is_more = $('#is_more:checked').val();
+                if (is_more) {
+                    $('.more_number').show();
+                } else {
+                    $('.more_number').hide();
+                }
+                
             });
 
             
