@@ -1,45 +1,31 @@
-<!doctype html>
-<html>
-
-<head>
-    <title>Chamily</title>
-    <link rel="shortcut icon" href="img_logo/Chamily_logo_color.png" />
-    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet"
-        type="text/css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="frontend/stylewish.css">
-</head>
-
-<!-- logo&name -->
-<div style="padding: 30px;" class="bodytexttrue">
-    <div class="textheader">
-        Chamily
-    </div>
-    <div class="logo">
-        <img src="img_logo/Chamily_logo_color.png" width="50px" height="50px" />
-    </div>
-</div>
-
-<body class="bodytexttrue">
-    <h1>
-        <font color="#AD464C">Make</font>
-        <font color="#3D5A48"> A </font>
-        <font color="#315468">Wish</font>
-        <i class="fa fa-tree" style="color: #3D5A48;"></i>
-    </h1>
-    <div class="boxthetext">
-        <p><textarea onkeyup='writeText(this)' id='textArea' placeholder='-Write Your Wish-' rows='2'
-                cols='31'></textarea></p>
-    </div>
-
+@extends('layouts.client')
+@section('assets')
+<link rel="stylesheet" href="/frontend/stylewish.css?v={{ time() }}">
+@endsection
+@section('content')
+    @if(@php is_mobile() @endphp != true)
     <div class='bodytextfalse'>
+        <div class="container mt-4 mb-4 d-flex justify-content-center">
+            <h1>
+                <b>
+                    <font color="#AD464C">Make</font>
+                    <font color="#3D5A48"> A </font>
+                    <font color="#315468">Wish</font>
+                </b>
+                <i class="fa fa-tree" style="color: #3D5A48;"></i>
+            </h1>
+        </div>
+        
+        <div class="boxthetext">
+            <p><textarea onkeyup='writeText(this)' id='textArea' placeholder='-Write Your Wish-' rows='2'
+                    cols='31'></textarea></p>
+        </div>
+
         <!--The parent container, image and container for text (to place over the image)-->
         <div class="mainContainer" id='mainContainer'>
             <!--The default image. You can select a different image too.-->
-            <img src="/img_wish/merry-christmas.jpg" id="myimage" alt="" />
-
+            <img src="img_wish/merry-christmas.jpg" id="myimage" alt=""/>
+                    
             <!--The text, which is also draggable.-->
             <div id='theText' onmousedown='this.style.border = "dashed 2px #fabd4a";'>Sample Text</div>
         </div>
@@ -50,7 +36,14 @@
             <button class="button" type="button" onclick="saveImageWithText();" id="bt">Save Image</button>
         </p>
     </div>
-</body>
+    @else 
+        @php
+            echo "<body class='bodytextfalse'><br><br><div align='center'><font size=5>\"เขียนคำอวยพรในเว็บไซต์บนโทรศัพท์\"</font><br><br><br><img src='/img_champoo/champoo2.png' width='20%' height='20%'/></div></body>";
+            exit();
+        @endphp
+    @endif
+@endsection
+@section('scripts')
 <script>
 // Make the text element draggable.
 $(document).ready(function() {
@@ -166,5 +159,9 @@ $(document).keydown(function(event) {
     }
 });
 </script>
-
-</html>
+<!-- Note
+- อยากเปลี่ยนสีตัวอักษรคำที่จะใส่บนภาพให้เปลี่ยนที่ frontend/stylewish.css | #theText color
+- อยากเปลี่ยนขนาดตัวอักษรคำที่จะใส่บนภาพให้เปลี่ยนที่ frontend/stylewish.css | #theText font-size
+- ปรับตำแหน่งที่จะใส่บนภาพให้ปรับตรง script | paddingTop paddingLeft paddingRight
+- เพิ่มลดปรับระยะห่างบรรทัดที่จะใส่บนภาพ script | (55) parseInt(paddingTop, 10) + parseInt(top, 10) + 10 + (i * 55); -->
+@endsection
