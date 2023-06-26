@@ -220,7 +220,7 @@ class SavingController extends Controller
     public function show($id)
     {
         $saving = App\Saving::find($id);
-        $saving_lineitems = App\SavingLineitem::where('saving_id', $id)->orderBy('created_at', 'desc')->paginate(10);
+        $saving_lineitems = App\SavingLineitem::where('saving_id', $id)->orderBy('transfer_date', 'desc')->paginate(10);
         $saving_lineitem_count = App\SavingLineitem::where('saving_id', $id)->get();
         $count = $saving_lineitem_count->count();
 

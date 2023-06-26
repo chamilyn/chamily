@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('assets')
-
+<link rel="stylesheet" href="/frontend/style_klong.css?v={{ time() }}">
 @endsection
 @section('content')
     <div class="container mt-3">
