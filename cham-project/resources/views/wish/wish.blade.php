@@ -1,10 +1,11 @@
 @extends('layouts.client')
 @section('assets')
 <link rel="stylesheet" href="/frontend/stylewish.css?v={{ time() }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 @endsection
 @section('content')
-    @if(@php is_mobile() @endphp != true)
-    <div class='bodytextfalse'>
+
+    <div class='bodytextfalse mobile' style="display: none;">
         <div class="container mt-4 mb-4 d-flex justify-content-center">
             <h1>
                 <b>
@@ -36,21 +37,34 @@
             <button class="button" type="button" onclick="saveImageWithText();" id="bt">Save Image</button>
         </p>
     </div>
-    @else 
-        @php
-            echo "<body class='bodytextfalse'><br><br><div align='center'><font size=5>\"เขียนคำอวยพรในเว็บไซต์บนโทรศัพท์\"</font><br><br><br><img src='/img_champoo/champoo2.png' width='20%' height='20%'/></div></body>";
-            exit();
-        @endphp
-    @endif
+    <br><br><div class="pc" style="display: none;" align='center'><font size=5>"เขียนคำอวยพรในเว็บไซต์บนโทรศัพท์"</font><br><br><br><img src='/img_champoo/champoo2.png' width='20%' height='20%'/></div>
 @endsection
 @section('scripts')
 <script>
+    function is_mobile() {
+        let isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+  
+            if (isMobile) {
+                $('.mobile').show();
+            } else {
+                $('.pc').show();
+            }
+        }
 // Make the text element draggable.
 $(document).ready(function() {
+    is_mobile();
     $(function() {
         $('#theText').draggable({
             containment: 'parent' // set draggable area.
         });
+    });
+
+    $(document).keydown(function(event) {
+    if (event.keyCode == 123) { // Prevent F12
+        return false;
+    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+        return false;
+    }
     });
 });
 let textContainer;
@@ -150,31 +164,7 @@ let saveImageWithText = () => {
 }
 </script>
 
-<script>
-    function is_mobile() {
-            if ( empty( $_SERVER['HTTP_USER_AGENT'] ) ) {
-                $is_mobile = false;
-            } elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Mobile' ) !== false // many mobile devices (all iPhone, iPad, etc.)
-                || strpos( $_SERVER['HTTP_USER_AGENT'], 'Android' ) !== false
-                || strpos( $_SERVER['HTTP_USER_AGENT'], 'Silk/' ) !== false
-                || strpos( $_SERVER['HTTP_USER_AGENT'], 'Kindle' ) !== false
-                || strpos( $_SERVER['HTTP_USER_AGENT'], 'BlackBerry' ) !== false
-                || strpos( $_SERVER['HTTP_USER_AGENT'], 'Opera Mini' ) !== false
-                || strpos( $_SERVER['HTTP_USER_AGENT'], 'Opera Mobi' ) !== false ) {
-                    $is_mobile = true;
-            } else {
-                $is_mobile = false;
-            }
-            return $is_mobile;
-        }
-$(document).keydown(function(event) {
-    if (event.keyCode == 123) { // Prevent F12
-        return false;
-    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
-        return false;
-    }
-});
-</script>
+
 <!-- Note
 - อยากเปลี่ยนสีตัวอักษรคำที่จะใส่บนภาพให้เปลี่ยนที่ frontend/stylewish.css | #theText color
 - อยากเปลี่ยนขนาดตัวอักษรคำที่จะใส่บนภาพให้เปลี่ยนที่ frontend/stylewish.css | #theText font-size
