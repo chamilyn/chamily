@@ -105,7 +105,7 @@
                     <div class="tab-pane" id="name">
                         <div class="mb-3 mt-4">
                             <label for="name_random" class="form-label">รายชื่อที่ต้องการสุ่ม</label><br>
-                            <textarea id="name_texts" name="name_texts" rows="4" cols="50" placeholder="หากต้องการใส่รายชื่อมากกว่า 1 คนให้เว้นบรรทัด"></textarea>
+                            <textarea id="name_texts" class="w-100" name="name_texts" rows="4" cols="50" placeholder="หากต้องการใส่รายชื่อมากกว่า 1 คนให้เว้นบรรทัด"></textarea>
                         </div>
                         <!-- ก๊อปจากตัวเลขมารบกวนเช็กอีกที -->
                         <div class="mb-3 name_more_number" style="display: none;">
