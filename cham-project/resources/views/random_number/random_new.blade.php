@@ -1,6 +1,6 @@
 @extends('layouts.client')
 @section('assets')
-<link rel="stylesheet" href="/frontend/style_numbers.css?v={{ time() }}">
+<link rel="stylesheet" href="/frontend/style_numbers_new.css?v={{ time() }}">
 @endsection
 @section('content')
     @if (Session()->has('error'))
@@ -27,72 +27,136 @@
                 <div class="card-body">
                     <div class="text-center">
                         <h3>
-                            <b><span style="color:#89CFF0;">Random Number</span></b>
-                            <i class="fa fa-gamepad" style="color: #89CFF0;"></i>
+                            <!-- <b><span style="color:#89CFF0;">สุ่มจากตัวเลข</span></b>
+                            <i class="fa fa-gamepad" style="color: #89CFF0;"></i> -->
+                            <!-- ในกรณีเปลี่ยน TAB เป็นสุ่มชื่อให้ใช้เป็นตัวนี้ -->
+                            <b><span style="color:#FFBF00;">สุ่มจากรายชื่อ</span></b>
+                            <i class="fa fa-gamepad" style="color: #FFBF00;"></i>
                         </h3>
                     </div>
-                    <div style="text-align: -webkit-center;"><hr width="95%"></div>
-                    <div class="mb-3">
-                        <label for="start" class="form-label">ตั้งแต่หมายเลข</label>
-                        <input type="number" class="form-control" id="start" name="start" value="">
-                    </div>
-                    <div class="mb-3">
-                        <label for="end" class="form-label">ถึงหมายเลข</label>
-                        <input type="number" class="form-control" id="end" name="end" value="">
-                    </div>
-                    <div class="mb-3 more_number" style="display: none;">
-                        <label for="end" class="form-label">จำนวน</label>
-                        <input type="number" class="form-control" id="more_number" name="more_number" value="">
-                    </div>
-                    <div class="mb-3">
-                        <input type="checkbox" id="is_dup" name="is_dup">
-                        <label for="is_dup">ไม่ซ้ำ</label>
 
-                        <input type="checkbox" id="is_more" name="is_more">
-                        <label for="is_more">หลายจำนวน</label>
-                    </div>
-                    <div style="text-align: -webkit-center;">
-                        <button type="button" id="random" class="btn btn-success">Go</button>
-                        <button type="button" id="reset" class="btn btn-danger">Reset</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mt-4 mb-4 d-flex justify-content-center">
-            <div class="card" style="width: 90%;">
-                <div class="card-body">
-                    <div class="text-center">
-                        <h3>
-                            <b><span style="color:#89CFF0;">Result</span></b>
-                            <img src="/img_champooart/champoo_dead_sheep.png" width="70" height="70"></img>
-                        </h3>
-                    </div>
-                    <!-- <div style="text-align: -webkit-center;"><hr width="90%" class="new5"></div> -->
                     <div style="text-align: -webkit-center;"><hr width="95%"></div>
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col" style="border: 2px solid #89f0de; padding:5px; border-radius: 25px;">
+
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#number">สุ่มจากตัวเลข</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#name">สุ่มจากรายชื่อ</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="number">
+                            <div class="mb-3 mt-4">
+                                <label for="start" class="form-label">ตั้งแต่หมายเลข</label>
+                                <input type="number" class="form-control" id="start" name="start" value="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="end" class="form-label">ถึงหมายเลข</label>
+                                <input type="number" class="form-control" id="end" name="end" value="">
+                            </div>
+                            <div class="mb-3 more_number" style="display: none;">
+                                <label for="end" class="form-label">จำนวนที่ต้องการ</label>
+                                <input type="number" class="form-control" id="more_number" name="more_number" value="">
+                            </div>
+                            <div class="mb-3">
+                                <input type="checkbox" id="is_dup" name="is_dup">
+                                <label for="is_dup">สุ่มไม่ซ้ำ</label>
+
+                                <input type="checkbox" id="is_more" name="is_more">
+                                <label for="is_more">สุ่มหลายจำนวน</label>
+                            </div>
+                            <div style="text-align: -webkit-center;">
+                                <button type="button" id="random" class="btn btn-success">Go</button>
+                                <button type="button" id="reset" class="btn btn-danger">Reset</button>
+                            </div>
+
+                            <br><div class="text-center">
                                 <h3>
-                                    <span>เลขที่สุ่ม </span>
-                                    <div style="text-align: -webkit-center;"><hr width="90%" class="new1"></div>
-                                    <p id="result"></p>
+                                    <b><span style="color:#89CFF0;">ผลลัพธ์</span></b>
+                                    <img src="img_champooart/angelsheep.png" width="70" height="70"></img>
                                 </h3>
                             </div>
-                            &nbsp;&nbsp;
-                            <div class="col" style="border: 2px solid #89CFF0; padding:5px; border-radius: 25px;">
+
+                            <div style="text-align: -webkit-center;"><hr width="95%"></div>
+
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col" style="border: 2px solid #89f0de; padding:5px; border-radius: 25px;">
+                                        <h3>
+                                            <span>เลขที่สุ่ม </span>
+                                            <div style="text-align: -webkit-center;"><hr width="90%" class="new1"></div>
+                                            <p id="result"></p>
+                                        </h3>
+                                    </div>
+                                    &nbsp;&nbsp;
+                                    <div class="col" style="border: 2px solid #89CFF0; padding:5px; border-radius: 25px;">
+                                        <h3>
+                                            <span>เลขทั้งหมด </span>
+                                            <div style="text-align: -webkit-center;"><hr width="90%" class="new2"></div>
+                                            <div id="results">[]</div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="name">
+                            <div class="mb-3 mt-4">
+                                <label for="name_random" class="form-label">รายชื่อที่ต้องการสุ่ม</label><br>
+                                <textarea id="name_random" name="name_random" rows="4" cols="50" placeholder="หากต้องการใส่รายชื่อมากกว่า 1 คนให้เว้นบรรทัด"></textarea>
+                            </div>
+                            <!-- ก๊อปจากตัวเลขมารบกวนเช็กอีกที -->
+                            <div class="mb-3 more_number" style="display: none;">
+                                <label for="end" class="form-label">จำนวนที่ต้องการ</label>
+                                <input type="number" class="form-control" id="more_number" name="more_number" value="">
+                            </div>
+                            <div class="mb-3">
+                                <input type="checkbox" id="is_dup" name="is_dup">
+                                <label for="is_dup">สุ่มไม่ซ้ำ</label>
+
+                                <input type="checkbox" id="is_more" name="is_more">
+                                <label for="is_more">สุ่มหลายจำนวน</label>
+                            </div>
+                            <div style="text-align: -webkit-center;">
+                                <button type="button" id="random" class="btn btn-success">Go</button>
+                                <button type="button" id="reset" class="btn btn-danger">Reset</button>
+                            </div>
+
+                            <br><div class="text-center">
                                 <h3>
-                                    <span>เลขทั้งหมด </span>
-                                    <div style="text-align: -webkit-center;"><hr width="90%" class="new2"></div>
-                                    <div id="results">[]</div>
+                                    <b><span style="color:#FFBF00;">ผลลัพธ์</span></b>
+                                    <img src="img_champooart/artist.png" width="70" height="70"></img>
                                 </h3>
+                            </div>
+
+                            <div style="text-align: -webkit-center;"><hr width="95%"></div>
+
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col" style="border: 2px solid #FF9839; padding:5px; border-radius: 25px;">
+                                        <h3>
+                                            <span>รายชื่อที่สุ่ม </span>
+                                            <div style="text-align: -webkit-center;"><hr width="90%" class="new3"></div>
+                                            <p id="result"></p>
+                                        </h3>
+                                    </div>
+                                    &nbsp;&nbsp;
+                                    <div class="col" style="border: 2px solid #FFBF00; padding:5px; border-radius: 25px;">
+                                        <h3>
+                                            <span>รายชื่อทั้งหมด </span>
+                                            <div style="text-align: -webkit-center;"><hr width="90%" class="new4"></div>
+                                            <div id="results">[]</div>
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-	
 @endsection
 @section('scripts')
 <script>

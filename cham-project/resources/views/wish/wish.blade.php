@@ -13,7 +13,7 @@
                     <font color="#3D5A48"> A </font>
                     <font color="#315468">Wish</font>
                 </b>
-                <i class="fa fa-tree" style="color: #3D5A48;"></i>
+                <i class="fa fa-star" style="color: #3D5A48;"></i>
             </h1>
         </div>
         

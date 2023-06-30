@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@300&display=swap');
+
+::-webkit-scrollbar { /* make scrollbar transparent */
+    width: 0px;
+    background: transparent;
+}
+
+* {
+    font-family: 'Anuphan', sans-serif;
+}
+
+body {
+    /* background-color: #89CFF0; */
+    background-color: #F0F3F4;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.result {
+    font-size: 36px;
+    color: blue;
+    animation: fade-in 0.15s linear;
+    opacity: 0;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fade-out 0.15s linear;
+    opacity: 1;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+    }
+}
+
+hr.new1 {
+    border: 2px solid #89f0ab;
+    border-radius: 5px;
+}
+
+hr.new2 {
+    border: 2px solid #89CFF0;
+    border-radius: 5px;
+}
+
+hr.new3 {
+    border: 2px solid #FF9839;
+    border-radius: 5px;
+}
+
+hr.new4 {
+    border: 2px solid #FFBF00;
+    border-radius: 5px;
+}
+
+/* .nav-tabs .nav-link.active {
+    background-color: #603F8B;
+    color: #fff;
+    border: 3px solid #603F8B;
+}
+
+.nav-tabs .nav-link:hover {
+    border: 3px solid #603F8B;
+} */
