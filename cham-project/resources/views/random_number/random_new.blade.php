@@ -27,26 +27,31 @@
             <div class="card-body">
                 <div class="text-center">
                     <h3>
-                        <!-- <b><span style="color:#89CFF0;">สุ่มจากตัวเลข</span></b>
-                        <i class="fa fa-gamepad" style="color: #89CFF0;"></i> -->
+                        <div class="head_number">
+                            <b><span style="color:#89CFF0;">สุ่มจากตัวเลข</span></b>
+                            <i class="fa fa-gamepad" style="color: #89CFF0;"></i>
+                        </div>
+                        
                         <!-- ในกรณีเปลี่ยน TAB เป็นสุ่มชื่อให้ใช้เป็นตัวนี้ -->
-                        <b><span style="color:#FFBF00;">สุ่มจากรายชื่อ</span></b>
-                        <i class="fa fa-gamepad" style="color: #FFBF00;"></i>
+                        <div class="head_name" style="display: none;">
+                            <b><span style="color:#FFBF00;">สุ่มจากรายชื่อ</span></b>
+                            <i class="fa fa-gamepad" style="color: #FFBF00;"></i>
+                        </div>
                     </h3>
                 </div>
 
                 <div style="text-align: -webkit-center;"><hr width="95%"></div>
 
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs" id="tab_main">
                     <li class="nav-item">
-                        <a class="nav-link active" data-bs-toggle="tab" href="#number">สุ่มจากตัวเลข</a>
+                        <a class="nav-link active" id="tab_number" data-bs-toggle="tab" href="#number">สุ่มจากตัวเลข</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#name">สุ่มจากรายชื่อ</a>
+                        <a class="nav-link" id="tab_name" data-bs-toggle="tab" href="#name">สุ่มจากรายชื่อ</a>
                     </li>
                 </ul>
 
-                <div class="tab-content">
+                <div class="tab-content" id="tab_content">
                     <div class="tab-pane active" id="number">
                         <div class="mb-3 mt-4">
                             <label for="start" class="form-label">ตั้งแต่หมายเลข</label>
@@ -222,7 +227,16 @@
         }
 
         $(document).ready(function() {
-            //$('.more_number').hide();
+            $('#tab_main').on("shown.bs.tab", function (e) {
+                let tartget_id = $(e.target).attr("href");
+                if (tartget_id == '#name') {
+                    $('.head_name').show();
+                    $('.head_number').hide();
+                } else {
+                    $('.head_name').hide();
+                    $('.head_number').show();
+                }
+            });
             $('#random').click(function() {
                 $(this).attr('disabled', true);
                 let resultElement = $('#result');
