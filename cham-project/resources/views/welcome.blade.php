@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <blockquote class="twitter-tweet" data-conversation="none" align="center" data-link-color="#f00" lang="en">
-                        <a href="https://twitter.com/Real_CSS_Tricks"></a><a href="http://t.co/19v3xxALrl"></a>”</p>&mdash; <a href="https://twitter.com/chamily_th/status/1618114443636019200?s=46&t=2WsLDusxwhOOZsqcfHj13Q"></a>
+                        <a href="https://twitter.com/Real_CSS_Tricks"></a><a href="http://t.co/19v3xxALrl"></a>”</p>&mdash; <a href="https://twitter.com/Chamily_TH/status/1675006227896750081?t=MRaeVIBhQi2uQhJph0l1ow"></a>
                     </blockquote>
                 </div>
             </div>
