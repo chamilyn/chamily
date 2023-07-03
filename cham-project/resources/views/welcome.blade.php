@@ -66,114 +66,114 @@
                 <div class="table-responsive">
                     <div class="container">
                         <div class="row">
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/carnation.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
-                                        <a href="https://chamily.net/flowersforyou/january.php" target="_blank"><button type="button" class="btn btn-outline-info">January</button></a>
+                                        <a href="https://chamily.net/flowersforyou/january.php" target="_blank"><button type="button" class="btn btn-outline-warning">January</button></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/daffodil.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
-                                        <a href="https://chamily.net/flowersforyou/february.php" target="_blank"><button type="button" class="btn btn-outline-info">February</button></a>
+                                        <a href="https://chamily.net/flowersforyou/february.php" target="_blank"><button type="button" class="btn btn-outline-warning">February</button></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/daisy.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
-                                        <a href="https://chamily.net/flowersforyou/march.php" target="_blank"><button type="button" class="btn btn-outline-info">March</button></a>
+                                        <a href="https://chamily.net/flowersforyou/march.php" target="_blank"><button type="button" class="btn btn-outline-warning">March</button></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/violet.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
-                                        <a href="https://chamily.net/flowersforyou/april.php" target="_blank"><button type="button" class="btn btn-outline-info">April</button></a>
+                                        <a href="https://chamily.net/flowersforyou/april.php" target="_blank"><button type="button" class="btn btn-outline-warning">April</button></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/rose.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
-                                        <a href="https://chamily.net/flowersforyou/may.php" target="_blank"><button type="button" class="btn btn-outline-info">May</button></a>
+                                        <a href="https://chamily.net/flowersforyou/may.php" target="_blank"><button type="button" class="btn btn-outline-warning">May</button></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/Delphinium.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
-                                        <a href="https://chamily.net/flowersforyou/june.php" target="_blank"><button type="button" class="btn btn-outline-info">June</button></a>
+                                        <a href="https://chamily.net/flowersforyou/june.php" target="_blank"><button type="button" class="btn btn-outline-warning">June</button></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/Aster.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
-                                        <a href="https://chamily.net/flowersforyou/july.php" target="_blank"><button type="button" class="btn btn-outline-info">July</button></a>
+                                        <a href="https://chamily.net/flowersforyou/july.php" target="_blank"><button type="button" class="btn btn-outline-warning">July</button></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/lily.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
-                                        <a href="https://chamily.net/flowersforyou/august.php" target="_blank"><button type="button" class="btn btn-outline-info">August</button></a>
+                                        <a href="https://chamily.net/flowersforyou/august.php" target="_blank"><button type="button" class="btn btn-outline-warning">August</button></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/Chrysanthemum.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
-                                        <a href="https://chamily.net/flowersforyou/september.php" target="_blank"><button type="button" class="btn btn-outline-info">September</button></a>
+                                        <a href="https://chamily.net/flowersforyou/september.php" target="_blank"><button type="button" class="btn btn-outline-warning">September</button></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/sunflower.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
-                                        <a href="https://chamily.net/flowersforyou/october.php" target="_blank"><button type="button" class="btn btn-outline-info">October</button></a>
+                                        <a href="https://chamily.net/flowersforyou/october.php" target="_blank"><button type="button" class="btn btn-outline-warning">October</button></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/tulip.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
-                                        <a href="https://chamily.net/flowersforyou/november.php" target="_blank"><button type="button" class="btn btn-outline-info">November</button></a>
+                                        <a href="https://chamily.net/flowersforyou/november.php" target="_blank"><button type="button" class="btn btn-outline-warning">November</button></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/dandilion.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
-                                        <a href="https://chamily.net/flowersforyou/december.php" target="_blank"><button type="button" class="btn btn-outline-info">December</button></a>
+                                        <a href="https://chamily.net/flowersforyou/december.php" target="_blank"><button type="button" class="btn btn-outline-warning">December</button></a>
                                     </div>
                                 </div>
                             </div>
