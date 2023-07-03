@@ -11,6 +11,7 @@
                 <source src="video/lalarak.mp4" type="video/mp4">
             </video>
             <div class="text">
+                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Flowers For You</button>
                 <h2>Champoo</h2> 
                 <h3>Kodchaporn Leelatheep</h3>
                 <ul class="social">
@@ -23,37 +24,170 @@
     </div>
 </div>
 <div class="secondsection">
-        <div class="container d-flex justify-content-center">
-            <div class="card" style="width: 90%;background-color: #EFEFEF;border: 0px;">
-                <div class="card-body" style="text-align: -webkit-center;border: 0px;">
-                    <br>
-                    <div class="container">
-                        <h2 style="color:black;" class="text-center"><b>Chamily Contact</b></h2>
-                    </div>
-                    <br>
-                    <div class="card" style="width: 15rem;"><!-- background-color: #FFF4BD; -->
-                    <div class="mt-4">
-                        <a href="https://line.me/ti/g2/gmYW9Z1ghA44ywx5PbSKXA"><img src="img_qr_chamily/QrCode.jpg" class="img-fluid rounded-start"></a>
-                    </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Click Me!</h5>
-                            <div class="chamily_social">
-                                <a href="https://www.facebook.com/ChamilyTH" class="fab fa-facebook media_btn"></a>
-                                <a href="https://twitter.com/Chamily_TH?s=20" class="fab fa-twitter media_btn"></a>
-                                <a href="https://instagram.com/chamily_th?igshid=YmMyMTA2M2Y=" class="fab fa-instagram media_btn"></a>
-                                <a href="https://www.tiktok.com/@chamily_th?_t=8bntwvY6JWb&_r=1" class="fab fa-tiktok media_btn"></a>
-                                <a href="mailto: chamilyth@gmail.com" class="fab fa-google media_btn"></a>
-                                <a href="https://www.youtube.com/channel/UCr-e1cO5ShlsIzzn7AWLV8g" class="fab fa-youtube media_btn"></a>
-                            </div>
+    <div class="container d-flex justify-content-center">
+        <div class="card" style="width: 90%;background-color: #EFEFEF;border: 0px;">
+            <div class="card-body" style="text-align: -webkit-center;border: 0px;">
+                <br>
+                <div class="container">
+                    <h2 style="color:black;" class="text-center"><b>Chamily Contact</b></h2>
+                </div>
+                <br>
+                <div class="card" style="width: 15rem;"><!-- background-color: #FFF4BD; -->
+                <div class="mt-4">
+                    <a href="https://line.me/ti/g2/gmYW9Z1ghA44ywx5PbSKXA"><img src="img_qr_chamily/QrCode.jpg" class="img-fluid rounded-start"></a>
+                </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Click Me!</h5>
+                        <div class="chamily_social">
+                            <a href="https://www.facebook.com/ChamilyTH" class="fab fa-facebook media_btn"></a>
+                            <a href="https://twitter.com/Chamily_TH?s=20" class="fab fa-twitter media_btn"></a>
+                            <a href="https://instagram.com/chamily_th?igshid=YmMyMTA2M2Y=" class="fab fa-instagram media_btn"></a>
+                            <a href="https://www.tiktok.com/@chamily_th?_t=8bntwvY6JWb&_r=1" class="fab fa-tiktok media_btn"></a>
+                            <a href="mailto: chamilyth@gmail.com" class="fab fa-google media_btn"></a>
+                            <a href="https://www.youtube.com/channel/UCr-e1cO5ShlsIzzn7AWLV8g" class="fab fa-youtube media_btn"></a>
                         </div>
                     </div>
-                    <blockquote class="twitter-tweet" data-conversation="none" align="center" data-link-color="#f00" lang="en">
-                        <a href="https://twitter.com/Real_CSS_Tricks"></a><a href="http://t.co/19v3xxALrl"></a>”</p>&mdash; <a href="https://twitter.com/Chamily_TH/status/1675006227896750081?t=MRaeVIBhQi2uQhJph0l1ow"></a>
-                    </blockquote>
                 </div>
+                <blockquote class="twitter-tweet" data-conversation="none" align="center" data-link-color="#f00" lang="en">
+                    <a href="https://twitter.com/Real_CSS_Tricks"></a><a href="http://t.co/19v3xxALrl"></a>”</p>&mdash; <a href="https://twitter.com/Chamily_TH/status/1675006227896750081?t=MRaeVIBhQi2uQhJph0l1ow"></a>
+                </blockquote>
             </div>
         </div>
     </div>
+</div>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Flowers For You</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="text-align: -webkit-center;">
+                <div class="table-responsive">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="flowers/carnation.jpg" class="card-img-top">
+                                    <div class="card-body" style="text-align: center;">
+                                        <a href="https://chamily.net/flowersforyou/january.php" target="_blank"><button type="button" class="btn btn-outline-info">January</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="flowers/daffodil.jpg" class="card-img-top">
+                                    <div class="card-body" style="text-align: center;">
+                                        <a href="https://chamily.net/flowersforyou/february.php" target="_blank"><button type="button" class="btn btn-outline-info">February</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="flowers/daisy.jpg" class="card-img-top">
+                                    <div class="card-body" style="text-align: center;">
+                                        <a href="https://chamily.net/flowersforyou/march.php" target="_blank"><button type="button" class="btn btn-outline-info">March</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="flowers/violet.jpg" class="card-img-top">
+                                    <div class="card-body" style="text-align: center;">
+                                        <a href="https://chamily.net/flowersforyou/april.php" target="_blank"><button type="button" class="btn btn-outline-info">April</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="flowers/rose.jpg" class="card-img-top">
+                                    <div class="card-body" style="text-align: center;">
+                                        <a href="https://chamily.net/flowersforyou/may.php" target="_blank"><button type="button" class="btn btn-outline-info">May</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="flowers/Delphinium.jpg" class="card-img-top">
+                                    <div class="card-body" style="text-align: center;">
+                                        <a href="https://chamily.net/flowersforyou/june.php" target="_blank"><button type="button" class="btn btn-outline-info">June</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="flowers/Aster.jpg" class="card-img-top">
+                                    <div class="card-body" style="text-align: center;">
+                                        <a href="https://chamily.net/flowersforyou/july.php" target="_blank"><button type="button" class="btn btn-outline-info">July</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="flowers/lily.jpg" class="card-img-top">
+                                    <div class="card-body" style="text-align: center;">
+                                        <a href="https://chamily.net/flowersforyou/august.php" target="_blank"><button type="button" class="btn btn-outline-info">August</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="flowers/Chrysanthemum.jpg" class="card-img-top">
+                                    <div class="card-body" style="text-align: center;">
+                                        <a href="https://chamily.net/flowersforyou/september.php" target="_blank"><button type="button" class="btn btn-outline-info">September</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="flowers/sunflower.jpg" class="card-img-top">
+                                    <div class="card-body" style="text-align: center;">
+                                        <a href="https://chamily.net/flowersforyou/october.php" target="_blank"><button type="button" class="btn btn-outline-info">October</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="flowers/tulip.jpg" class="card-img-top">
+                                    <div class="card-body" style="text-align: center;">
+                                        <a href="https://chamily.net/flowersforyou/november.php" target="_blank"><button type="button" class="btn btn-outline-info">November</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="flowers/dandilion.jpg" class="card-img-top">
+                                    <div class="card-body" style="text-align: center;">
+                                        <a href="https://chamily.net/flowersforyou/december.php" target="_blank"><button type="button" class="btn btn-outline-info">December</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+            </div> -->
+        </div>
+    </div>
+</div>
 @endsection
 <!--
   <!DOCTYPE html>

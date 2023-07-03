@@ -593,3 +593,7 @@ blockquote.twitter-tweet a[href^="https://twitter.com"] {
   font-size: 18px;
 }
 /* ====================================================================================== */
+.table-responsive {
+  max-height: 300px;
+  overflow: scroll;
+}
