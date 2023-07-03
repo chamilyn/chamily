@@ -75,6 +75,10 @@ Route::get('/test/random', function () {
     return view('random_number.random_new');
 });
 
+Route::get('/test/drawing', function () {
+    return view('drawing.drawing');
+});
+
 Route::get('/about', function () {
     return view('about.about');
 });
