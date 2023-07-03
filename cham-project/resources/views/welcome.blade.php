@@ -66,7 +66,7 @@
                 <div class="table-responsive">
                     <div class="container">
                         <div class="row">
-                            <div class="col mb-3">
+                            <div class="mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/carnation.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
@@ -74,7 +74,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col mb-3">
+                            <div class="mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/daffodil.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
@@ -83,9 +83,9 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
+
                         <div class="row">
-                            <div class="col mb-3">
+                            <div class="mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/daisy.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col mb-3">
+                            <div class="mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/violet.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
@@ -102,9 +102,9 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
+
                         <div class="row">
-                            <div class="col mb-3">
+                            <div class="mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/rose.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
@@ -112,7 +112,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col mb-3">
+                            <div class="mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/Delphinium.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
@@ -121,9 +121,9 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
+
                         <div class="row">
-                            <div class="col mb-3">
+                            <div class="mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/Aster.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
@@ -131,7 +131,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col mb-3">
+                            <div class="mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/lily.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
@@ -140,9 +140,9 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
+
                         <div class="row">
-                            <div class="col mb-3">
+                            <div class="mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/Chrysanthemum.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
@@ -150,7 +150,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col mb-3">
+                            <div class="mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/sunflower.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
@@ -159,9 +159,9 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
+                        
                         <div class="row">
-                            <div class="col mb-3">
+                            <div class="mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/tulip.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
@@ -169,7 +169,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col mb-3">
+                            <div class="mb-3">
                                 <div class="card" style="width: 10rem;">
                                     <img src="flowers/dandilion.jpg" class="card-img-top">
                                     <div class="card-body" style="text-align: center;">
