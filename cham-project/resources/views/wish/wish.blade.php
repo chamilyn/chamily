@@ -2,6 +2,11 @@
 @section('assets')
 <link rel="stylesheet" href="/frontend/stylewish.css?v={{ time() }}">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<style>
+    .font-size-ipad {
+        font-size: 34.5px !important;
+    }
+</style>
 @endsection
 @section('content')
 
@@ -9,11 +14,11 @@
         <div class="container mt-4 mb-4 d-flex justify-content-center">
             <h1>
                 <b>
-                    <font color="#AD464C">Make</font>
-                    <font color="#3D5A48"> A </font>
-                    <font color="#315468">Wish</font>
+                    <font color="#41483C">Make</font>
+                    <font color="#D5A84E"> A </font>
+                    <font color="#1E5786">Wish</font>
                 </b>
-                <i class="fa fa-star" style="color: #3D5A48;"></i>
+                <i class="fa fa-star" style="color: #FDD277;"></i>
             </h1>
         </div>
         
@@ -25,10 +30,10 @@
         <!--The parent container, image and container for text (to place over the image)-->
         <div class="mainContainer" id='mainContainer'>
             <!--The default image. You can select a different image too.-->
-            <img src="img_wish/merry-christmas.jpg" id="myimage" alt=""/>
+            <img src="img_wish/tanabata.jpg" id="myimage" alt=""/>
                     
             <!--The text, which is also draggable.-->
-            <div id='theText' onmousedown='this.style.border = "dashed 2px #fabd4a";'>Sample Text</div>
+            <div id='theText' onmousedown='this.style.border = "dashed 2px #1E5786";'>Sample Text</div>
         </div>
 
         <!--Button to save the image with the text.-->
@@ -42,14 +47,18 @@
 @section('scripts')
 <script>
     function is_mobile() {
-        let isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
-  
-            if (isMobile) {
+        let isMobile = /iPhone|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+        let isIpad = (/Macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints && navigator.maxTouchPoints > 1) 
+        || (/iPad/i.test(navigator.userAgent));
+            if (isMobile || isIpad) {
                 $('.mobile').show();
+                if (isIpad) {
+                    $("#theText").addClass("font-size-ipad");
+                }
             } else {
                 $('.pc').show();
             }
-        }
+    }
 // Make the text element draggable.
 $(document).ready(function() {
     is_mobile();
@@ -109,9 +118,9 @@ let saveImageWithText = () => {
         let right = textContainer.getBoundingClientRect().right;
         let top = parseInt(window.getComputedStyle(textContainer).top, 0);
         let center = textContainer.getBoundingClientRect().width / 2;
-        //ปรับตำแหน่ง
-        let paddingTop = '400';
-        let paddingLeft = '200';
+        //ปรับตำแหน่ง (อยากให้ไปด้านไหนเพิ่มอีกด้านเช่น อยากให้เถิบไปขวาก็ใส่ซ้ายเยอะๆ อยากให้ไปซ้ายใส่ขวาเยอะๆ ด้านบนก็ตรงตัวเพิ่มลดเอา)
+        let paddingTop = '430';
+        let paddingLeft = '620';
         let paddingRight = '250';
 
         // Get text alignement, colour and font of the text.
@@ -120,7 +129,8 @@ let saveImageWithText = () => {
         let fnt = window.getComputedStyle(textContainer).font;
 
         // Assign text properties to the context.
-        ctx.font = fnt;
+        // ctx.font = fnt;
+        ctx.font = "52px Anuphan, san-serif";
         ctx.fillStyle = color;
         ctx.textAlign = txtAlign;
 
@@ -148,8 +158,8 @@ let saveImageWithText = () => {
                 .replace('<br>', '')
                 .replace(';', ''),
                 x,
-                parseInt(paddingTop, 10) + parseInt(top, 10) + 10 + (i * 55));
-            // 55 ปรับระยะห่างบรรทัดในรูปภาพ
+                parseInt(paddingTop, 10) + parseInt(top, 10) + 10 + (i * 66)); // change from65 to 66
+            // 55 ปรับระยะห่างบรรทัดในรูปภาพ 
         }
     }
 
@@ -164,10 +174,15 @@ let saveImageWithText = () => {
 }
 </script>
 
-
-<!-- Note
-- อยากเปลี่ยนสีตัวอักษรคำที่จะใส่บนภาพให้เปลี่ยนที่ frontend/stylewish.css | #theText color
-- อยากเปลี่ยนขนาดตัวอักษรคำที่จะใส่บนภาพให้เปลี่ยนที่ frontend/stylewish.css | #theText font-size
+{{-- New Note
+        - ในกรณีได้รูปใหม่มา -
+-ปรับหน้าจอ-
+- เอารูปไปวางใน path public/img_wish
+- ปรับสีตรง Make A Wish และ Sample Text ตามใจชอบ
+- ปรับตำแหน่ง สีตัวอักษรและขนาดตัวหนังสือได้ที่ public/frontend/stylewish.css #theText
+-ปรับเมื่อบันทึกภาพ-
+- ปรับขนาดตัวอักษรที่จะใส่บนภาพ
 - ปรับตำแหน่งที่จะใส่บนภาพให้ปรับตรง script | paddingTop paddingLeft paddingRight
-- เพิ่มลดปรับระยะห่างบรรทัดที่จะใส่บนภาพ script | (55) parseInt(paddingTop, 10) + parseInt(top, 10) + 10 + (i * 55); -->
+- เพิ่มลดปรับระยะห่างบรรทัดที่จะใส่บนภาพ script | (55) parseInt(paddingTop, 10) + parseInt(top, 10) + 10 + (i * 55);
+--}}
 @endsection

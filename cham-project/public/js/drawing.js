@@ -108,6 +108,7 @@ const startDraw = (e) => {
         prevMouseX = e.offsetX;
         prevMouseY = e.offsetY;
       } else if (e.type === 'touchstart') {
+        e.preventDefault();
         const touch = e.touches[0];
         prevMouseX = touch.pageX - canvas.offsetLeft;
         prevMouseY = touch.pageY - canvas.offsetTop;
@@ -130,6 +131,7 @@ const drawing = (e) => {
         if (e.type === 'mousemove') {
             ctx.lineTo(e.offsetX, e.offsetY);
           } else if (e.type === 'touchmove') {
+            e.preventDefault();
             const touch = e.touches[0];
             ctx.lineTo(touch.pageX - canvas.offsetLeft, touch.pageY - canvas.offsetTop);
           }
@@ -146,6 +148,7 @@ function stopDrawing(e) {
     isDrawing = false;
   
     if (e.type === 'mouseup' || e.type === 'touchend') {
+      e.preventDefault();
         // Save the current state to drawingHistory
         const snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
         drawingHistory.push(snapshot);
