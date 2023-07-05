@@ -100,7 +100,7 @@
                         <a class="nav-link" href="/schedule">Schedule</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/random">Random Number</a>
+                        <a class="nav-link" href="/random">Random</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/feedbacks">Feedback</a>
