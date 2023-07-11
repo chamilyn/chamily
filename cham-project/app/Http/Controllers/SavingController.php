@@ -258,7 +258,22 @@ class SavingController extends Controller
         ->orderBy('total_amount', 'DESC')
         ->get();
 
-        return view('admin.saving.lineitem.list', compact('saving', 'saving_lineitems', 'count', 'total_amount', 'current_month_year', 'top_spenders', 'saving_lineitem_tops'));
+        $sum_this_month = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount')
+        ->whereYear("transfer_date", $current_year)
+        ->whereMonth("transfer_date", $current_month)
+        ->orderBy('total_amount', 'DESC')
+        ->first();
+
+        $transfer_ids = App\SavingLineitem::whereYear("transfer_date", $current_year)
+        ->whereMonth("transfer_date", $current_month)
+        ->pluck('transfer_id');
+
+        $user_inactives = App\User::where('saving_code', '<>', null)
+        ->whereNotIn('id', $transfer_ids)
+        ->orderBy('saving_code', 'ASC')
+        ->get();
+
+        return view('admin.saving.lineitem.list', compact('saving', 'saving_lineitems', 'count', 'total_amount', 'current_month_year', 'top_spenders', 'saving_lineitem_tops', 'sum_this_month', 'user_inactives'));
     }
 
     /**

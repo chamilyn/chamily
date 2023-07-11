@@ -20,6 +20,56 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    การออมประจำเดือน กรกฏาคม 2566 </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>ยอดออมทั้งหมด</th>
+                                            <th>ยอดที่ต้องทบ (10%)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td><b>{{(isset($sum_this_month) && $sum_this_month->total_amount > 0 ? number_format($sum_this_month->total_amount,2) : '0.00')}}฿</b></td>
+                                            <td><b>{{(isset($sum_this_month) && $sum_this_month->total_amount > 0 ? number_format(($sum_this_month->total_amount/10),2) : '0.00')}}฿</b></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>รายชื่อผู้ที่ยังไม่ได้ทำการออม</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td>
+                                                @if(isset($user_inactives))
+                                                    @foreach($user_inactives as $user)
+                                                        <b>{{$user}},</b>
+                                                    @endforeach
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4 mt-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                     เงินทั้งหมดของกองทุน</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{(isset($total_amount) ? number_format($total_amount,2) : '0.00')}}฿</div>
                             </div>
