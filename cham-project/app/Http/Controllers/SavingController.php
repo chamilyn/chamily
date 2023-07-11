@@ -269,6 +269,7 @@ class SavingController extends Controller
         ->pluck('transfer_id');
 
         $user_inactives = App\User::where('saving_code', '<>', null)
+        ->where('saving_code', '<>', '000')
         ->whereNotIn('id', $transfer_ids)
         ->orderBy('saving_code', 'ASC')
         ->get();

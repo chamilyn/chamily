@@ -20,43 +20,12 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    การออมประจำเดือน กรกฏาคม 2566 </div>
+                                    เงินทั้งหมดของกองทุน</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{(isset($total_amount) ? number_format($total_amount,2) : '0.00')}}฿</div>
                             </div>
-
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th>ยอดออมทั้งหมด</th>
-                                            <th>ยอดที่ต้องทบ (10%)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="text-center">
-                                            <td><b>{{(isset($sum_this_month) && $sum_this_month->total_amount > 0 ? number_format($sum_this_month->total_amount,2) : '0.00')}}฿</b></td>
-                                            <td><b>{{(isset($sum_this_month) && $sum_this_month->total_amount > 0 ? number_format(($sum_this_month->total_amount/10),2) : '0.00')}}฿</b></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <table class="table">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th>รายชื่อผู้ที่ยังไม่ได้ทำการออม</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="text-center">
-                                            <td>
-                                                @if(isset($user_inactives))
-                                                    @foreach($user_inactives as $user)
-                                                        <b>{{$user}},</b>
-                                                    @endforeach
-                                                @endif
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="col-auto">
+                                <!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+                                <i class="fas fa-trophy fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -65,17 +34,37 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4 mt-4">
-                <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card border-left-info shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    เงินทั้งหมดของกองทุน</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{(isset($total_amount) ? number_format($total_amount,2) : '0.00')}}฿</div>
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">ยอดรวมการออมของสมาชิกทั้งหมด
+                                </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>ชื่อ</th>
+                                            <th>ยอดรวม</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- เรียงตามยอดออมสูงสุด -->
+                                        @php
+                                        $inx = 1;
+                                        $changed_amount = 0.00;
+                                        @endphp
+                                        @if (isset($saving_lineitem_tops))
+                                            @foreach ($saving_lineitem_tops as $saving_lineitem)
+                                                <tr class="text-center">
+                                                    <td>{{$saving_lineitem->saving_code}}</td>
+                                                    <td>{{($saving_lineitem->total_amount ? number_format($saving_lineitem->total_amount,2) : '0.00')}}฿</td>
+                                                </tr>
+                                            @endforeach
+                                        @endif
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="col-auto">
-                                <!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
-                                <i class="fas fa-trophy fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -147,40 +136,50 @@
                     </div>
                 </div>
             </div>
-
+                                                    
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4 mt-4">
-                <div class="card border-left-info shadow h-100 py-2">
+                <div class="card border-left-primary shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">ยอดรวมการออมของสมาชิกทั้งหมด
-                                </div>
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    การออมประจำเดือน {{$current_month_year}}</div>
+                            </div>
+
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr class="text-center">
-                                            <th>ชื่อ</th>
-                                            <th>ยอดรวม</th>
+                                            <th>ยอดออมทั้งหมด</th>
+                                            <th>ยอดที่ต้องทบ (10%)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- เรียงตามยอดออมสูงสุด -->
-                                        @php
-                                        $inx = 1;
-                                        $changed_amount = 0.00;
-                                        @endphp
-                                        @if (isset($saving_lineitem_tops))
-                                            @foreach ($saving_lineitem_tops as $saving_lineitem)
-                                                <tr class="text-center">
-                                                    <td>{{$saving_lineitem->saving_code}}</td>
-                                                    <td>{{($saving_lineitem->total_amount ? number_format($saving_lineitem->total_amount,2) : '0.00')}}฿</td>
-                                                </tr>
-                                            @endforeach
-                                        @endif
+                                        <tr class="text-center">
+                                            <td><b>{{(isset($sum_this_month) && $sum_this_month->total_amount > 0 ? number_format($sum_this_month->total_amount,2) : '0.00')}}฿</b></td>
+                                            <td><b>{{(isset($sum_this_month) && $sum_this_month->total_amount > 0 ? number_format(($sum_this_month->total_amount/10),2) : '0.00')}}฿</b></td>
+                                        </tr>
                                     </tbody>
                                 </table>
-                            </div>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>รายชื่อผู้ที่ยังไม่ได้ทำการออม</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td>
+                                                @if(isset($user_inactives))
+                                                    @php $inx_user = 0; @endphp
+                                                    @foreach($user_inactives as $user)<b>{{($inx_user > 0 ? ', ' : '')}}{{$user->saving_code}}</b>@php $inx_user++; @endphp@endforeach
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
