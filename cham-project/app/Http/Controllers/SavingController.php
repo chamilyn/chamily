@@ -259,12 +259,14 @@ class SavingController extends Controller
         ->get();
 
         $sum_this_month = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount')
+        ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
         ->whereYear("transfer_date", $current_year)
         ->whereMonth("transfer_date", $current_month)
         ->orderBy('total_amount', 'DESC')
         ->first();
 
         $transfer_ids = App\SavingLineitem::whereYear("transfer_date", $current_year)
+        ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
         ->whereMonth("transfer_date", $current_month)
         ->pluck('transfer_id');
 
