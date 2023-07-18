@@ -1,0 +1,33 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+body {
+    font-family: 'Chakra Petch', sans-serif;
+    background-image: url("../img_background/bg_janken_tournament2023.jpg");
+    background-size: 100% 100%;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #003366;
+    color: #fff;
+    border: 3px solid #003366;
+}
+
+.nav-tabs .nav-link:hover {
+    border: 3px solid #003366;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #003366;
+}
+
+.table-responsive {
+    max-height: 300px;
+    overflow: scroll;
+}
+/* 9400d3 */
