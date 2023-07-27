@@ -2,7 +2,7 @@
 @section('assets')
 <link rel="stylesheet" href="/frontend/stylejanken.css?v={{ time() }}">
 <style>
-    .tab-content.landscape {
+    .landscape {
       transform: rotate(90deg);
       transform-origin: 50% 50%;
       width: 100vh;
