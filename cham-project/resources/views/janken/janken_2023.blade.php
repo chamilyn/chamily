@@ -2,7 +2,15 @@
 @section('assets')
 <link rel="stylesheet" href="/frontend/stylejanken.css?v={{ time() }}">
 <style>
-    .landscape {
+    #tab-content {
+      width: 100%;
+      height: 100%;
+      background-color: lightgray;
+      display: none; /* Initially, the div is hidden */
+    }
+
+    /* Landscape orientation styles */
+    #tab-content.landscape {
       transform: rotate(90deg);
       transform-origin: 50% 50%;
       width: 100vh;
@@ -52,7 +60,7 @@
                         <a class="nav-link" data-bs-toggle="tab" href="#senbatsu">Senbatsu</a>
                     </li>
                 </ul>
-                <div class="tab-content">
+                <div id="tab-content">
                     <div class="tab-pane active" id="round1">
                         <div class="row border g-0 rounded shadow-sm">
                             <div class="col p-4">
@@ -389,7 +397,7 @@
 <script>
     // Function to enter fullscreen mode for the div
     function enterFullscreen() {
-      const fullscreenDiv = $('.tab-content')[0];
+      const fullscreenDiv = $('#tab-content')[0];
       if (fullscreenDiv.requestFullscreen) {
         fullscreenDiv.requestFullscreen();
       } else if (fullscreenDiv.mozRequestFullScreen) {
