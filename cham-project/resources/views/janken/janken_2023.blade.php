@@ -1,6 +1,17 @@
 @extends('layouts.client')
 @section('assets')
 <link rel="stylesheet" href="/frontend/stylejanken.css?v={{ time() }}">
+<style>
+    .tab-content.landscape {
+      transform: rotate(90deg);
+      transform-origin: 50% 50%;
+      width: 100vh;
+      height: 100vw;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+    }
+  </style>
 @endsection
 @section('content')
     <div class="container mt-4">
