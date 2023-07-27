@@ -62,6 +62,7 @@ Route::group(['prefix' => 'kongtun'], function()
 Route::get('/', 'IndexController@index')->name('welcome');
 Route::get('/flowersforyou/{month}', 'OldProjectController@showFlower');
 Route::get('/wish', 'OldProjectController@wish');
+Route::get('/janken/2023', 'OldProjectController@janken2023');
 Route::get('/schedule', 'EventController@clientIndex');
 Route::get('/get_event_schedules', 'EventController@getEventSchedules');
 

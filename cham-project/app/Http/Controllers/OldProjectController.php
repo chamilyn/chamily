@@ -110,4 +110,11 @@ class OldProjectController extends Controller
     {
         return view('wish.wish');
     }
+
+    public function janken2023()
+    {
+        //ORDER BY matchs ASC
+        //sen matchs IN ('43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','73') ORDER BY matchs ASC"
+        return view('janken.janken_2023');
+    }
 }
