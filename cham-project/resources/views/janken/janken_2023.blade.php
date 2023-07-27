@@ -372,4 +372,26 @@
             </div>
         </div>
     </div>
+    <button id="fullscreenButton">Enter Fullscreen</button>
+@endsection
+@section('scripts')
+<script>
+    // Function to enter fullscreen mode for the div
+    function enterFullscreen() {
+      const fullscreenDiv = $('.tab-content')[0];
+      if (fullscreenDiv.requestFullscreen) {
+        fullscreenDiv.requestFullscreen();
+      } else if (fullscreenDiv.mozRequestFullScreen) {
+        fullscreenDiv.mozRequestFullScreen();
+      } else if (fullscreenDiv.webkitRequestFullscreen) {
+        fullscreenDiv.webkitRequestFullscreen();
+      } else if (fullscreenDiv.msRequestFullscreen) {
+        fullscreenDiv.msRequestFullscreen();
+      }
+    }
+  
+    $(document).ready(function() {
+      $('#fullscreenButton').on('click', enterFullscreen);
+    });
+  </script>
 @endsection
