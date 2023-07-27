@@ -402,7 +402,10 @@
     }
   
     $(document).ready(function() {
-      $('#fullscreenButton').on('click', enterFullscreen);
+      $('#fullscreenButton').on('click', function() {
+            enterFullscreen();
+            $('.tab-content').addClass('landscape');
+        });
     });
   </script>
 @endsection
