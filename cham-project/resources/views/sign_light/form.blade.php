@@ -9,7 +9,7 @@
                 <h1 style="color: #FFF;"><b>ป้ายไฟ</b></h1>
             </div>
             <div style="text-align: -webkit-center; color:#FFF;"><hr width="95%"></div>
-            <form action="/ledlight" method="POST" name="form1" enctype="multipart/form-data" class="form-inline">
+            <form id="sign_light_form" action="/ledlight" method="POST" name="form1" enctype="multipart/form-data" class="form-inline">
                 {!! csrf_field() !!}
                 <div class="mb-3">
                     <label for="text_sign" class="form-label"><font color="white">ข้อความที่อยากแสดงบนป้ายไฟ</font>&nbsp;<font color="red">(50 ตัวอักษร)</font></label>
@@ -135,4 +135,27 @@
         </div>
     </div>
 </div>
+@endsection
+@section('scripts')
+<script>
+    $(document).ready(function() {
+      $("#sign_light_form").submit(function(event) {
+        event.preventDefault(); // Prevent the form from submitting by default
+    
+        // Get the input value
+        var inputValue = $("#text_sign").val().trim();
+    
+        // Check if the input is empty
+        if (inputValue === "") {
+          // Display an alert message if the input is empty
+          alert("กรุณากรอกข้อความ.");
+        } else {
+          // Perform any additional validation or actions here if needed
+    
+          // Submit the form programmatically
+          $('#sign_light_form')[0].submit();
+        }
+      });
+    });
+    </script>
 @endsection
