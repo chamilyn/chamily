@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@300&display=swap');
+
+::-webkit-scrollbar { /* make scrollbar transparent */
+    width: 0px;
+    background: transparent;
+}
+
+* {
+    font-family: 'Anuphan', sans-serif;
+}
+
+body {
+    background-color: #000;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.neonTextRed {
+    font-size: 18rem;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #fe0000,
+        0 0 82px #fe0000,
+        0 0 92px #fe0000,
+        0 0 102px #fe0000,
+        0 0 151px #fe0000;
+}
+
+.neonTextGreen {
+    font-size: 18rem;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #03cc02,
+        0 0 82px #03cc02,
+        0 0 92px #03cc02,
+        0 0 102px #03cc02,
+        0 0 151px #03cc02;
+}
+
+.neonTextBlue {
+    font-size: 18rem;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #3300fd,
+        0 0 82px #3300fd,
+        0 0 92px #3300fd,
+        0 0 102px #3300fd,
+        0 0 151px #3300fd;
+}
+
+.neonTextPink {
+    font-size: 18rem;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #fd67fe,
+        0 0 82px #fd67fe,
+        0 0 92px #fd67fe,
+        0 0 102px #fd67fe,
+        0 0 151px #fd67fe;
+}
+
+.neonTextWhite {
+    font-size: 18rem;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #ffffff,
+        0 0 82px #ffffff,
+        0 0 92px #ffffff,
+        0 0 102px #ffffff,
+        0 0 151px #ffffff;
+}
+
+.neonTextYellow {
+    font-size: 18rem;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #fffc0b,
+        0 0 82px #fffc0b,
+        0 0 92px #fffc0b,
+        0 0 102px #fffc0b,
+        0 0 151px #fffc0b;
+}
+
+.neonTextLightBlue {
+    font-size: 18rem;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #4495eb,
+        0 0 82px #4495eb,
+        0 0 92px #4495eb,
+        0 0 102px #4495eb,
+        0 0 151px #4495eb;
+}
+
+.neonTextLightYellow {
+    font-size: 18rem;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #f8e181,
+        0 0 82px #f8e181,
+        0 0 92px #f8e181,
+        0 0 102px #f8e181,
+        0 0 151px #f8e181;
+}
+
+.neonTextPurple {
+    font-size: 18rem;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #9b01fc,
+        0 0 82px #9b01fc,
+        0 0 92px #9b01fc,
+        0 0 102px #9b01fc,
+        0 0 151px #9b01fc;
+}
+
+.neonTextOrange {
+    font-size: 18rem;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #ff6501,
+        0 0 82px #ff6501,
+        0 0 92px #ff6501,
+        0 0 102px #ff6501,
+        0 0 151px #ff6501;
+}
+
+.neonTextGreenYellow {
+    font-size: 18rem;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #ccfe66,
+        0 0 82px #ccfe66,
+        0 0 92px #ccfe66,
+        0 0 102px #ccfe66,
+        0 0 151px #ccfe66;
+}
+
+.neonTextGreenMint {
+    font-size: 18rem;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0dfacb,
+        0 0 82px #0dfacb,
+        0 0 92px #0dfacb,
+        0 0 102px #0dfacb,
+        0 0 151px #0dfacb;
+}

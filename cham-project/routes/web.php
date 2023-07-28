@@ -72,6 +72,22 @@ Route::post('/feedbacks', 'FeedbackController@store');
 Route::get('/random', function () {
     return view('random_number.random');
 });
+Route::get('/signlight', function () {
+    $text = request()->query('text_sign');
+    $color = request()->query('text_color');
+    if (!$text && !$color) {
+        return view('sign_light.form');
+    } else {
+        return view('sign_light.show', compact("text", "color"));
+    }
+    
+});
+Route::post('/signlight', function () {
+    $text = request()->text_sign;
+    $color = request()->text_color;
+    return view('sign_light.show', compact("text", "color"));
+    
+});
 Route::get('/test/random', function () {
     return view('random_number.random_new');
 });
