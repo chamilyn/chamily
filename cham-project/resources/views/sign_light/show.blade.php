@@ -25,8 +25,11 @@
     </nav>
 
     <body>
-        <div class="mt-4 mb-4">
+        <!--div class="mt-4 mb-4">
             <marquee class="{{isset($color) ? $color : ''}}" scrollamount="25">{{isset($text) ? $text : '-'}}</marquee>
+        </div-->
+        <div class="mt-4 mb-4 {{isset($color) ? $color : ''}} text-center" style="font-size: 10rem !important;">
+           {{$text}}
         </div>
     </body>
 </html>
