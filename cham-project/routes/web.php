@@ -72,7 +72,7 @@ Route::post('/feedbacks', 'FeedbackController@store');
 Route::get('/random', function () {
     return view('random_number.random');
 });
-Route::get('/signlight', function () {
+Route::get('/ledlight', function () {
     $text = request()->query('text_sign');
     $color = request()->query('text_color');
     if (!$text && !$color) {
@@ -82,7 +82,7 @@ Route::get('/signlight', function () {
     }
     
 });
-Route::post('/signlight', function () {
+Route::post('/ledlight', function () {
     $text = request()->text_sign;
     $color = request()->text_color;
     return view('sign_light.show', compact("text", "color"));

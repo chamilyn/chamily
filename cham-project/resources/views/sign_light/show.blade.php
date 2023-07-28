@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
         <div class="container">
-            <a class="navbar-brand" href="/signlight">
+            <a class="navbar-brand" href="/ledlight">
                 <i class="fa fa-chevron-left" style="color: #FFF;"></i>
             </a>
 

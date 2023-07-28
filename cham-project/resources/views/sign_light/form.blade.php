@@ -9,7 +9,7 @@
                 <h1 style="color: #FFF;"><b>ป้ายไฟ</b></h1>
             </div>
             <div style="text-align: -webkit-center; color:#FFF;"><hr width="95%"></div>
-            <form action="/signlight" method="POST" name="form1" enctype="multipart/form-data" class="form-inline">
+            <form action="/ledlight" method="POST" name="form1" enctype="multipart/form-data" class="form-inline">
                 {!! csrf_field() !!}
                 <div class="mb-3">
                     <label for="text_sign" class="form-label"><font color="white">ข้อความที่อยากแสดงบนป้ายไฟ</font>&nbsp;<font color="red">(50 ตัวอักษร)</font></label>
