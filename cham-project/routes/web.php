@@ -85,7 +85,9 @@ Route::get('/ledlight', function () {
 Route::post('/ledlight', function () {
     $text = request()->text_sign;
     $color = request()->text_color;
-    return view('sign_light.show', compact("text", "color"));
+    $size = request()->text_size;
+    $is_move = request()->text_move_val;
+    return view('sign_light.show', compact("text", "color", "size", "is_move"));
     
 });
 Route::get('/test/random', function () {

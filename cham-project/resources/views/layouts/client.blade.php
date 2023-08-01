@@ -106,6 +106,9 @@
                         <a class="nav-link" href="/random">Random</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/ledlight">Led Light</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/feedbacks">Feedback</a>
                     </li>
                     <li class="nav-item">

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="shortcut icon" href="/img_logo/Chamily_logo_color.png"/>
+    <link rel="shortcut icon" href="img_logo/Chamily_logo_color.png"/>
     <head>
         <title>Chamily</title>
         <meta charset="utf-8">
@@ -17,19 +17,18 @@
             <a class="navbar-brand" href="/ledlight">
                 <i class="fa fa-chevron-left" style="color: #FFF;"></i>
             </a>
-
-            <div class="ms-auto">
-                <img src="/img_logo/Chamily_logo_white.png" width="50" height="50"></img>
-            </div>
         </div>
     </nav>
 
     <body>
-        <!--div class="mt-4 mb-4">
-            <marquee class="{{isset($color) ? $color : ''}}" scrollamount="25">{{isset($text) ? $text : '-'}}</marquee>
-        </div-->
-        <div class="mt-4 mb-4 {{isset($color) ? $color : ''}} text-center" style="font-size: 10rem !important;">
-           {{$text}}
+        <div class="mt-4 mb-4">
+            @if(isset($is_move) && $is_move == "move")
+                <marquee class="{{isset($color) ? $color : ''}}" style="font-size: {{isset($size) ? $size : '9'}}rem !important;" scrollamount="20">{{isset($text) ? $text : '-'}}</marquee>
+            @else
+                <div class="text-center w-100 {{isset($color) ? $color : ''}}" style="font-size: {{isset($size) ? $size : '9'}}rem !important;white-space: nowrap;">
+                    {{isset($text) ? $text : '-'}}
+                </div>
+            @endif
         </div>
     </body>
 </html>
