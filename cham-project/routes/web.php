@@ -101,3 +101,7 @@ Route::get('/test/drawing', function () {
 Route::get('/about', function () {
     return view('about.about');
 });
+
+Route::get('/test/champoo_birthday_2023', function () {
+    return view('birthday_project.2023.show');
+});
