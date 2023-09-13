@@ -40,6 +40,27 @@ class WishingController extends Controller
         //
     }
 
+    public function storeLineitem(Request $request)
+    {
+        DB::beginTransaction();
+        $wishing_lineitem = new App\WishingLineitem;
+        try {
+            if (!$request->wishing_id) {
+                return false;
+            }
+            $wishing_lineitem->wishing_id = $request->wishing_id;
+            $wishing_lineitem->wish = $request->wish;
+            $wishing_lineitem->save();
+           
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            return false;
+        }
+
+        return true;
+    }
+
     /**
      * Display the specified resource.
      *
