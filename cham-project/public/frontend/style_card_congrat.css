@@ -5,14 +5,9 @@
     width: 0px;
     background: transparent;
 }
-
-* {
-    font-family: 'Itim', cursive;
-}
-
-/* * {
+ * {
     font-family: 'Anuphan', sans-serif;
-} */
+}
 
 body {
     background: rgb(253,249,220);
