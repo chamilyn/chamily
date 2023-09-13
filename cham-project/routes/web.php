@@ -105,3 +105,5 @@ Route::get('/about', function () {
 Route::get('/test/champoo_birthday_2023', function () {
     return view('birthday_project.2023.show');
 });
+
+Route::resource('/wishing', 'WishingController');
