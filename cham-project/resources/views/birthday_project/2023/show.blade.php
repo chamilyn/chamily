@@ -88,7 +88,7 @@
     <div class="panel" data-color="violet">
       <div>
         <h1>Image by fans</h1>
-          <div class="container">
+          <div class="text-center">
               <img class="mySlides w3-animate-fading" src="/img_champooart/champybara.png" style="max-width: 50%;"></img>
               <img class="mySlides w3-animate-fading" src="/img_champooart/champoo_dead_sheep.png" style="max-width: 50%;"></img>
           </div>
