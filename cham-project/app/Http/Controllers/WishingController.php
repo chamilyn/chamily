@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App;
+use Auth;
+use DB;
+use DateTime;
 class WishingController extends Controller
 {
     /**
@@ -45,7 +48,14 @@ class WishingController extends Controller
      */
     public function show($id)
     {
-        return view('wishing.lip_gloss.add');
+        $wishing_id = null;
+        $wishing_name = 'none';
+        $wishing = App\Wishing::where('name', $id);
+        if  ($wishing) {
+            $wishing_id = $wishing->id;
+            $wishing_name = $wishing->name;
+        }
+        return view('wishing.'.$wishing_name.'.add', compact('wishing_id'));
     }
 
     /**

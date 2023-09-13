@@ -5,13 +5,14 @@
 @endsection
 @section('content')
 <div class="container mt-4 mb-4 d-flex justify-content-center">
+    @if(isset($wishing_id) && $wishing_id)
     <div class="row" style="width: 90%;">
         <div class="text-center">
             <h2 style="color: #b68068;"><b>Congratulations!</b></h2>
         </div>
         <div style="text-align: -webkit-center; color:#b68068;"><hr width="95%"></div>
             {!! csrf_field() !!}
-            <input type="hidden" id="wishing_id" name="wishing_id" value="" />
+            <input type="hidden" id="wishing_id" name="wishing_id" value="{{(isset($wishing_id) ? $wishing_id : null)}}" />
             <div class="mb-3">
                 <label for="text_wish" class="form-label"><font color="#b68068">ร่วมแสดงความยินดี</font>&nbsp;<font color="red">(100 ตัวอักษร)</font></label>
                 <textarea class="form-control" id="text_wish" name="text_wish" maxlength="100" autocomplete="off" row="5"></textarea>
@@ -22,6 +23,9 @@
                 <button type="button" id="send_btn" class="btn btn-success">ส่งข้อความ</button>
             </div>
     </div>
+    @else
+        ไม่พบแคมเปญ
+    @endif
 </div>
 <div id="modal01" class="w3-modal" onclick="this.style.display='none'" style="margin-top: 50px">
     <div class="w3-modal-content w3-animate-zoom"  style="width: 95% !important;text-align: center;background: none;">
