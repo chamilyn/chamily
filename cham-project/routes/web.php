@@ -107,4 +107,5 @@ Route::get('/test/champoo_birthday_2023', function () {
 });
 
 Route::resource('/writing', 'WishingController');
+Route::resource('/writing/{id}/champoo', 'WishingController@showChampoo');
 Route::post('/writing_save_lineitem', 'WishingController@storeLineitem');

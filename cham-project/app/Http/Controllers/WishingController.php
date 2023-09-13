@@ -80,6 +80,20 @@ class WishingController extends Controller
         return view('wishing.'.$wishing_name.'.add', compact('wishing_id'));
     }
 
+    public function showChampoo($id)
+    {
+        $wishing_id = null;
+        $wishing_name = 'lip_gloss';
+        $wishing = App\Wishing::where('name', $id)->first();
+        $wishing_lineitems = new App\WishingLineitem;
+        if  ($wishing) {
+            $wishing_id = $wishing->id;
+            $wishing_name = $wishing->name;
+            $wishing_lineitems = App\WishingLineitem::where('wishing_id', $wishing->id)->get();
+        }
+        return view('wishing.'.$wishing_name.'.show', compact('wishing_id', 'wishing_lineitems'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
