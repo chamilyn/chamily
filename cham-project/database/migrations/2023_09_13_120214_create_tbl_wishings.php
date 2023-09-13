@@ -30,6 +30,7 @@ class CreateTblWishings extends Migration
             $table->integer('wishing_id')->nullable();
             $table->string('name')->nullable();
             $table->text('wish')->nullable();
+            $table->integer('is_approved')->nullable();
             $table->integer('created_user_id')->nullable();
             $table->integer('updated_user_id')->nullable();
             $table->softDeletes();

@@ -10,19 +10,17 @@
             <h2 style="color: #b68068;"><b>Congratulations!</b></h2>
         </div>
         <div style="text-align: -webkit-center; color:#b68068;"><hr width="95%"></div>
-        <form action="/wishing" class="form-inline prevent_submit" enctype="multipart/form-data" method="post">
             {!! csrf_field() !!}
             <input type="hidden" id="wishing_id" name="wishing_id" value="" />
             <div class="mb-3">
-                <label for="text_sign" class="form-label"><font color="#b68068">ร่วมแสดงความยินดี</font>&nbsp;<font color="red">(100 ตัวอักษร)</font></label>
-                <textarea class="form-control" id="text_sign" name="text_sign" value="" maxlength="100" autocomplete="off" row="5"></textarea>
+                <label for="text_wish" class="form-label"><font color="#b68068">ร่วมแสดงความยินดี</font>&nbsp;<font color="red">(100 ตัวอักษร)</font></label>
+                <textarea class="form-control" id="text_wish" name="text_wish" maxlength="100" autocomplete="off" row="5"></textarea>
                 <!-- แปลง input ให้เป็น textarea -->
             </div>
 
             <div  style="text-align: -webkit-center;" class="mt-4">
-                <button type="button" id="send_btn" onclick="document.getElementById('modal01').style.display='block'" class="btn btn-success">ส่งข้อความ</button>
+                <button type="button" id="send_btn" class="btn btn-success">ส่งข้อความ</button>
             </div>
-        </form>
     </div>
 </div>
 <div id="modal01" class="w3-modal" onclick="this.style.display='none'" style="margin-top: 50px">
@@ -36,18 +34,15 @@
 @section('scripts')
 <script>
     $(document).ready(function() {
-        // Get the modal
-        var modal = $("#myModal");
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = $("#myImg");
-        var modalImg = $("#img01");
-        var captionText = $("#caption");
-
         $("#send_btn").on("click", function (evt) {
+            var modal = $("#modal01");
+            var text_wish = $("#text_wish").val().trim();
+            if (!text_wish) {
+                alert('กรุณากรอกข้อความ');
+                return false;
+            }
             modal.css("display", "block");
-            modalImg.attr("src", this.src);
-            captionText.html(this.alt);
+            $("#text_wish").val(null);
         });
 
         // Get the <span> element that closes the modal
