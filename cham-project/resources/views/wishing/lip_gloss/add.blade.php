@@ -11,7 +11,7 @@
             <h2 style="color: #b68068;"><b>Congratulations!</b></h2>
         </div>
         <div style="text-align: -webkit-center; color:#b68068;"><hr width="95%"></div>
-            {!! csrf_field() !!}
+            <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
             <input type="hidden" id="wishing_id" name="wishing_id" value="{{(isset($wishing_id) ? $wishing_id : null)}}" />
             <div class="mb-3">
                 <label for="text_wish" class="form-label"><font color="#b68068">ร่วมแสดงความยินดี</font>&nbsp;<font color="red">(100 ตัวอักษร)</font></label>
@@ -39,14 +39,30 @@
 <script>
     $(document).ready(function() {
         $("#send_btn").on("click", function (evt) {
+            
             var modal = $("#modal01");
             var text_wish = $("#text_wish").val().trim();
+            var wishing_id = $("#wishing_id").val();
             if (!text_wish) {
                 alert('กรุณากรอกข้อความ');
                 return false;
             }
-            modal.css("display", "block");
-            $("#text_wish").val(null);
+            if (confirm(`ยืนยันบันทึกข้อมูล?`)) {
+                $.ajax({
+                    url: "/writing_save_lineitem",
+                    method: "POST",
+                    data: {
+                        _token: $('#token').val(),
+                        wish: text_wish,
+                        wishing_id: wishing_id
+                    },
+                    success: function (results) {
+                        //
+                    },
+                });
+                modal.css("display", "block");
+                $("#text_wish").val(null);
+            }
         });
 
         // Get the <span> element that closes the modal
