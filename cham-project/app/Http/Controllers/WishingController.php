@@ -48,9 +48,10 @@ class WishingController extends Controller
      */
     public function show($id)
     {
+        
         $wishing_id = null;
         $wishing_name = 'none';
-        $wishing = App\Wishing::where('name', $id);
+        $wishing = App\Wishing::where('name', $id)->first();
         if  ($wishing) {
             $wishing_id = $wishing->id;
             $wishing_name = $wishing->name;
