@@ -50,7 +50,7 @@ class WishingController extends Controller
     {
         
         $wishing_id = null;
-        $wishing_name = 'none';
+        $wishing_name = 'lip_gloss';
         $wishing = App\Wishing::where('name', $id)->first();
         if  ($wishing) {
             $wishing_id = $wishing->id;
