@@ -29,7 +29,7 @@
     <div class="w3-modal-content w3-animate-zoom"  style="width: 95% !important;text-align: center;background: none;">
         <img id="img01" src="/img_champoo/congrat_lip_gloss.jpg" alt="Description" style="width: 100%">
         <br>
-        <p style="color: white;margin-top: 15px;">ปิด</p>
+        <p style="color: white;margin-top: 15px;font-size: 20px;">ปิด</p>
     </div>
 </div>
 @endsection
