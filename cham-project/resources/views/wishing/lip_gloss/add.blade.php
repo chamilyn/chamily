@@ -15,7 +15,7 @@
             <input type="hidden" id="wishing_id" name="wishing_id" value="" />
             <div class="mb-3">
                 <label for="text_sign" class="form-label"><font color="#b68068">ร่วมแสดงความยินดี</font>&nbsp;<font color="red">(100 ตัวอักษร)</font></label>
-                <input type="text" class="form-control" id="text_sign" name="text_sign" value="" maxlength="100" autocomplete="off"> 
+                <textarea class="form-control" id="text_sign" name="text_sign" value="" maxlength="100" autocomplete="off" row="5"></textarea>
                 <!-- แปลง input ให้เป็น textarea -->
             </div>
 
