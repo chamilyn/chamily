@@ -28,7 +28,8 @@
 <div id="modal01" class="w3-modal" onclick="this.style.display='none'" style="margin-top: 50px">
     <div class="w3-modal-content w3-animate-zoom"  style="width: 95% !important;text-align: center;background: none;">
         <img id="img01" src="/img_champoo/congrat_lip_gloss.jpg" alt="Description" style="width: 100%">
-        ปิด
+        <br>
+        <p style="color: white;margin-top: 15px;">ปิด</p>
     </div>
 </div>
 @endsection
