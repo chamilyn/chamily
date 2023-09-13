@@ -26,9 +26,8 @@
     </div>
 </div>
 <div id="modal01" class="w3-modal" onclick="this.style.display='none'" style="margin-top: 50px">
-    <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
-    <div class="w3-modal-content w3-animate-zoom">
-        <img id="img01" src="/img_champoo/congrat_lip_gloss.jpg" alt="Description" style="width: 100%">
+    <div class="w3-modal-content w3-animate-zoom"  style="width: 95%;">
+        <img id="img01" src="/img_champoo/congrat_lip_gloss.jpg" alt="Description" style="width: 95%">
     </div>
 </div>
 @endsection
