@@ -89,7 +89,8 @@ class WishingController extends Controller
         if  ($wishing) {
             $wishing_id = $wishing->id;
             $wishing_name = $wishing->name;
-            $wishing_lineitems = App\WishingLineitem::where('wishing_id', $wishing->id)->get();
+            $wishing_lineitems = App\WishingLineitem::where('wishing_id', $wishing->id)
+            ->where('is_approved', 1)->get();
         }
         return view('wishing.'.$wishing_name.'.show', compact('wishing_id', 'wishing_lineitems'));
     }

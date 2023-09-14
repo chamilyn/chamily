@@ -20,7 +20,7 @@
             </div>
 
             <div  style="text-align: -webkit-center;" class="mt-4">
-                <button type="button" id="send_btn" class="btn btn-success">ส่งข้อความ</button>
+                <button type="submit" id="send_btn" class="btn btn-success">ส่งข้อความ</button>
             </div>
     </div>
     @else
@@ -29,7 +29,7 @@
 </div>
 <div id="modal01" class="w3-modal" onclick="this.style.display='none'" style="margin-top: 50px">
     <div class="w3-modal-content w3-animate-zoom"  style="width: 95% !important;text-align: center;background: none;">
-        <img id="img01" src="/img_champoo/congrat_lip_gloss.jpg" alt="Description" style="width: 100%">
+        <img id="img01" src="/img_champoo/congrat_lip_gloss.jpg" alt="Description" style="width: 80%">
         <br>
         <p style="color: white;margin-top: 15px;font-size: 18px;">ปิด</p>
     </div>
@@ -38,6 +38,23 @@
 @section('scripts')
 <script>
     $(document).ready(function() {
+        var is_mobile = is_mobile();
+        function is_mobile() {
+        let isMobile = /iPhone|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+        let isIpad = (/Macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints && navigator.maxTouchPoints > 1) 
+        || (/iPad/i.test(navigator.userAgent));
+            if (isMobile) {
+                /*$('.mobile').show();
+                if (isIpad) {
+                    $("#theText").addClass("font-size-ipad");
+                }*/
+                return true;
+                
+            } else {
+                ///$('.pc').show();
+                return false;
+            }
+    }
         $("#send_btn").on("click", function (evt) {
             
             var modal = $("#modal01");
@@ -47,7 +64,7 @@
                 alert('กรุณากรอกข้อความ');
                 return false;
             }
-            if (confirm(`ยืนยันบันทึกข้อมูล?`)) {
+            if (confirm(`ยืนยันการส่งข้อความ?`)) {
                 $.ajax({
                     url: "/writing_save_lineitem",
                     method: "POST",
@@ -60,6 +77,10 @@
                         //
                     },
                 });
+                if (!is_mobile) {
+                    $('#modal01').css("margin-top", "30px");
+                    $('#img01').css("width", "35%");
+                }
                 modal.css("display", "block");
                 $("#text_wish").val(null);
             }
