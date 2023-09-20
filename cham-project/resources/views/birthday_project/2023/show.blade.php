@@ -4,7 +4,7 @@
     <style>
         body {
             color: #000;
-            background: linear-gradient(to bottom, #2F8FED, #4DCF42);
+            background-color: #eda4f0;
             transition: background-color 1s ease;
         }
 
@@ -14,7 +14,6 @@
             min-height: 100vh;
             display: flex;
             justify-content: space-around;
-            align-items: center;
             font-family: sans-serif;
             /* outline: 10px solid hotpink; */
             /* turn above on to see the edge of panels */
@@ -78,7 +77,7 @@
 @section('content')
     <div class="panel" data-color="white">
         <div>
-            <h1>Magic scrolling colours</h1>
+            <h1>Champoo Story</h1>
             <p>Scroll to animate the background colour of the body as a full height panel becomes visible.</p>
             <p>I have tried to comment the code, particurly the JavaScript, as much as possible. I hope it's clear to
                 understand.</p>
@@ -88,7 +87,7 @@
     <div class="panel" data-color="violet">
       <div>
         <h1>Image by fans</h1>
-          <div class="text-center">
+          <div class="text-center d-flex align-items-center justify-content-center">
               <img class="mySlides w3-animate-fading" src="/img_champooart/champybara.png" style="max-width: 50%;"></img>
               <img class="mySlides w3-animate-fading" src="/img_champooart/champoo_dead_sheep.png" style="max-width: 50%;"></img>
           </div>
