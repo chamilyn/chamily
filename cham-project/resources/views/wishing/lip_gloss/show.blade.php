@@ -17,14 +17,14 @@
 <div class="wrapper">
     @foreach ($wishing_lineitems as $wishing_lineitem)
         <div class="card">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, perspiciatis blanditiis accusamus commodi consectetur id tempora rem iure eligendi quos eos et autem ratione exercitationem earum laborum ad a sequi!</p>
+            <p>{{$wishing_lineitem->wish}}</p>
         </div>
     @endforeach
     <div class="card">
         <div style="text-align: center;">
             <b>
-                <h4>We're always knew you could do it!</h4>
-                <h4>So proud of you :)</h4>
+                <h4>We're always knew<br>you could do it!</h4><br>
+                <h4>We're so proud of you :)</h4>
             </b>
         </div>
     </div>
@@ -32,4 +32,14 @@
 @else
     ไม่พบแคมเปญ
 @endif
+@endsection
+@section('scripts')
+<script>
+    /*$(document).ready(function() {
+        $('.card').each(function(index) {
+            $(this).css('top', `${20 * (index + 1)}px`);
+        });
+    });*/
+
+</script>
 @endsection
