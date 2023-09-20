@@ -4,8 +4,11 @@
     <style>
         body {
             color: #000;
-            background-color: #f4f4f4;
-            transition: background-color 1s ease;
+            background-image: url("/img_background/birthday_2023/bg1.jpg");
+            background-size: cover;
+            background-position: center; 
+            transition: background-image 1s ease;
+            height: 100vh;
         }
 
         /* panel styles */
@@ -22,11 +25,11 @@
 
         /* colours */
         .color-violet {
-            background-color: #7A4EAB;
+            background-image: url("/img_background/birthday_2023/bg2.jpg");
         }
 
         .color-indigo {
-            background-color: #4332CF;
+            background-image: url("/img_background/birthday_2023/bg3.jpg");
         }
 
         .color-blue {
