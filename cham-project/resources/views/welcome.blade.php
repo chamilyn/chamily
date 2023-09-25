@@ -11,7 +11,9 @@
                 <source src="video/lalarak.mp4" type="video/mp4">
             </video>
             <div class="text">
-                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Flowers For You</button>
+                <button type="button" class="btn btn-outline-warning mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Flowers For You</button>
+                <button type="button" class="btn btn-outline-info mt-1" data-bs-target="#staticBackdrop"
+                onclick="window.open('https://twitter.com/intent/tweet?openExternalBrowser=1&text=%0a%23ChampooCGM48%0a%23Champoo_no_LipGloss', '_blank');">Trend Twitter #ChampooCGM48</button>
                 <h2>Champoo</h2> 
                 <h3>Kodchaporn Leelatheep</h3>
                 <ul class="social">

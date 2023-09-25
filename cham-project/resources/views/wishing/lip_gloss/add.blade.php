@@ -15,7 +15,7 @@
             <input type="hidden" id="wishing_id" name="wishing_id" value="{{(isset($wishing_id) ? $wishing_id : null)}}" />
             <div class="mb-3">
                 <label for="text_wish" class="form-label"><font color="#b68068">ร่วมแสดงความยินดี</font>&nbsp;<font color="red">(100 ตัวอักษร)</font></label>
-                <textarea class="form-control" id="text_wish" name="text_wish" maxlength="100" autocomplete="off" row="5"></textarea>
+                <textarea class="form-control" id="text_wish" name="text_wish" autocomplete="off" row="5"></textarea>
                 <!-- แปลง input ให้เป็น textarea -->
             </div>
 
