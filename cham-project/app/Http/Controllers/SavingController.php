@@ -7,6 +7,7 @@ use App;
 use Auth;
 use DB;
 use DateTime;
+use Carbon\Carbon;
 
 class SavingController extends Controller
 {
@@ -249,11 +250,30 @@ class SavingController extends Controller
         ->limit(10)
         ->get();
 
+        $top_spenders_ge = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
+        ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->whereBetween('tbl_saving_lineitems.transfer_date', ['2023-09-25', '2023-12-08'])
+        ->groupBy('saving_code')
+        ->orderBy('total_amount', 'DESC')
+        ->limit(10)
+        ->get();
+
+        
+
         $saving_lineitem_tops = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
         ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
         //->whereYear("transfer_date", $current_year)
         //->whereMonth("transfer_date", $current_month)
         //->where("saving_code", Auth::user()->saving_code)
+        ->groupBy('saving_code')
+        ->orderBy('total_amount', 'DESC')
+        ->get();
+
+        $currentWeek = Carbon::now()->startOfWeek();
+        $endOfWeek = Carbon::now()->endOfWeek();
+        $saving_lineitem_tops_week = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
+        ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->whereBetween('tbl_saving_lineitems.transfer_date', [$currentWeek, $endOfWeek])
         ->groupBy('saving_code')
         ->orderBy('total_amount', 'DESC')
         ->get();
@@ -276,7 +296,7 @@ class SavingController extends Controller
         ->orderBy('saving_code', 'ASC')
         ->get();
 
-        return view('admin.saving.lineitem.list', compact('saving', 'saving_lineitems', 'count', 'total_amount', 'current_month_year', 'top_spenders', 'saving_lineitem_tops', 'sum_this_month', 'user_inactives'));
+        return view('admin.saving.lineitem.list', compact('saving', 'saving_lineitems', 'count', 'total_amount', 'current_month_year', 'top_spenders', 'top_spenders_ge', 'saving_lineitem_tops', 'saving_lineitem_tops_week', 'sum_this_month', 'user_inactives'));
     }
 
     /**

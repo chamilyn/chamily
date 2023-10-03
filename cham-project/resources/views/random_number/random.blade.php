@@ -164,7 +164,7 @@
     </div>
 @endsection
 @section('scripts')
-<script>
+    <script>
         let array_number = [];
         let string_number = '';
         function getRandomInt(min, max, is_dup) {
