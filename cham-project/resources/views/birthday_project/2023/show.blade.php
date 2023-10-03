@@ -6,6 +6,9 @@
             color: #000;
             background-color: #eda4f0;
             transition: background-color 1s ease;
+            text-align: center;
+            font-size: 100%;
+            line-height: 1.618;
         }
 
         /* panel styles */
@@ -48,13 +51,6 @@
             background-color: #F2293A;
         }
 
-        /* styling for demo, can ignore */
-        body {
-            text-align: center;
-            font-size: 120%;
-            line-height: 1.618;
-        }
-
         h1,
         h2 {
             font-size: 3em;
@@ -88,16 +84,32 @@
       <div>
         <h1>Image by fans</h1>
           <div class="text-center d-flex align-items-center justify-content-center">
-              <img class="mySlides w3-animate-fading" src="/img_champooart/champybara.png" style="max-width: 50%;"></img>
-              <img class="mySlides w3-animate-fading" src="/img_champooart/champoo_dead_sheep.png" style="max-width: 50%;"></img>
+              <img class="mySlides w3-animate-fading" src="/img_champooart/champybara.png" style="max-width: 40%;"></img>
+              <img class="mySlides w3-animate-fading" src="/img_champooart/champoo_dead_sheep.png" style="max-width: 40%;"></img>
           </div>
       </div>
     </div>
     <div class="panel" data-color="indigo">
-        <h2>Indigo panel</h2>
+        <div>
+            <h2>Cafe</h2><br>
+            <div class="row text-center d-flex align-items-center justify-content-center">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-5" style="padding:10px;">
+                    <img class="" src="/img_birthday/Champoo-BD-23-AW_BKK.png" style="max-width: 70%;"></img><br>
+                    คาเฟ่ที่กรุงเทพ
+                </div>
+                <div class="col-sm-5" style="padding:10px;">
+                    <img class="" src="/img_birthday/Champoo-BD-23-AW_CNX.png" style="max-width: 70%;"></img><br>
+                    คาเฟ่ที่เชียงใหม่
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="panel" data-color="blue">
-        <h2>Blue panel</h2>
+        <h2>MBK</h2>
     </div>
     <div class="panel" data-color="green">
         <h2>Green panel</h2>
