@@ -68,6 +68,62 @@
         }
 
         .mySlides {display:none;}
+        .cafe_slides {display:none;}
+
+        .button-55 {
+            align-self: center;
+            background-color: #fff;
+            background-image: none;
+            background-position: 0 90%;
+            background-repeat: repeat no-repeat;
+            background-size: 4px 3px;
+            border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+            border-style: solid;
+            border-width: 2px;
+            box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+            box-sizing: border-box;
+            color: #41403e;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Neucha, sans-serif;
+            font-size: 1rem;
+            line-height: 23px;
+            outline: none;
+            padding: .75rem;
+            text-decoration: none;
+            transition: all 235ms ease-in-out;
+            border-bottom-left-radius: 15px 255px;
+            border-bottom-right-radius: 225px 15px;
+            border-top-left-radius: 255px 15px;
+            border-top-right-radius: 15px 225px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+          }
+
+          .button-55:hover {
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+            transform: translate3d(0, 2px, 0);
+          }
+
+          .button-55:focus {
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+          }
+
+          .button {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.button4 {
+  border: 2px solid #e7e7e7;
+}
     </style>
 @endsection
 @section('content')
@@ -84,32 +140,110 @@
       <div>
         <h1>Image by fans</h1>
           <div class="text-center d-flex align-items-center justify-content-center">
-              <img class="mySlides w3-animate-fading" src="/img_champooart/champybara.png" style="max-width: 40%;"></img>
-              <img class="mySlides w3-animate-fading" src="/img_champooart/champoo_dead_sheep.png" style="max-width: 40%;"></img>
+              <img class="mySlides w3-animate-fading" src="/img_champooart/champybara.png" style="width: 40%;"></img>
+              <img class="mySlides w3-animate-fading" src="/img_champooart/champoo_dead_sheep.png" style="width: 40%;"></img>
           </div>
       </div>
     </div>
     <div class="panel" data-color="indigo">
         <div>
             <h2>Cafe</h2><br>
-            <div class="row text-center d-flex align-items-center justify-content-center">
-                <div class="col-sm-1">
+            <div class="row" style="--bs-gutter-x: 0;">
+                <div class="col-md-5">
+                    <div class="w3-content w3-display-container" style="width: 90%;">
+                        <div class="w3-display-container cafe_slides">
+                            <img src="/img_birthday/Champoo-BD-23-AW_BKK.png" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides">
+                            <img src="/img_birthday/bkk_cafe_1.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides">
+                            <img src="/img_birthday/bkk_cafe_2.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides">
+                            <img src="/img_birthday/bkk_cafe_3.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides">
+                            <img src="/img_birthday/bkk_cafe_4.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides">
+                            <img src="/img_birthday/bkk_cafe_5.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides">
+                            <img src="/img_birthday/bkk_cafe_6.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides">
+                            <img src="/img_birthday/bkk_cafe_7.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides">
+                            <img src="/img_birthday/bkk_cafe_8.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides">
+                            <img src="/img_birthday/bkk_cafe_9.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides">
+                            <img src="/img_birthday/bkk_cafe_10.jpg" style="width:100%">
+                        </div>
+                        <button style="top: 40% !important;" class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+                        <button style="top: 40% !important;" class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+                        <br>
+                        <button style="" class="button button4"><font color="white"><b>BKK</b></font></button>
+                    </div>
                 </div>
-                <div class="col-sm-5" style="padding:10px;">
-                    <img class="" src="/img_birthday/Champoo-BD-23-AW_BKK.png" style="max-width: 70%;"></img><br>
-                    คาเฟ่ที่กรุงเทพ
+                <div class="col-md-1">
+                    <br>
                 </div>
-                <div class="col-sm-5" style="padding:10px;">
-                    <img class="" src="/img_birthday/Champoo-BD-23-AW_CNX.png" style="max-width: 70%;"></img><br>
-                    คาเฟ่ที่เชียงใหม่
+                <div class="col-md-1">
+                    <br>
                 </div>
-                <div class="col-sm-1">
+                <div class="col-md-5">
+                    <div class="w3-content w3-display-container" style="width: 90%;">
+                        <div class="w3-display-container cafe_slides_cnx">
+                            <img src="/img_birthday/Champoo-BD-23-AW_CNX.png" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides_cnx">
+                            <img src="/img_birthday/cnx_cafe_1.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides_cnx">
+                            <img src="/img_birthday/cnx_cafe_2.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides_cnx">
+                            <img src="/img_birthday/cnx_cafe_3.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides_cnx">
+                            <img src="/img_birthday/cnx_cafe_4.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides_cnx">
+                            <img src="/img_birthday/cnx_cafe_5.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides_cnx">
+                            <img src="/img_birthday/cnx_cafe_6.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides_cnx">
+                            <img src="/img_birthday/cnx_cafe_7.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides_cnx">
+                            <img src="/img_birthday/cnx_cafe_8.jpg" style="width:100%">
+                        </div>
+                        <div class="w3-display-container cafe_slides_cnx">
+                            <img src="/img_birthday/cnx_cafe_9.jpg" style="width:100%">
+                        </div>
+                        <button style="top: 40% !important;" class="w3-button w3-display-left w3-black" onclick="plusDivsCnx(-1)">&#10094;</button>
+                        <button style="top: 40% !important;" class="w3-button w3-display-right w3-black" onclick="plusDivsCnx(1)">&#10095;</button>
+                        <br>
+                        <button style="" class="button button4"><font color="white"><b>CNX</b></font></button>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
     <div class="panel" data-color="blue">
-        <h2>MBK</h2>
+        <div style="width: 90%;">
+            <h2>MBK</h2><br>
+        
+            <iframe width="100%" height="65%" src="https://www.youtube.com/embed/m6svJS9JtD0"></iframe>
+        </div>
     </div>
     <div class="panel" data-color="green">
         <h2>Green panel</h2>
@@ -126,20 +260,56 @@
 @endsection
 @section('scripts')
     <script>
-      var myIndex = 0;
-carousel();
+        var slideIndexCafe = 1;
+        showDivs(slideIndexCafe);
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 5000);    
-}
+        function plusDivs(n) {
+            showDivs(slideIndexCafe += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("cafe_slides");
+            if (n > x.length) {slideIndexCafe = 1}
+            if (n < 1) {slideIndexCafe = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            x[slideIndexCafe-1].style.display = "block";  
+        }
+
+        var slideIndexCafeCnx = 1;
+        showDivsCnx(slideIndexCafeCnx);
+
+        function plusDivsCnx(n) {
+            showDivsCnx(slideIndexCafeCnx += n);
+        }
+
+        function showDivsCnx(n) {
+            var i;
+            var x = document.getElementsByClassName("cafe_slides_cnx");
+            if (n > x.length) {slideIndexCafeCnx = 1}
+            if (n < 1) {slideIndexCafeCnx = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            x[slideIndexCafeCnx-1].style.display = "block";  
+        }
+
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 5000);    
+        }
         $(window).scroll(function() {
 
             // selectors
