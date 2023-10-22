@@ -1,153 +1,40 @@
 @extends('layouts.client')
 @section('assets')
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <style>
-        body {
-            color: #000;
-            background-color: #eda4f0;
-            transition: background-color 1s ease;
-            text-align: center;
-            font-size: 100%;
-            line-height: 1.618;
-        }
-
-        /* panel styles */
-        .panel {
-            /* min height incase content is higher than window height */
-            min-height: 100vh;
-            display: flex;
-            justify-content: space-around;
-            font-family: sans-serif;
-            /* outline: 10px solid hotpink; */
-            /* turn above on to see the edge of panels */
-        }
-
-        /* colours */
-        .color-violet {
-            background-color: #7A4EAB;
-        }
-
-        .color-indigo {
-            background-color: #4332CF;
-        }
-
-        .color-blue {
-            background-color: #2F8FED;
-        }
-
-        .color-green {
-            background-color: #4DCF42;
-        }
-
-        .color-yellow {
-            background-color: #FAEB33;
-        }
-
-        .color-orange {
-            background-color: #F19031;
-        }
-
-        .color-red {
-            background-color: #F2293A;
-        }
-
-        h1,
-        h2 {
-            font-size: 3em;
-            letter-spacing: -0.05em;
-            line-height: 1.1;
-        }
-
-        p {
-            max-width: 30em;
-            margin-bottom: 1.618em;
-        }
-
-        a {
-            color: #4332CF;
-        }
-
-        .mySlides {display:none;}
-        .cafe_slides {display:none;}
-
-        .button-55 {
-            align-self: center;
-            background-color: #fff;
-            background-image: none;
-            background-position: 0 90%;
-            background-repeat: repeat no-repeat;
-            background-size: 4px 3px;
-            border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
-            border-style: solid;
-            border-width: 2px;
-            box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
-            box-sizing: border-box;
-            color: #41403e;
-            cursor: pointer;
-            display: inline-block;
-            font-family: Neucha, sans-serif;
-            font-size: 1rem;
-            line-height: 23px;
-            outline: none;
-            padding: .75rem;
-            text-decoration: none;
-            transition: all 235ms ease-in-out;
-            border-bottom-left-radius: 15px 255px;
-            border-bottom-right-radius: 225px 15px;
-            border-top-left-radius: 255px 15px;
-            border-top-right-radius: 15px 225px;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-          }
-
-          .button-55:hover {
-            box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
-            transform: translate3d(0, 2px, 0);
-          }
-
-          .button-55:focus {
-            box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
-          }
-
-          .button {
-  background-color: transparent;
-  border-radius: 20px;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-}
-
-.button4 {
-  border: 2px solid #e7e7e7;
-}
-    </style>
+<link rel="stylesheet" href="/frontend/style_birthday.css">
 @endsection
 @section('content')
-    <div class="panel" data-color="white">
-        <div>
-            <h1>Champoo Story</h1>
-            <p>Scroll to animate the background colour of the body as a full height panel becomes visible.</p>
-            <p>I have tried to comment the code, particurly the JavaScript, as much as possible. I hope it's clear to
-                understand.</p>
-            <p>If you have any questions my twitter is <a href="https://twitter.com/daveredfern">@daveredfern</a>.</p>
+    <div class="panel" data-color="white"><!-- ที่มาของ 18TH Colorful -->
+        <div class="container mt-4 mb-4 d-flex justify-content-center">
+            <div style="text-align: center;">
+                <b>
+                    <h1 class="text">Champoo 18TH Birthday</h1>                    
+                    <h2 class="text2">✿ Kodchaporn Leelatheep ✿</h2>
+                </b>
+
+                <br>
+                <div class="card">
+                    <div class="card-body" style="text-align: left; padding-top: 50px; padding-bottom: 50px; padding-left: 20px; padding-right: 20px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        <h1 class="card-title">ทำไมถึงต้อง Colorful</h1>
+                        <p class="card-text">&emsp;&emsp;&emsp;ในชีวิตของเรามีสีสันมากน้อยขนาดไหนกันนะ? จากหัวใจที่ว่างเปล่าและบริสุทธิ์ในวัยเด็ก การเติบโตในแต่ละวัน จะถูกแต่งแต้มไปด้วยสีที่หลากหลาย ช่วงเวลาเหล่านั้นได้เติมสีสันแบบไหนให้กับแชมพูและพวกเราบ้าง? มาร่วมผ่านช่วงวัย 18 ปีของแชมพูนี้ไปด้วยกันเถอะ</p>
+                        <br><h2 style="text-align: center;">ในปีนี้แชมพูจะได้พบกับสีอะไรบ้างนะ?</h2>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="panel" data-color="violet">
-      <div>
-        <h1>Image by fans</h1>
-          <div class="text-center d-flex align-items-center justify-content-center">
-              <img class="mySlides w3-animate-fading" src="/img_champooart/champybara.png" style="width: 40%;"></img>
-              <img class="mySlides w3-animate-fading" src="/img_champooart/champoo_dead_sheep.png" style="width: 40%;"></img>
-          </div>
-      </div>
-    </div>
-    <div class="panel" data-color="indigo">
+
+    <div class="panel" data-color="color1"><!-- บริจาค -->
         <div>
-            <h2>Cafe</h2><br>
+            <h1 class="text2">Chamily X Foundation 🐕‍🦺🐈‍⬛</h1><br>
+            <img src="/img/Foundation.jpg" width="70%" height="50%">
+            <br><br><span>"ขอให้สัตว์ทุกตัวบนโลกมีบ้านที่ดีและปลอดภัย"</span>
+        </div> 
+    </div>
+
+    <div class="panel" data-color="color2"><!-- Cafe -->
+        <div>
+            <h1 class="text2">Chamily X Cafe ☕🥐</h1><br>
             <div class="row" style="--bs-gutter-x: 0;">
                 <div class="col-md-5">
                     <div class="w3-content w3-display-container" style="width: 90%;">
@@ -191,10 +78,10 @@
                     </div>
                 </div>
                 <div class="col-md-1">
-                    <br>
+                    
                 </div>
                 <div class="col-md-1">
-                    <br>
+                   
                 </div>
                 <div class="col-md-5">
                     <div class="w3-content w3-display-container" style="width: 90%;">
@@ -236,108 +123,170 @@
                 </div>
 
             </div>
+            <br><span>"ขอให้เป็น 18 ปีที่อิ่มท้องและอุ่นใจอยู่เสมอ ♡"</span>
         </div>
     </div>
-    <div class="panel" data-color="blue">
-        <div style="width: 90%;">
-            <h2>MBK</h2><br>
-        
-            <iframe width="100%" height="65%" src="https://www.youtube.com/embed/m6svJS9JtD0"></iframe>
+    <br><br>
+    <div class="panel" data-color="color3"><!-- MBK -->
+        <div>
+            <h1 class="text2">Chamily X MBK Billboard 📺</h1><br>
+            <iframe width="100%" height="65%" src="https://www.youtube.com/embed/hqJP0r6YgNU?si=PS4vD8qkxlsCnUul" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <br><br><span>"ขอบคุณที่เป็นดั่งทานตะวันที่เบ่งบานไม่โอนอ่อนต่อสิ่งใด🌻"</span>
+        </div> 
+    </div>
+
+    <div class="panel" data-color="color4"><!-- ยอดเงินกิจกรรมทั้งหมด -->
+        <div>
+            <h1 class="text2">สรุปยอดโดเนท 💵</h1><br>
+            <div class="row">
+                <div class="col counter" style="border: 2px solid #89f0de; padding:5px; border-radius: 25px;">
+                    <h3>
+                        <span>ยอดเงินทั้งหมด </span>
+                        <div style="text-align: -webkit-center;"><hr width="90%" class="new1"></div>
+                        <span>45,500 ฿</span>
+                    </h3>
+                </div>
+                &nbsp;&nbsp;
+                <div class="col counter" style="border: 2px solid #89CFF0; padding:5px; border-radius: 25px;">
+                    <h3>
+                        <span>ยอดเงินที่ใช้ไป </span>
+                        <div style="text-align: -webkit-center;"><hr width="90%" class="new2"></div>
+                        <span>40,500 ฿</span>
+                    </h3>
+                </div>
+            </div>
+            <br><span>- ยอดเงินคงเหลือทั้งหมดจะถูกนำไว้ใช้ในกิจกรรมต่อไป -</span>
+            <br><br><a href="#" target="_blank"><button type="button" class="btn btn-outline-success">Statement การเดินบัญชี</button></a>
         </div>
     </div>
-    <div class="panel" data-color="green">
-        <h2>Green panel</h2>
-    </div>
-    <div class="panel" data-color="yellow">
-        <h2>Yellow panel</h2>
-    </div>
-    <div class="panel" data-color="orange">
-        <h2>Orange panel</h2>
-    </div>
-    <div class="panel" data-color="red">
-        <h2>Red panel</h2>
+
+    <div class="panel" data-color="color5"><!-- Thank for support -->
+        <div class="container mt-4 mb-4">
+        <br><br>
+            <h1 class="text2">ขอขอบคุณทุกแรงสนับสนุนสำคัญ ꕤ</h1>
+            <div class="mt-4 mb-4 text-center d-flex align-items-center justify-content-center">
+                <table class="table table-sm">
+                    <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h1>Thank you for everything you do :)</h1>
+        </div> 
     </div>
 @endsection
 @section('scripts')
-    <script>
-        var slideIndexCafe = 1;
-        showDivs(slideIndexCafe);
+<script>
+    var slideIndexCafe = 1;
+    showDivs(slideIndexCafe);
 
-        function plusDivs(n) {
-            showDivs(slideIndexCafe += n);
-        }
+    function plusDivs(n) {
+        showDivs(slideIndexCafe += n);
+    }
 
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("cafe_slides");
-            if (n > x.length) {slideIndexCafe = 1}
-            if (n < 1) {slideIndexCafe = x.length}
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-            }
-            x[slideIndexCafe-1].style.display = "block";  
-        }
-
-        var slideIndexCafeCnx = 1;
-        showDivsCnx(slideIndexCafeCnx);
-
-        function plusDivsCnx(n) {
-            showDivsCnx(slideIndexCafeCnx += n);
-        }
-
-        function showDivsCnx(n) {
-            var i;
-            var x = document.getElementsByClassName("cafe_slides_cnx");
-            if (n > x.length) {slideIndexCafeCnx = 1}
-            if (n < 1) {slideIndexCafeCnx = x.length}
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-            }
-            x[slideIndexCafeCnx-1].style.display = "block";  
-        }
-
-        var myIndex = 0;
-        carousel();
-
-        function carousel() {
+    function showDivs(n) {
         var i;
-        var x = document.getElementsByClassName("mySlides");
+        var x = document.getElementsByClassName("cafe_slides");
+        if (n > x.length) {slideIndexCafe = 1}
+        if (n < 1) {slideIndexCafe = x.length}
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none";  
         }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 5000);    
+        x[slideIndexCafe-1].style.display = "block";  
+    }
+
+    var slideIndexCafeCnx = 1;
+    showDivsCnx(slideIndexCafeCnx);
+
+    function plusDivsCnx(n) {
+        showDivsCnx(slideIndexCafeCnx += n);
+    }
+
+    function showDivsCnx(n) {
+        var i;
+        var x = document.getElementsByClassName("cafe_slides_cnx");
+        if (n > x.length) {slideIndexCafeCnx = 1}
+        if (n < 1) {slideIndexCafeCnx = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
         }
-        $(window).scroll(function() {
+        x[slideIndexCafeCnx-1].style.display = "block";  
+    }
 
-            // selectors
-            var $window = $(window),
-                $body = $('body'),
-                $panel = $('.panel');
+    $(window).scroll(function() {
 
-            // Change 33% earlier than scroll position so colour is there when you arrive.
-            var scroll = $window.scrollTop() + ($window.height() / 3);
+// selectors
+var $window = $(window),
+    $body = $('body'),
+    $panel = $('.panel');
 
-            $panel.each(function() {
-                var $this = $(this);
+// Change 33% earlier than scroll position so colour is there when you arrive.
+var scroll = $window.scrollTop() + ($window.height() / 3);
 
-                // if position is within range of this panel.
-                // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
-                // Remember we set the scroll to 33% earlier in scroll var.
-                if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+$panel.each(function() {
+    var $this = $(this);
 
-                    // Remove all classes on body with color-
-                    $body.removeClass(function(index, css) {
-                        return (css.match(/(^|\s)color-\S+/g) || []).join(' ');
-                    });
+    // if position is within range of this panel.
+    // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
+    // Remember we set the scroll to 33% earlier in scroll var.
+    if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
 
-                    // Add class of currently active div
-                    $body.addClass('color-' + $(this).data('color'));
-                }
-            });
+        // Remove all classes on body with color-
+        $body.removeClass(function(index, css) {
+            return (css.match(/(^|\s)color-\S+/g) || []).join(' ');
+        });
 
-        }).scroll();
-    </script>
+        // Add class of currently active div
+        $body.addClass('color-' + $(this).data('color'));
+    }
+});
+
+}).scroll();
+</script>
 @endsection
