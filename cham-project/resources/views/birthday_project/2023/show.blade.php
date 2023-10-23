@@ -135,27 +135,30 @@
     </div>
 
     <div class="panel" data-color="color4"><!-- ยอดเงินกิจกรรมทั้งหมด -->
-        <div>
+        <div style="text-align: center; width:90%">
             <h1 class="text2">สรุปยอดโดเนท 💵</h1><br>
-            <div class="row">
-                <div class="col counter" style="border: 2px solid #89f0de; padding:5px; border-radius: 25px;">
-                    <h3>
-                        <span>ยอดเงินทั้งหมด </span>
-                        <div style="text-align: -webkit-center;"><hr width="90%" class="new1"></div>
-                        <span>45,500 ฿</span>
-                    </h3>
+
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col" style="border: 2px solid #89f0de; padding:5px; border-radius: 25px;">
+                        <h3>
+                            <span>ยอดเงินทั้งหมด </span>
+                            <div style="text-align: -webkit-center;"><hr width="90%" class="new1"></div>
+                            <span>45,500 ฿</span>
+                        </h3>
+                    </div>
+                    &nbsp;&nbsp;
+                    <div class="col" style="border: 2px solid #89CFF0; padding:5px; border-radius: 25px;">
+                        <h3>
+                            <span>ยอดเงินที่ใช้ไป </span>
+                            <div style="text-align: -webkit-center;"><hr width="90%" class="new2"></div>
+                            <span>40,500 ฿</span>
+                        </h3>
+                    </div>
                 </div>
-                &nbsp;&nbsp;
-                <div class="col counter" style="border: 2px solid #89CFF0; padding:5px; border-radius: 25px;">
-                    <h3>
-                        <span>ยอดเงินที่ใช้ไป </span>
-                        <div style="text-align: -webkit-center;"><hr width="90%" class="new2"></div>
-                        <span>40,500 ฿</span>
-                    </h3>
-                </div>
+                <br><span>- ยอดเงินคงเหลือทั้งหมดจะถูกนำไว้ใช้ในกิจกรรมต่อไป -</span>
+                <br><br><a href="#" target="_blank"><button type="button" class="btn btn-outline-success">Statement การเดินบัญชี</button></a>
             </div>
-            <br><span>- ยอดเงินคงเหลือทั้งหมดจะถูกนำไว้ใช้ในกิจกรรมต่อไป -</span>
-            <br><br><a href="#" target="_blank"><button type="button" class="btn btn-outline-success">Statement การเดินบัญชี</button></a>
         </div>
     </div>
 
