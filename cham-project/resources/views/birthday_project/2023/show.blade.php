@@ -7,6 +7,7 @@
     <div class="panel" data-color="white"><!-- ที่มาของ 18TH Colorful -->
         <div class="container mt-4 mb-4 d-flex justify-content-center">
             <div style="text-align: center;">
+                <br><br>
                 <b>
                     <h1 class="text">Champoo 18TH Birthday</h1>                    
                     <h2 class="text2">✿ Kodchaporn Leelatheep ✿</h2>
@@ -26,7 +27,7 @@
     <div class="panel" data-color="color1"><!-- บริจาค -->
         <div>
             <h1 class="text2">Chamily X Foundation 🐕‍🦺🐈‍⬛</h1><br>
-            <img src="/img/Foundation.jpg" width="30%" height="50%">
+            <img src="/img/Foundation.jpg" width="60%" height="50%">
             <br><br><span>"ขอให้สัตว์ทุกตัวบนโลกมีบ้านที่ดีและปลอดภัย"</span>
         </div> 
     </div>
@@ -73,7 +74,7 @@
                         <button style="top: 40% !important;" class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
                         <button style="top: 40% !important;" class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
                         <br>
-                        <button style="" class="button button4"><font color="white"><b>BKK</b></font></button>
+                        <button style="background-color: black;" class="button button4"><font color="white"><b>BKK</b></font></button>
                     </div>
                 </div>
                 <div class="col-md-1">
@@ -117,7 +118,7 @@
                         <button style="top: 40% !important;" class="w3-button w3-display-left w3-black" onclick="plusDivsCnx(-1)">&#10094;</button>
                         <button style="top: 40% !important;" class="w3-button w3-display-right w3-black" onclick="plusDivsCnx(1)">&#10095;</button>
                         <br>
-                        <button style="" class="button button4"><font color="white"><b>CNX</b></font></button>
+                        <button style="background-color: black;" class="button button4"><font color="white"><b>CNX</b></font></button>
                     </div>
                 </div>
 
@@ -128,6 +129,7 @@
     <br><br>
     <div class="panel" data-color="color3"><!-- MBK -->
         <div>
+            <br><br><br><br>
             <h1 class="text2">Chamily X MBK Billboard 📺</h1><br>
             <iframe width="100%" height="65%" src="https://www.youtube.com/embed/hqJP0r6YgNU?si=PS4vD8qkxlsCnUul" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <br><br><span>"ขอบคุณที่เป็นดั่งทานตะวันที่เบ่งบานไม่โอนอ่อนต่อสิ่งใด🌻"</span>
@@ -136,6 +138,7 @@
 
     <div class="panel" data-color="color4"><!-- ยอดเงินกิจกรรมทั้งหมด -->
         <div style="text-align: center; width:90%">
+            <br><br><br><br><br><br><br><br>
             <h1 class="text2">สรุปยอดโดเนท 💵</h1><br>
 
             <div class="container text-center">
