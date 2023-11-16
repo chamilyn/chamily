@@ -67,9 +67,9 @@
                         const imageUrl = result.data[0]; // Replace with the actual image URL
                         const filename = 'downloaded_image.jpg'; // Replace with the desired file name
                         //downloadImage(imageUrl, filename);
-                        window.open(imageUrl, '_blank');
+                        window.location.href = imageUrl;
                     } else {
-                        alert("No iamge found");
+                        alert("No image found");
                     }
                     },
                 });
