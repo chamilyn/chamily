@@ -315,7 +315,7 @@ class EventController extends Controller
                 } else {
                     $start_month++;
                 }
-                while ($start_month <= $end_month || $start_year < $end_year) {
+                while (($start_month <= $end_month || $start_year < $end_year) && !isset($event_list[$start_year][$start_month])) {
                     $tmp_events = $event_list[$start_year][$start_month];
                     
                     array_push($tmp_events, $event);
