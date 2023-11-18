@@ -112,3 +112,7 @@ Route::post('/writing_save_lineitem', 'WishingController@storeLineitem');
 
 Route::resource('/record_iam', 'RecordIamController');
 Route::post('/record_iam_download', 'RecordIamController@downloadLink');
+
+Route::get('/dino_game', function () {
+    return view('dino_game.running_dino');
+});

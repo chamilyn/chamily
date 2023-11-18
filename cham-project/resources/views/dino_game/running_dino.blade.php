@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-    <link rel="shortcut icon" href="img_logo/Chamily_logo_color.png"/>
-    <head>
-        <title>Chamily</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-        <meta name="description" content="Ripped T-Rex/Dino game of Chromium">
-        <meta property="og:title" content="Play the hidden T-Rex Dinosaur game of Chromium .">
-        <meta property="og:type" content="article">
-        <meta property="og:url" content="http://www.thecodepost.org">
-        <meta property="og:image" content="http://img.thecodepost.org/2015/01/trex.png">
-        <meta property="og:site_name" content="The Code Post">
-        <meta property="og:description" content="Google Chrome has a hidden T-Rex game only for offline mode. But now, you can enjoy it any time and on any device, but you gotta stay online!!!">
-
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@thecodepost">
-        <meta name="twitter:creator" content="@thecodepost">
-        <meta name="twitter:title" content="Check out the cool hidden game from Google Chrome!">
-        <meta name="twitter:description" content="Check out the cool hidden game from Google Chrome!">
-        <meta name="twitter:image:src" content="http://img.thecodepost.org/2015/01/trex.png">
+@extends('layouts.client')
+@section('assets')
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script type="text/javascript">
 	function hideClass(name) {
@@ -1938,53 +1915,22 @@
     };
     })();
 	</script>
-        <link rel="stylesheet" href="frontend/style_running_dinosaur.css">
-    </head>
-
-    <nav class="navbar sticky-top bg-dark navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="img_logo/Chamily_logo_color.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
-                &nbsp;Chamily
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Schedule</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Wish</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-            </div>
-        </div>
-    </nav>
-
-    <body>
+        <link rel="stylesheet" href="/frontend/style_running_dinosaur.css">
+        
+@endsection
+@section('content')
         <div class="container mt-4 mb-4 d-flex justify-content-center">
             <div class="card" style="width: 90%;border: 2px solid #557A46; padding:5px; border-radius: 25px;">
                 <div class="card-body">
                     <div class="text-center">
                         <h3>
-                            <img src="img_champooart/capybara.png" width="50" height="50"></img>
+                            <img src="/img_champooart/capybara.png" width="50" height="50"></img>
                             <!-- <b> -->
                                 <span style="color:#8C3333;">Running</span>&nbsp;
-                                <span style="color:#557A46;">Dinosaur</span>
+                                <span style="ccaolor:#557A46;">Dinosaur</span>
                             <!-- </b> -->
-                            <img src="img_champooart/dino.png" width="50" height="50"></img>
-                            <img src="img_champooart/mumu.png" width="50" height="50"></img>
+                            <img src="/img_champooart/dino.png" width="50" height="50"></img>
+                            <img src="/img_champooart/mumu.png" width="50" height="50"></img>
                         </h3>
                     </div>
                     <div style="text-align: -webkit-center;"><hr width="90%" class="new1"></div><br><br>
@@ -2026,7 +1972,8 @@
         <div class="footer mb-1">
             <font size="2">thk for reference &nbsp;<a href="https://codepen.io/MysticReborn/pen/rygqao">click here!</a>&nbsp;&nbsp;</font>
         </div>
-    </body>
+        @endsection
+@section('scripts')
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -2058,4 +2005,4 @@
             hideClass(".onlyforchrome");
         }
     </script>
-</html>
+    @endsection
