@@ -86,6 +86,9 @@
                                 <a class="nav-link" href="/admin/savings/1">General Election 4</a>
                             </nav>
                             <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="/admin/savings/2">General Election 5</a>
+                            </nav>
+                            <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="/kongtun/summary">Summary (ตัวเอง)</a>
                             </nav>
                         </div>
