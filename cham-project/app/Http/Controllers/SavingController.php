@@ -77,6 +77,7 @@ class SavingController extends Controller
 
         $saving_lineitem_total = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
         ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->where('saving_id', 2)
         ->where("saving_code", Auth::user()->saving_code)
         ->groupBy('saving_code')
         ->orderBy('total_amount', 'DESC')
@@ -88,6 +89,7 @@ class SavingController extends Controller
 
         $top_spenders = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
         ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->where('saving_id', 2)
         ->whereYear("transfer_date", $current_year)
         ->whereMonth("transfer_date", $current_month)
         ->groupBy('saving_code')
@@ -98,6 +100,7 @@ class SavingController extends Controller
         $saving_lineitem_months = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code
         , YEAR(tbl_saving_lineitems.transfer_date) as transfer_year, MONTH(tbl_saving_lineitems.transfer_date) as transfer_month')
         ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->where('saving_id', 2)
         //->whereYear("transfer_date", $current_year)
         //->whereMonth("transfer_date", $current_month)
         ->where("saving_code", Auth::user()->saving_code)
@@ -231,6 +234,7 @@ class SavingController extends Controller
         $current_month_year = $current_month_text.' '.($current_year<2500?$current_year+543 : $current_year);
 
         $saving_lineitem_total = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount')
+        ->where('saving_id', $id)
         //->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
         //->where("saving_code", Auth::user()->saving_code)
         //->groupBy('saving_code')
@@ -243,6 +247,7 @@ class SavingController extends Controller
 
         $top_spenders = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
         ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->where('saving_id', $id)
         ->whereYear("transfer_date", $current_year)
         ->whereMonth("transfer_date", $current_month)
         ->groupBy('saving_code')
@@ -253,6 +258,7 @@ class SavingController extends Controller
         $top_spenders_ge = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
         ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
         ->whereBetween('tbl_saving_lineitems.transfer_date', ['2023-09-25', '2023-12-08'])
+        ->where('saving_id', $id)
         ->groupBy('saving_code')
         ->orderBy('total_amount', 'DESC')
         ->limit(10)
@@ -262,6 +268,7 @@ class SavingController extends Controller
 
         $saving_lineitem_tops = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
         ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->where('saving_id', $id)
         //->whereYear("transfer_date", $current_year)
         //->whereMonth("transfer_date", $current_month)
         //->where("saving_code", Auth::user()->saving_code)
@@ -273,6 +280,7 @@ class SavingController extends Controller
         $endOfWeek = Carbon::now()->endOfWeek();
         $saving_lineitem_tops_week = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount, users.saving_code as saving_code')
         ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->where('saving_id', $id)
         ->whereBetween('tbl_saving_lineitems.transfer_date', [$currentWeek, $endOfWeek])
         ->groupBy('saving_code')
         ->orderBy('total_amount', 'DESC')
@@ -280,6 +288,7 @@ class SavingController extends Controller
 
         $sum_this_month = App\SavingLineitem::selectRaw('SUM(tbl_saving_lineitems.amount) as total_amount')
         ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->where('saving_id', $id)
         ->whereYear("transfer_date", $current_year)
         ->whereMonth("transfer_date", $current_month)
         ->orderBy('total_amount', 'DESC')
@@ -287,6 +296,7 @@ class SavingController extends Controller
 
         $transfer_ids = App\SavingLineitem::whereYear("transfer_date", $current_year)
         ->join('users', 'tbl_saving_lineitems.transfer_id', "=", "users.id")
+        ->where('saving_id', $id)
         ->whereMonth("transfer_date", $current_month)
         ->pluck('transfer_id');
 
