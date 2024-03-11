@@ -51,7 +51,7 @@ svg text {
 }
 
 .start_btn{
-    position: relative;
+    /*position: relative;*/
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -168,7 +168,7 @@ svg text {
 }
 
 .info_box{
-    width: 540px;
+    width: 110%;
     border:5px solid #FFBF00;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -227,7 +227,8 @@ svg text {
 }
 
 .quiz_box{
-    width: 550px;
+    width: 110%;
+    margin-top: 15%;
     border:5px solid #FFBF00;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -433,7 +434,8 @@ footer button.show{
     border-radius: 5px;
     display: flex;
     padding: 25px 30px;
-    width: 450px;
+    margin-top: 15%;
+    width: 110%;
     align-items: center;
     flex-direction: column;
     justify-content: center;

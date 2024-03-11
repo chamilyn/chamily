@@ -116,3 +116,11 @@ Route::post('/record_iam_download', 'RecordIamController@downloadLink');
 Route::get('/dino_game', function () {
     return view('dino_game.running_dino');
 });
+
+Route::group(['prefix' => 'games'], function()
+{
+    Route::get('/quiz', function () {
+        return view('games.quiz.main');
+    });
+
+});
