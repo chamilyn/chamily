@@ -1,132 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-    <link rel="shortcut icon" href="img_logo/Chamily_logo_color.png"/>
-    <head>
-        <title>Chamily</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> 
-        <link rel="stylesheet" href="frontend/style_quiz.css">
-    </head>
+@extends('layouts.client')
+@section('assets')
+<link rel="stylesheet" href="/frontend/stylewish.css?v={{ time() }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="/frontend/style_quiz.css?v={{ time() }}">
+<style>
 
-    <nav class="navbar sticky-top bg-dark navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="img_logo/Chamily_logo_color.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
-                &nbsp;Chamily
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Schedule</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Wish</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-            </div>
-        </div>
-    </nav>
+</style>
+@endsection
+@section('content')
+    <div class="container mt-4 mb-4 d-flex justify-content-center">
+        <div class="card" style="width: 90%;">
+            <div class="card-body">
+                <div class="wrapper">
+                    <svg>
+                        <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                            Chamily Quiz!
+                        </text>
+                    </svg>
 
-    <body>
-        <div class="container mt-4 mb-4 d-flex justify-content-center">
-            <div class="card" style="width: 90%;">
-                <div class="card-body">
-                    <div class="wrapper">
-                        <svg>
-                            <text x="50%" y="50%" dy=".35em" text-anchor="middle">
-                                Chamily Quiz!
-                            </text>
-                        </svg>
+                    <!-- start Quiz button -->
+                    <br><br><br><br><br><br><br><div class="start_btn"><button>เริ่ม!</button></div>
+                </div>
 
-                        <!-- start Quiz button -->
-                        <br><br><br><br><br><br><br><div class="start_btn"><button>เริ่ม!</button></div>
+                <!-- Info Box -->
+                <div class="info_box">
+                    <div class="info-title"><span>- กฎกติกาก่อนเริ่มเล่น -</span></div>
+                    <div class="info-list">
+                        <div class="info">1. คุณจะมีเวลา <span>15 วินาที</span> ต่อคำถาม</div>
+                        <div class="info">2. เมื่อหมดเวลาจะไม่สามารถเลือกคำตอบได้</div>
+                        <div class="info">3. เลือกคำตอบแล้วจะถือว่าตอบเลยเปลี่ยนไม่ได้</div>
+                        <div class="info">4. คุณไม่สามารถออก <span>Quiz</span> ในขณะที่เล่นอยู่ได้</div>
+                        <div class="info">5. คุณจะได้รับคะแนนตามคำตอบที่ตอบถูกต้อง</div>
                     </div>
-
-                    <!-- Info Box -->
-                    <div class="info_box">
-                        <div class="info-title"><span>- กฎกติกาก่อนเริ่มเล่น -</span></div>
-                        <div class="info-list">
-                            <div class="info">1. คุณจะมีเวลา <span>15 วินาที</span> ต่อคำถาม</div>
-                            <div class="info">2. เมื่อหมดเวลาจะไม่สามารถเลือกคำตอบได้</div>
-                            <div class="info">3. เลือกคำตอบแล้วจะถือว่าตอบเลยเปลี่ยนไม่ได้</div>
-                            <div class="info">4. คุณไม่สามารถออก <span>Quiz</span> ในขณะที่เล่นอยู่ได้</div>
-                            <div class="info">5. คุณจะได้รับคะแนนตามคำตอบที่ตอบถูกต้อง</div>
-                        </div>
-                        <div class="buttons">
-                            <button class="quit">ทำใจแปป...</button>
-                            <button class="restart">เริ่มกันเลย!</button>
-                        </div>
+                    <div class="buttons">
+                        <button class="quit">ทำใจแปป...</button>
+                        <button class="restart">เริ่มกันเลย!</button>
                     </div>
+                </div>
 
-                    <!-- Quiz Box -->
-                    <div class="quiz_box">
-                        <header>
-                            <div class="title">Chamily Quiz</div>
-                            <div class="timer">
-                                <div class="time_left_txt">เวลาที่เหลือ</div>
-                                <div class="timer_sec">15</div>
-                            </div>
-                            <div class="time_line"></div>
-                        </header>
-                        <section>
-                            <div class="que_text">
-                                <!-- Here I've inserted question from JavaScript -->
-                            </div>
-                            <div class="option_list">
-                                <!-- Here I've inserted options from JavaScript -->
-                            </div>
-                        </section>
+                <!-- Quiz Box -->
+                <div class="quiz_box">
+                    <header>
+                        <div class="title">Chamily Quiz</div>
+                        <div class="timer">
+                            <div class="time_left_txt">เวลาที่เหลือ</div>
+                            <div class="timer_sec">15</div>
+                        </div>
+                        <div class="time_line"></div>
+                    </header>
+                    <section>
+                        <div class="que_text">
+                            <!-- Here I've inserted question from JavaScript -->
+                        </div>
+                        <div class="option_list">
+                            <!-- Here I've inserted options from JavaScript -->
+                        </div>
+                    </section>
 
-                        <!-- footer of Quiz Box -->
-                        <footer>
-                            <div class="total_que">
-                                <!-- Here I've inserted Question Count Number from JavaScript -->
-                            </div>
-                            <button class="next_btn">ต่อไป</button>
-                        </footer>
+                    <!-- footer of Quiz Box -->
+                    <footer>
+                        <div class="total_que">
+                            <!-- Here I've inserted Question Count Number from JavaScript -->
+                        </div>
+                        <button class="next_btn">ต่อไป</button>
+                    </footer>
+                </div>
+
+
+                <!-- Result Box -->
+                <div class="result_box">
+                    <div class="icon" style="text-align: center;">
+                        <!-- <i class="fas fa-crown"></i> -->
+                        <img src="img_champooart/capybara.png" width="25%" height="25%" />
+                        <img src="img_champooart/mumu.png" width="25%" height="25%" />
+                        <img src="img_champooart/dino.png" width="25%" height="25%" />
                     </div>
-
-
-                    <!-- Result Box -->
-                    <div class="result_box">
-                        <div class="icon" style="text-align: center;">
-                            <!-- <i class="fas fa-crown"></i> -->
-                            <img src="img_champooart/capybara.png" width="25%" height="25%" />
-                            <img src="img_champooart/mumu.png" width="25%" height="25%" />
-                            <img src="img_champooart/dino.png" width="25%" height="25%" />
-                        </div>
-                        <div class="complete_text">คุณทำ <span>Quiz</span> เสร็จแล้ว!</div>
-                        <div class="score_text">
-                            <!-- Here I've inserted Score Result from JavaScript -->
-                        </div>
-                        <div class="buttons">
-                            <button class="restart">ขอแก้มือ!</button>
-                            <button class="quit">พอใจและะ</button>
-                        </div>
+                    <div class="complete_text">คุณทำ <span>Quiz</span> เสร็จแล้ว!</div>
+                    <div class="score_text">
+                        <!-- Here I've inserted Score Result from JavaScript -->
+                    </div>
+                    <div class="buttons">
+                        <button class="restart">ขอแก้มือ!</button>
+                        <button class="quit">พอใจและะ</button>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
-
-
+    </div>
+@endsection
+@section('scripts')
 <script>
     // creating an array and passing the number, questions, options, and answers
 let questions = [
@@ -455,3 +417,4 @@ function queCounter(index){
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }
 </script>
+@endsection
