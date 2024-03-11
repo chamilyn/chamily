@@ -111,6 +111,10 @@
                         <a class="nav-link" href="/ledlight">Led Light</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/record_iam">ดาวน์โหลดปกไลฟ์จาก iam48</a>
+                    </li>
+                    
+                    <li class="nav-item">
                         <a class="nav-link" href="/feedbacks">Feedback</a>
                     </li>
                     <li class="nav-item">
