@@ -72,6 +72,10 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Events
                         </a>
+                        <a class="nav-link" href="/admin/record_iam">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Download IAM48
+                        </a>
                         <a class="nav-link" href="/admin/feedbacks">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Feedbacks
