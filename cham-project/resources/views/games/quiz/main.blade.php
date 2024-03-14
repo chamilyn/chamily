@@ -12,18 +12,19 @@
         <div class="card" style="width: 90%;">
             <div class="card-body">
                 <div class="wrapper">
-                    <svg>
-                        <text x="50%" y="50%" dy=".35em" text-anchor="middle">
-                            Chamily Quiz!
-                        </text>
-                    </svg>
-
+                    <div class="text-center">
+                        <br>
+                        <h1>Chamily Quiz!<img src="/img_champooart/champoo_student.png" width="90" height="90"></img></h1>
+                    </div>
+                    <br>
                     <!-- start Quiz button -->
-                    <br><br><br><br><br><br><br><div class="start_btn"><button>เริ่ม!</button></div>
+                    <div class="text-center">
+                    </div>
+                    <div class="start_btn"><button>เริ่ม!</button></div>
                 </div>
 
                 <!-- Info Box -->
-                <div class="info_box">
+                <div class="info_box text-start">
                     <div class="info-title"><span>- กฎกติกาก่อนเริ่มเล่น -</span></div>
                     <div class="info-list">
                         <div class="info">1. คุณจะมีเวลา <span>15 วินาที</span> ต่อคำถาม</div>
@@ -33,7 +34,7 @@
                         <div class="info">5. คุณจะได้รับคะแนนตามคำตอบที่ตอบถูกต้อง</div>
                     </div>
                     <div class="buttons">
-                        <button class="quit">ทำใจแปป...</button>
+                        <button class="quit">ทำใจก่อน</button>
                         <button class="restart">เริ่มกันเลย!</button>
                     </div>
                 </div>
@@ -71,17 +72,17 @@
                 <div class="result_box">
                     <div class="icon" style="text-align: center;">
                         <!-- <i class="fas fa-crown"></i> -->
-                        <img src="img_champooart/capybara.png" width="25%" height="25%" />
-                        <img src="img_champooart/mumu.png" width="25%" height="25%" />
-                        <img src="img_champooart/dino.png" width="25%" height="25%" />
+                        <img src="/img_champooart/capybara.png" width="25%" height="25%" />
+                        <img src="/img_champooart/mumu.png" width="25%" height="25%" />
+                        <img src="/img_champooart/dino.png" width="25%" height="25%" />
                     </div>
                     <div class="complete_text">คุณทำ <span>Quiz</span> เสร็จแล้ว!</div>
-                    <div class="score_text">
+                    <div class="score_text text-center">
                         <!-- Here I've inserted Score Result from JavaScript -->
                     </div>
                     <div class="buttons">
                         <button class="restart">ขอแก้มือ!</button>
-                        <button class="quit">พอใจและะ</button>
+                        <button class="quit">พอใจแล้ว</button>
                     </div>
                 </div>
             </div>
@@ -90,118 +91,254 @@
 @endsection
 @section('scripts')
 <script>
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function generateUniqueRandomNumber(min, max, array) {
+        let randomNumber;
+        do {
+            randomNumber = getRandomNumber(min, max);
+        } while (array.includes(randomNumber));
+
+        return randomNumber;
+    }
     // creating an array and passing the number, questions, options, and answers
 let questions = [
     {
         numb: 1,
-        question: "What challenge did codepen have in the month of March 2023?",
-        answer: "Buttons",
+        question: "งาน Concert magical chu chu chu แชมพูร้องเพลง ลา ลา รัก กับใคร?",
+        answer: "จิงจิง",
         options: [
-        "Shape",
-        "Buttons",
-        "Texture",
-        "The typography of quotes"
+        "นานา",
+        "จิงจิง",
+        "แองเจิ้ล",
+        "สิตา"
         ]
     },
         {
         numb: 2,
-        question: "What color shade is this hex #ffff00?",
-        answer: "yellow",
+        question: "บ้านเกิดแชมพูอยู่ที่จังหวัดอะไร?",
+        answer: "ลำปาง",
         options: [
-        "orange",
-        "red",
-        "yellow",
-        "pink"
+        "กรุงเทพ",
+        "เชียงใหม่",
+        "เชียงราย",
+        "ลำปาง"
         ]
     },
         {
         numb: 3,
-        question: "How does a FOR loop start?",
-        answer: "for (i = 0; i <= 5; i++)",
+        question: "อันดับเลือกตั้ง General election ครั้งที่ 3 แชมพูติดอันดับที่เท่าไหร่?",
+        answer: "23",
         options: [
-        "for (i = 0; i <= 5; i++)",
-        "for (i <= 5; i++)",
-        "for i = 1 to 5",
-        "for (i = 0; i <= 5)"
+        "21",
+        "22",
+        "23",
+        "24"
         ]
     },
         {
         numb: 4,
-        question: "How do you round the number 7.25, to the nearest integer?",
-        answer: "Math.round(7.25)",
+        question: "อันดับเลือกตั้ง General election ครั้งที่ 4 แชมพูติดอันดับที่เท่าไหร่?",
+        answer: "10",
         options: [
-        "Math.rnd(7.25)",
-        "rnd(7.25)",
-        "round(7.25)",
-        "Math.round(7.25)"
+        "7",
+        "8",
+        "9",
+        "10"
         ]
     },
         {
         numb: 5,
-        question: "What is the default value of the position property?",
-        answer: "static",
+        question: "ชื่อจริงของแชมพู",
+        answer: "กชพร ลีละทีป",
         options: [
-        "relative",
-        "fixed",
-        "static",
-        "absolute"
+        "กชพร ลีละทีป",
+        "กชพร ลีลทีป",
+        "กชพร ลีละทีบ",
+        "กชพร พรโชคชัย"
         ]
     },
         {
         numb: 6,
-        question: "How do you make each word in a text start with a capital letter?",
-        answer: "text-transform:capitalize",
+        question: "งาน CGM48 Fanmeet ครั้งแรกแชมพูอยู่บูธอะไร?",
+        answer: "ทำอาหาร",
         options: [
-        "text-transform:capitalize",
-        "text-style:capitalize",
-        "transform:capitalize",
-        "You can't do that with css"
+        "เล่นเกม",
+        "ทำอาหาร",
+        "ศิลปะ",
+        "กีฬา"
         ]
     },
         {
         numb: 7,
-        question: "How do you group selectors?",
-        answer: "Separate each selector with a comma",
+        question: "งานกีฬาสีอนุบาลหนูน้อย 48 แชมพูอยู่สีอะไร?",
+        answer: "เขียว",
         options: [
-        "Separate each selector with a slash",
-        "Separate each selector with a plus sign",
-        "Separate each selector with a space",
-        "Separate each selector with a comma"
+        "แดง",
+        "เหลือง",
+        "เขียว",
+        "ฟ้า"
         ]
     },
         {
         numb: 8,
-        question: "How to write an IF statement in JavaScript?",
-        answer: "if (i == 5)",
+        question: "แชมพูเกิด วัน/เดือน/ปี อะไร?",
+        answer: "10/10/2548",
         options: [
-        "if (i == 5)",
-        "if i = 5 then",
-        "if i = 5",
-        "if i == 5 then"
+        "10/10/2546",
+        "10/10/2547",
+        "10/10/2548",
+        "10/10/2549"
         ]
     },
         {
         numb: 9,
-        question: "How do you select all p elements inside a div element?",
-        answer: "div p",
+        question: "แชมพูได้เป็นเซ็นเตอร์ครั้งแรกในเพลงอะไร?",
+        answer: "Eien Pressure",
         options: [
-        "p,div",
-        "div.p",
-        "div + p",
-        "div p"
+        "ลา ลา รัก",
+        "Eien Pressure",
+        "Sayonara Crawl",
+        "รถไฟสายรุ้ง"
         ]
     },
-        {
+    {
         numb: 10,
-        question: "How can you detect the client's browser name?",
-        answer: "navigator.appName",
+        question: "ตุ๊กตาที่อยู่ข้างกายแชมพูมาตั้งแต่เด็กชื่ออะไร?",
+        answer: "มูมู่",
         options: [
-        "client.browserName",
-        "client.navName",
-        "navigator.appName",
-        "browser.name"
+        "มูมู่",
+        "มีมี่",
+        "ออเรนจิ",
+        "โมโม่"
         ]
     },
+    {
+        numb: 11,
+        question: "แมว CGM48 ประจำตัวแชมพูชื่อว่าอะไร?",
+        answer: "หอมนวล",
+        options: [
+        "คิระคิระ",
+        "พะโล้",
+        "ปริ้นเซส",
+        "หอมนวล"
+        ]
+    },
+    {
+        numb: 12,
+        question: "ไลฟ์ที่นานที่สุดของแชมพูใน App IAM วันที่เท่าไหร่่?",
+        answer: "16/03/2563",
+        options: [
+        "17/01/2563",
+        "15/02/2563",
+        "16/03/2563",
+        "26/04/2563"
+        ]
+    },
+    {
+        numb: 13,
+        question: "เพลงหลักเพลงแรกที่แชมพูติดเซ็มบัตสึคือเพลงอะไร?",
+        answer: "มะลิ",
+        options: [
+        "เชียงใหม่ 106",
+        "Melon Juice",
+        "มะลิ",
+        "Eien Pressure"
+        ]
+    },
+    {
+        numb: 14,
+        question: "เพลงประกอบภาพยนตร์ Cheese Sister ที่แชมพูร้องชื่อเพลงอะไร?",
+        answer: "ลาลารัก",
+        options: [
+        "ลาลารัก",
+        "bye bye",
+        "ชีสพาย",
+        "ข้างๆ"
+        ]
+    },
+
+    {
+        numb: 15,
+        question: "บูธงานมัตรสึริของแชมพู ปี 2567 ชื่อ บูธอะไร?",
+        answer: "baby gangter",
+        options: [
+        "So-pan",
+        "baby gangter",
+        "i mou to camping",
+        "maid my day"
+        ]
+    },
+
+    {
+        numb: 16,
+        question: "ไลฟ์แรกของแชมพูวันที่เท่าไร?",
+        answer: "25/12/2562",
+        options: [
+        "25/12/2562",
+        "26/12/2562",
+        "27/12/2562",
+        "28/12/2562"
+        ]
+    },
+
+    {
+        numb: 17,
+        question: "เพลงรองที่แชมพูเป็น double Center คู่กับคนิ้งมีชื่อภาษาญี่ปุ่นว่าอะไร?",
+        answer: "Niji no ressha",
+        options: [
+        "Niji no ressha",
+        "Maeshika Mukanee",
+        "Sansei Kawaii",
+        "Otona e no Michi"
+        ]
+    },
+    {
+        numb: 18,
+        question: "ประเทศแรกที่แชมพูได้ไปต่างประเทศ คือประเทศอะไร?",
+        answer: "เกาหลี",
+        options: [
+        "จีน",
+        "เกาหลี",
+        "ญี่ปุ่น",
+        "ไต้หวัน"
+        ]
+    },
+    {
+        numb: 19,
+        question: "ตุ๊กตาตัวโปรดที่แชมพู ชอบพกไปต่างจังหวัดเสมอ มีชื่อว่าอะไร?",
+        answer: "มูมู่",
+        options: [
+        "ออเรนจิ",
+        "มูมู่",
+        "โมโม่",
+        "คิระ"
+        ]
+    },
+    {
+        numb: 20,
+        question: "คุกกี้ประจำตัวในแอพไอแอมของแชมพู มีชื่อว่าอะไร?",
+        answer: "เหลืองอ๋อย",
+        options: [
+        "น้องเห็ด",
+        "เปาเปา",
+        "สายรุ้ง",
+        "เหลืองอ๋อย"
+        ]
+    },
+    {
+        numb: 21,
+        question: "ภาพยนต์เรื่องแรกที่มีแชมพูร่วมแสดง มีชื่อเรื่องว่าอะไร?",
+        answer: "ห้าวเป้งจ๋า อย่าแกงน้อง",
+        options: [
+        "cheese sister",
+        "ห้าวเป้งจ๋า อย่าแกงน้อง",
+        "One take",
+        "girl don't cry"
+        ]
+    }
 ];
 
 //selecting all required elements
@@ -230,7 +367,9 @@ exit_btn.onclick = ()=>{
 continue_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.add("activeQuiz"); //show quiz box
-    showQuetions(0); //calling showQestions function
+    let newRandomNumber = generateUniqueRandomNumber(0, (questions.length-1), ans_ques);
+    ans_ques.push(newRandomNumber);
+    showQuetions(newRandomNumber); //calling showQestions function
     queCounter(1); //passing 1 parameter to queCounter
     startTimer(15); //calling startTimer function
     startTimerLine(0); //calling startTimerLine function
@@ -238,6 +377,8 @@ continue_btn.onclick = ()=>{
 
 let timeValue =  15;
 let que_count = 0;
+let que_final = 10;
+let ans_ques = [];
 let que_numb = 1;
 let userScore = 0;
 let counter;
@@ -253,10 +394,14 @@ restart_quiz.onclick = ()=>{
     result_box.classList.remove("activeResult"); //hide result box
     timeValue = 15; 
     que_count = 0;
+    que_final = 10;
+    ans_ques = [];
     que_numb = 1;
     userScore = 0;
     widthValue = 0;
-    showQuetions(que_count); //calling showQestions function
+    let newRandomNumber = generateUniqueRandomNumber(0, (questions.length-1), ans_ques);
+    ans_ques.push(newRandomNumber);
+    showQuetions(newRandomNumber); //calling showQestions function
     queCounter(que_numb); //passing que_numb value to queCounter
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
@@ -276,10 +421,12 @@ const bottom_ques_counter = document.querySelector("footer .total_que");
 
 // if Next Que button clicked
 next_btn.onclick = ()=>{
-    if(que_count < questions.length - 1){ //if question count is less than total question length
+    if(que_count < que_final - 1){ //if question count is less than total question length
         que_count++; //increment the que_count value
         que_numb++; //increment the que_numb value
-        showQuetions(que_count); //calling showQestions function
+        let newRandomNumber = generateUniqueRandomNumber(0, (questions.length-1), ans_ques);
+        ans_ques.push(newRandomNumber);
+        showQuetions(newRandomNumber); //calling showQestions function
         queCounter(que_numb); //passing que_numb value to queCounter
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
@@ -297,9 +444,8 @@ next_btn.onclick = ()=>{
 // getting questions and options from array
 function showQuetions(index){
     const que_text = document.querySelector(".que_text");
-
     //creating a new span and div tag for question and option and passing the value using array index
-    let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
+    let que_tag = '<span>'+ (que_count+1) + ". " + questions[index].question +'</span>';
     let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
@@ -323,7 +469,8 @@ function optionSelected(answer){
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
     let userAns = answer.textContent; //getting user selected option
-    let correcAns = questions[que_count].answer; //getting correct answer from array
+    let lastIndex = ans_ques.length - 1;
+    let correcAns = questions[ans_ques[lastIndex]].answer; //getting correct answer from array
     const allOptions = option_list.children.length; //getting all option items
     
     if(userAns == correcAns){ //if user selected option is equal to array's correct answer
@@ -358,15 +505,15 @@ function showResult(){
     const scoreText = result_box.querySelector(".score_text");
     if (userScore > 3){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
-        let scoreTag = '<span>ยินดีด้วย!, คุณทำได้ <p>'+ userScore +'</p> คะแนน จาก <p>'+ questions.length +'</p> ข้อ</span>';
+        let scoreTag = '<span>ยินดีด้วย!🎊<br>คุณทำได้ '+ userScore +' คะแนน<br>จาก '+ que_final +' ข้อ</span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
     else if(userScore > 1){ // if user scored more than 1
-        let scoreTag = '<span>ทำได้ดี! 😎, คุณทำได้ <p>'+ userScore +'</p> คะแนน จาก <p>'+ questions.length +'</p> ข้อ</span>';
+        let scoreTag = '<span>ทำได้ดี!😎<br>คุณทำได้ '+ userScore +' คะแนน<br>จาก '+ que_final +' ข้อ</span>';
         scoreText.innerHTML = scoreTag;
     }
     else{ // if user scored less than 1
-        let scoreTag = '<span>เสียใจด้วย 😐, คุณทำได้ <p>'+ userScore +'</p> คะแนน จาก <p>'+ questions.length +'</p> ข้อ</span>';
+        let scoreTag = '<span>เสียใจด้วย😐<br>คุณทำได้ '+ userScore +' คะแนน<br>จาก '+ que_final +' ข้อ</span>';
         scoreText.innerHTML = scoreTag;
     }
 }
@@ -413,7 +560,7 @@ function startTimerLine(time){
 
 function queCounter(index){
     //creating a new span tag and passing the question number and total question
-    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
+    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ que_final +'</p> Questions</span>';
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }
 </script>

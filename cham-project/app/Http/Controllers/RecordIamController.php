@@ -94,12 +94,35 @@ class RecordIamController extends Controller
             $count_split_url = count($split_url);
             $file_name = $split_url[$count_split_url - 1];
             $content = $split_url[$count_split_url - 2];
-            $client = new Client();
-            $response = $client->get($url);
-            $html = $response->getBody()->getContents();
-
+            
             if ($content == 'content-member-timeline' || $content == 'content-member-batch-thankyou') {
-                $is_continue = true;
+                $url = "https://public.bnk48.io/timeline/".$content."/".$file_name;
+                $client = new Client();
+                $response = $client->get($url);
+                $jsonResponse = json_decode($response->getBody()); // Decode the JSON response
+                if ($jsonResponse && $jsonResponse->content && $jsonResponse->content->imageFileUrl && count($jsonResponse->content->imageFileUrl) > 0) {
+                    $imageFileUrls = $jsonResponse->content->imageFileUrl;
+                    foreach ($imageFileUrls as $key => $image) {
+                        $imageData = file_get_contents($image);
+                        $base64Image = base64_encode($imageData);
+                        $imageSize = getimagesizefromstring($imageData);
+                        $imageFormat = image_type_to_mime_type($imageSize[2]);
+                        $base64Image = 'data:' . $imageFormat . ';base64,' . $base64Image;
+                        $extension = 'jpg';
+                        if ($imageFormat === 'image/png') {
+                            $extension = 'png';
+                        }
+                        $obj_image = (object)[];
+                        $obj_image->url = $image;
+                        $obj_image->image = $base64Image;
+                        $obj_image->file_name = $file_name.'_'.($key+1).'.'.$extension;
+                        array_push($res->data, $obj_image);
+                    }
+                } else {
+                    $res->success = 0;
+                }
+                
+                /*$is_continue = true;
                 $running_name = 1;
                 while ($is_continue) {
                     $pattern = '/<div class="row no-gutters">(.*?)<\/div>/s'; // Match the specific <div>
@@ -137,29 +160,21 @@ class RecordIamController extends Controller
                             // Perform the regex match to extract the URL within url('...')
                             if (preg_match($urlPattern, $divContent, $imgMatches)) {
                                 $imageSrcArray = $imgMatches[1];
-                                //$imgMatches = explode(',', $imgMatches[1])[1];
-                                /*$obj_image = (object)[];
-                                    $obj_image->url = $imgMatches[1];
-                                    $obj_image->image = $imgMatches[1];
-                                    $obj_image->file_name = $imgMatches[1];
-                                    array_push($res->data, $obj_image);*/
-                                //foreach ($imageSrcArray as $key => $image) {
-                                    $imageData = file_get_contents($imageSrcArray);
-                                    $base64Image = base64_encode($imageData);
-                                    $imageSize = getimagesizefromstring($imageData);
-                                    $imageFormat = image_type_to_mime_type($imageSize[2]);
-                                    $base64Image = 'data:' . $imageFormat . ';base64,' . $base64Image;
-                                    $extension = 'jpg';
-                                    if ($imageFormat === 'image/png') {
-                                        $extension = 'png';
-                                    }
-                                    $obj_image = (object)[];
-                                    $obj_image->url = $imageSrcArray;
-                                    $obj_image->image = $base64Image;
-                                    $obj_image->file_name = $file_name.'_'.$running_name.'.'.$extension;
-                                    array_push($res->data, $obj_image);
-                                    $running_name++;
-                                //}
+                                $imageData = file_get_contents($imageSrcArray);
+                                $base64Image = base64_encode($imageData);
+                                $imageSize = getimagesizefromstring($imageData);
+                                $imageFormat = image_type_to_mime_type($imageSize[2]);
+                                $base64Image = 'data:' . $imageFormat . ';base64,' . $base64Image;
+                                $extension = 'jpg';
+                                if ($imageFormat === 'image/png') {
+                                    $extension = 'png';
+                                }
+                                $obj_image = (object)[];
+                                $obj_image->url = $imageSrcArray;
+                                $obj_image->image = $base64Image;
+                                $obj_image->file_name = $file_name.'_'.$running_name.'.'.$extension;
+                                array_push($res->data, $obj_image);
+                                $running_name++;
 
                             } else {
                                 $is_continue = false;
@@ -174,8 +189,11 @@ class RecordIamController extends Controller
                     }
                     $html = str_replace($divContent.'</div>', "", $html);
                     
-                }
+                }*/
             } else {
+                $client = new Client();
+                $response = $client->get($url);
+                $html = $response->getBody()->getContents();
                 $ogImage = null;
                 preg_match('/<meta\s+property="og:image"\s+content="([^"]+)"/i', $html, $matches);
                 if (isset($matches[1])) {
