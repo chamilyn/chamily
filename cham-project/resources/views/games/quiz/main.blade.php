@@ -195,7 +195,7 @@ let questions = [
     },
         {
         numb: 9,
-        question: "แชมพูได้เป็นเซ็นเตอร์ครั้งแรกในเพลงอะไร?",
+        question: "แชมพูได้เป็น Center ครั้งแรกในเพลงอะไร?",
         answer: "Eien Pressure",
         options: [
         "ลา ลา รัก",
@@ -228,7 +228,7 @@ let questions = [
     },
     {
         numb: 12,
-        question: "ไลฟ์ที่นานที่สุดของแชมพูใน App IAM วันที่เท่าไหร่่?",
+        question: "ไลฟ์ที่นานที่สุดของแชมพูใน IAM วันที่เท่าไหร่?",
         answer: "16/03/2563",
         options: [
         "17/01/2563",
@@ -263,10 +263,10 @@ let questions = [
     {
         numb: 15,
         question: "บูธงานมัตรสึริของแชมพู ปี 2567 ชื่อ บูธอะไร?",
-        answer: "baby gangter",
+        answer: "baby gangster",
         options: [
         "So-pan",
-        "baby gangter",
+        "baby gangster",
         "i mou to camping",
         "maid my day"
         ]
@@ -308,7 +308,7 @@ let questions = [
     },
     {
         numb: 19,
-        question: "ตุ๊กตาตัวโปรดที่แชมพู ชอบพกไปต่างจังหวัดเสมอ มีชื่อว่าอะไร?",
+        question: "ตุ๊กตาตัวโปรดที่แชมพูชอบพกไปต่างจังหวัดเสมอ มีชื่อว่าอะไร?",
         answer: "มูมู่",
         options: [
         "ออเรนจิ",
@@ -319,7 +319,7 @@ let questions = [
     },
     {
         numb: 20,
-        question: "คุกกี้ประจำตัวในแอพไอแอมของแชมพู มีชื่อว่าอะไร?",
+        question: "คุกกี้ประจำตัวในแอพ IAM ของแชมพู มีชื่อว่าอะไร?",
         answer: "เหลืองอ๋อย",
         options: [
         "น้องเห็ด",
