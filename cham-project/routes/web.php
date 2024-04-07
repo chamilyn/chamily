@@ -120,6 +120,8 @@ Route::get('/dino_game', function () {
     return view('dino_game.running_dino');
 });
 
+Route::get('/download_vdo', 'RecordIamController@downLoadVdo');
+
 Route::group(['prefix' => 'games'], function()
 {
     Route::get('/quiz', function () {

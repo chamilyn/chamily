@@ -35,6 +35,26 @@ class RecordIamController extends Controller
         //
     }
 
+    public function downLoadVdo(Request $request)
+    {
+        $is_error = 0;
+        $base64Video = '';
+        $name = 'download.mp4';
+        try {
+            $client = new Client();
+            //dd($request->url);
+            $response = $client->get($request->url);
+            $videoContent = $response->getBody()->getContents();
+            $base64Video = base64_encode($videoContent);
+            $name = $request->name;
+        } catch (\Exception $e) {
+            $is_error = 1;
+            //dd($e->getMessage());
+        }
+        
+        return view('admin.record_iam.download', compact('base64Video', 'is_error', 'name'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -297,6 +317,7 @@ class RecordIamController extends Controller
 
                     if ($vdo_url) {
                         $data = (object)[];
+                        $vdo_url = "https://chamily.net/download_vdo?openExternalBrowser=1&url=".urlencode($vdo_url).'&name='.$file_name.'.mp4';
                         $data->message = $vdo_url;
                         $response = CallApiController::callLineNotify($data);
                     }
