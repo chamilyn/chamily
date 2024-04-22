@@ -36,7 +36,7 @@ class CallApiController extends Controller
         $response = $client->get($apiEndpoint, [
             'headers' => [
                 'Bnk48-Appcode' => 'BNK48_102',
-                'Authorization' => 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MTQzMDMiLCJ1bmlxdWVfbmFtZSI6IjgxNDMwMyIsImlzcyI6InVzZXItYXV0aC5ibms0OC5pbyIsIm5iZiI6MTcxMjEyMzMwNCwiZXhwIjoxNzEyNzI4MTA0LCJpYXQiOjE3MTIxMjMzMDR9.9dpCEo8XBzDw_ttG_lim_bHxY5WjWkisgphsGVpSAzY',
+                'Authorization' => 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MTQzMDMiLCJ1bmlxdWVfbmFtZSI6IjgxNDMwMyIsImlzcyI6InVzZXItYXV0aC5ibms0OC5pbyIsIm5iZiI6MTcxMzM2MTQxMywiZXhwIjoxNzEzOTY2MjEzLCJpYXQiOjE3MTMzNjE0MTN9.RyQWAL2Wt8sinXsNUnhkf_vOHIiExAMKkQQvpKzfBWs',
                 'Bnk48-Device-Id' => 'be2859ff8b2300f1',
                 'Bnk48-Device-Model' => 'Android Android SDK built for arm64',
             ],

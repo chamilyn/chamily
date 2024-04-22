@@ -122,6 +122,8 @@ Route::get('/dino_game', function () {
 
 Route::get('/download_vdo', 'RecordIamController@downLoadVdo');
 
+Route::resource('/propose_name', 'ProposeNameController');
+
 Route::group(['prefix' => 'games'], function()
 {
     Route::get('/quiz', function () {
@@ -129,3 +131,6 @@ Route::group(['prefix' => 'games'], function()
     });
 
 });
+
+Route::get('/propose_name_for_champoo', 'ProposeNameController@showChampoo');
+Route::post('/propose_name_for_champoo', 'ProposeNameController@champooStore');
