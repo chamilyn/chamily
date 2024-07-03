@@ -120,6 +120,10 @@ Route::get('/dino_game', function () {
     return view('dino_game.running_dino');
 });
 
+Route::get('/trend_x_nayak', function () {
+    return view('trend_x.nayak');
+});
+
 //Route::get('/download_vdo', 'RecordIamController@showDownload');
 Route::get('/download_vdo', 'RecordIamController@downLoadVdo');
 //Route::post('/download_vdo', 'RecordIamController@downLoadVdo');
