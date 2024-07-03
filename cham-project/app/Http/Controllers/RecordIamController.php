@@ -55,6 +55,26 @@ class RecordIamController extends Controller
         return view('admin.record_iam.download', compact('base64Video', 'is_error', 'name'));
     }
 
+    public function downLoadVdoFalse(Request $request)
+    {
+        $data = (object)[];
+        $data->is_error = 0;
+        $data->base64Video = '';
+        $data->name = $request->name;
+        try {
+            $client = new Client();
+            $response = $client->get($request->url);
+            //dd($response);
+            $videoContent = $response->getBody()->getContents();
+            $data->base64Video = base64_encode($videoContent);
+            //dd($data);
+        } catch (\Exception $e) {
+            $data->is_error = 1;
+            $data->base64Video = $e->getMessage();
+        }
+        return $data;
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -294,6 +314,14 @@ class RecordIamController extends Controller
                     $data->message = $messageBody;
                     $response = CallApiController::callLineNotify($data);
 
+                    //check vdo
+                    $vdo_url = CallApiController::getIamVdoUrl($file_name);
+                    if ($vdo_url) {
+                        $data = (object)[];
+                        $vdo_url = "https://chamily.net/download_vdo?openExternalBrowser=1&url=".urlencode($vdo_url).'&name='.$file_name.'.mp4';
+                        $data->message = $vdo_url;
+                        $response = CallApiController::callLineNotify($data);
+                    }
                     $imageFileUrls = $jsonResponse->content->imageFileUrl;
                     foreach ($imageFileUrls as $key => $image) {
                         $data = (object)[];
@@ -747,8 +775,8 @@ class RecordIamController extends Controller
         if (strpos($text, '@**NAMMONN|128**') !== false) {
             $text = str_replace('@**NAMMONN|128**', ' #NammonnBNK48 ', $text);
         }
-        if (strpos($text, '@**NANABNK48|129**') !== false) {
-            $text = str_replace('@**NANABNK48|129**', ' #Nanabnk48BNK48 ', $text);
+        if (strpos($text, '@**NANA|129**') !== false) {
+            $text = str_replace('@**NANA|129**', ' #NanaBNK48 ', $text);
         }
         if (strpos($text, '@**NEEN|130**') !== false) {
             $text = str_replace('@**NEEN|130**', ' #NeenBNK48 ', $text);
